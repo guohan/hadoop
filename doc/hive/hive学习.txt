@@ -1,0 +1,451 @@
+1. 创建orc 并且压缩的hive表
+CREATE TABLE jinhb_orc_compress
+STORED AS orc tblproperties ("orc.compress"="SNAPPY")
+as  select  *  from  jinhb_text_nocompress  distribute by  id      ---------distribute   用来向reduce分发数据，不然输出文件肯定就是map的分片压缩后的大小。
+
+set hive.exec.orc.default.stripe.size;   -----stripe的大小；
+
+
+CREATE TABLE jinhb_orc_nocompress  stored AS ORC 
+TBLPROPERTIES
+('orc.compress'='NONE') 
+AS 
+select  *  from  jinhb_text_nocompress  
+DISTRIBUTE BY id sort BY logindate
+
+
+
+CREATE TABLE jinhb_text_nocompress3
+stored as textfile
+as  select  *  from  jinhb_text_nocompress distribute by  id;
+
+
+insert overwrite table jinh_result 
+
+create table jinhb_result as 
+select  count(*), a.logindate  as a,b.logindate as b from  jinhb_text_nocompress3  a
+join jinhb_text_nocompress b on a.id=b.id
+ group by a.logindate , b.logindate
+
+
+insert overwrite table jinhb_result  
+select  count(*), logindate  from  jinhb_small_zip group by logindate
+
+select  count(*), logindate  from  jinhb_text_nocompress3   group by logindate
+select  count(*), logindate  from  jinhb_small2  group by logindate sort by logindate
+
+select  count(*), logindate  from  jinhb_result  group by logindate
+
+set hive.execution.engine=mr;
+
+
+hive --hiveconf hive.root.logger=TRACE,console
+
+
+select  *  from jinhb_result2 a
+join jinhb_result2 b on a.logindate=b.logindate
+
+hive.auto.convert.join 
+
+
+2. 查看表结构
+   describe  formatted   t
+3. set   查看所有参数
+    set hive.merge.mapfiles   查看单个参数值
+4. 查看建表语句  
+   show create table  jinhb_orc_compress2
+
+
+
+4. hive的重要参数
+
+合并输出文件
+set hive.merge.mapfiles = true;#在Map-only的任务结束时合并小文件，map阶段Hive自动对小文件合并。
+set hive.merge.mapredfiles = true;#默认false， true时在MapReduce的任务结束时合并小文件
+set hive.merge.per.task = 256*1000*1000;#合并文件的大小
+hive.merge.smallfiles.avgsize：在作业输出文件小于该值时，起一个额外的map/reduce作业将小文件合并为大文件，小文件的基本阈值，设置大点可以减少小文件个数，需要mapfiles和mapredfiles为true，默认值是16MB；
+hive.merge.tezfiles =true;   --------------------------用了tez是否合并靠这个参数。
+
+合并输入文件( 压缩文件不能合并？？？)
+set mapred.max.split.size = 256000000;#每个Map最大分割大小（hadoop）
+set mapred.min.split.size.per.node = l00000000; #一个节点上split的最小值
+set mapred.min.split.size.per.rack = l28000000; #一个节点上split的最小值
+set hive.input.format =org.apache.hadoop.hive.ql.io.CombineHiveInputFormat;#执行Map前进行小文件合并
+set hive.tez.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat ---------关联----------------set mapred.max.split.size=256000000； 
+
+set mapred.reduce.tasks=10; ----- 控制reduce数， 测试用，一般不用
+
+
+默认下，Hive分配reduce数基于以下参数： 
+参数1：hive.exec.reducers.bytes.per.reducer(默认是1G) 
+参数2：hive.exec.reducers.max(最大reduce数，默认为999)
+
+set hive.map.aggr=true  Map 端部分聚合，相当于Combiner
+set hive.groupby.skewindata=true 
+有数据倾斜的时候进行负载均衡，当选项设定为true，生成的查询计划会有两个 MR Job。第一个 MR Job 中，Map 的输出结果集合会随机分布到 Reduce 中，每个 Reduce 做部分聚合操作，并输出结果，这样处理的结果是相同的 Group By Key 有可能被分发到不同的 Reduce 中，从而达到负载均衡的目的；第二个 MR Job 再根据预处理的数据结果按照 Group By Key 分布到 Reduce 中（这个过程可以保证相同的 Group By Key 被分布到同一个 Reduce 中），最后完成最终的聚合操作。
+
+set hive.exec.compress.output：一个查询的最后一个map/reduce任务输出是否被压缩的标志，默认为false，但是一般会开启为true，好处的话，节省空间不说，在不考虑cpu压力的时候会提高io；
+hive.exec.compress.intermediate：类似上个，在一个查询的中间的map/reduce任务输出是否要被压缩，默认false，
+hive.join.emit.interval：在发出join结果之前对join最右操作缓存多少行的设定，默认1000；hive jira里有个对该值设置太小的bugfix；
+hive.map.aggr.hash.percentmemory：map端聚合时hash表所占用的内存比例，默认0.5，这个在map端聚合开启后使用，
+hive.default.fileformat：CREATE TABLE语句的默认文件格式，默认TextFile，其他可选的有SequenceFile、RCFile还有Orc；
+
+hive.exec.reducers.bytes.per.reducer：每个reducer的大小，默认是1G，输入文件如果是10G，那么就会起10个reducer；
+hive.exec.reducers.max：reducer的最大个数，如果在mapred.reduce.tasks设置为负值，那么hive将取该值作为reducers的最大可能值。当然还要依赖（输入文件大小/hive.exec.reducers.bytes.per.reducer）所得出的大小，取其小值作为reducer的个数，hive默认是999；
+hive.fileformat.check：加载数据文件时是否校验文件格式，默认是true；
+hive.groupby.mapaggr.checkinterval：map端做聚合时，group by 的key所允许的数据行数，超过该值则进行分拆，默认是100000；
+hive.mapred.local.mem：本地模式时，map/reduce的内存使用量，默认是0，就是无限制；
+
+hive.mapjoin.followby.map.aggr.hash.percentmemory：map端聚合时hash表的内存占比，该设置约束group by在map join后进行，否则使用hive.map.aggr.hash.percentmemory来确认内存占比，默认值0.3；
+hive.multigroupby.singlemr：将多个group by产出为一个单一map/reduce任务计划，当然约束前提是group by有相同的key，默认是false；
+hive.optimize.cp：列裁剪，默认开启true，在做查询时只读取用到的列，这个是个有用的优化；
+hive.optimize.index.filter：自动使用索引，默认不开启false；
+hive.optimize.ppd：是否支持谓词下推，默认开启；所谓谓词下推，将外层查询块的 WHERE 子句中的谓词移入所包含的较低层查询块（例如视图），从而能够提早进行数据过滤以及有可能更好地利用索引。
+
+hive.map.aggr.hash.min.reduction：如果hash表的容量与输入行数之比超过这个数，那么map端的hash聚合将被关闭，默认是0.5，设置为1可以保证hash聚合永不被关闭
+hive.optimize.ppd.storage：谓词下推开启时，谓词是否下推到存储handler，默认开启，在谓词下推关闭时不起作用；
+hive.mapjoin.bucket.cache.size：mapjoin时内存cache的每个key要存储多少个value，默认100；
+hive.mapred.mode：hive操作执行时的模式，默认是nonstrict非严格模式，如果是strict模式，很多有风险的查询会被禁止运行，比如笛卡尔积的join和动态分区；
+
+hive.exec.compress.output：控制hive的查询结果输出是否进行压缩，压缩方式在hadoop的mapred.output.compress中配置，默认不压缩false；
+hive.exec.compress.intermediate：控制hive的查询中间结果是否进行压缩，同上条配置，默认不压缩false；
+hive.exec.parallel：hive的执行job是否并行执行，默认不开启false，在很多操作如join时，子查询之间并无关联可独立运行，这种情况下开启并行运算可以大大加速；
+hvie.exec.parallel.thread.number：并行运算开启时，允许多少作业同时计算，默认是8；
+hive.mapjoin.smalltable.filesize：输入表文件的mapjoin阈值，如果输入文件的大小小于该值，则试图将普通join转化为mapjoin，默认25MB；
+hive.auto.convert.join：根据输入文件的大小决定是否将普通join转换为mapjoin的一种优化，默认不开启false；
+hive.mapred.reduce.tasks.speculative.execution：reduce任务推测执行是否开启，默认是true；
+hive.enforce.bucketing：数据分桶是否被强制执行，默认false，如果开启，则写入table数据时会启动分桶，
+hive.enforce.sorting：开启强制排序时，插数据到表中会进行强制排序，默认false；
+hive.optimize.reducededuplication：如果数据已经根据相同的key做好聚合，那么去除掉多余的map/reduce作业，此配置是文档的推荐配置，建议打开，默认是true；
+hive.exec.dynamic.partition：在DML/DDL中是否支持动态分区，默认false；
+hive.exec.dynamic.partition.mode：默认strict，在strict模式下，动态分区的使用必须在一个静态分区确认的情况下，其他分区可以是动态；
+hive.exec.max.dynamic.partitions：动态分区的上限，默认1000；
+hive.exec.max.dynamic.partitions.pernode：每个mapper/reducer节点可以创建的最大动态分区数，默认100；
+hive.exec.mode.local.auto：是否由hive决定自动在local模式下运行，默认是false，
+hive.variable.substitute：是否支持变量替换，如果开启的话，支持语法如${var} ${system:var}和${env.var}，默认是true；
+hive.stats.autogather：在insert overwrite命令时自动收集统计信息，默认开启true；
+
+合理的设置Buckets。在一些大数据join的情况下，map join有时候会内存不够。如果使用Bucket Map Join的话，可以只把其中的一个bucket放到内存中，内存中原来放不下的内存表就变得可以放下。这需要使用buckets的键进行join的条件连结，并且需要如下设置  
+ set hive.optimize.bucketmapjoin = true 
+
+JVM重用可以使得JVM实例在同一个JOB中重新使用N次，N的值可以在Hadoop的mapre-site.xml文件中进行设置       mapred.job.reuse.jvm.num.tasks 也可在hive的执行设置：     set  mapred.job.reuse.jvm.num.tasks=10; 
+
+-----------------------------------------------------------有机会遇到reduce比较慢的可以试试。
+mapred.job.reduce.input.buffer.percent 来指定需要多少的内存百分比来作为reduce读已经sort好的数据的buffer百分比,该值默认为0。Hadoop假设用户的reduce()函数需要所有的JVM内存，因此执行reduce()函数前要释放所有内存。如果设置了该值，可将部分文件保存在内存中(不必写到磁盘上)。
+
+
+set hive.exec.orc.default.stripe.size=268435456
+
+、为map中间输出启用压缩。
+
+      一般对于中间输出压缩采用低压缩比，高压缩解压缩速度的压缩算法，如LZO,Snappy 
+
+    set hive.exec.compress.intermediate=true;
+
+    set mapred.map.output.compression.codec=com.hadoop.compression.lzo.LzoCodec;
+
+    
+
+2、为最终输出结果启用压缩
+
+      需要注意的是：有些压缩格式是不支持切分的，这样后续mapre-reduce任务将不能并行处理。
+
+      set hive.exec.compress.output=true;
+
+      set mapred.output.compression.codec=org.apache.hadoop.io.compress.GzipCodec;
+
+3、为输出使用sequence file 文件格式
+
+      create table tname stored as sequencefile;
+
+      为sequence file 文件开启压缩
+
+      set mapred.output.compression.type=BLOCK;
+
+set hive.execution.engine=tez; 即执行引擎为tez
+ 如果想用yarn,则设置为:
+;即可 
+
+是否使用索引：  set hive.optimize.index.filter=true;
+
+
+   给text设置压缩：
+ set mapred.output.compression.codec=org.apache.hadoop.io.compress.BZip2Codec;
+     set mapred.output.compression.codec=org.apache.hadoop.io.compress.GzipCodec
+set hive.exec.compress.output=true;
+
+
+容器个数估计;  min(cpu核数*2 ，硬盘数*2， 可用内存/2)
+containers = min (2*32, 1.8* 7 , (128-24)/2) = min (64, 12.6 , 51) = 13
+
+计算RAM-per-container值如下：
+
+RAM-per-container = max (2, (124-24)/13) = max (2, 8) = 8
+
+map端 和reduce段 堆大小设置
+ yarn.scheduler.minimum-allocation-mb 最小容器内存，默认1024M
+
+mapreduce.map.java.opts 和mapreduce.reduce.java.opts(默认值为-Xmx200m)
+mapreduce.map.memory.mb
+mapreduce.reduce.memory.mb
+mapreduce.task.io.sort.mb
+
+---------------------------------hive.tez.container.size    -------tez 的container 缓冲池。  不可能比yarn的container小， 只能是yarn 的container的整数倍。 
+
+mapred.max.split.size
+mapred.min.split.size   ------最小分片
+dfs.block.size /dfs.blocksize   ------块大小
+
+mapreduce.min.split.size
+mapreduce.input.fileinputformat.split.minsize
+mapreduce.input.fileinputformat.split.maxsize
+
+                 jps
+                  pmap   -d    *****    查看进程内存
+
+yarn.app.mapreduce.am.command-opts
+yarn.app.mapreduce.am.resource.mb
+
+
+
+所以接下来我们就用bucket map join，之前分的bucket就派上用处了。只需要在上述sql的前面加上如下的设置： 
+set hive.optimize.bucketmapjoin = true;
+
+
+最后我们试试sort merge bucket map join，在bucket map join的基础上加上下面的设置即可： 
+set hive.optimize.bucketmapjoin.sortedmerge = true;
+set hive.input.format = org.apache.hadoop.hive.ql.io.BucketizedHiveInputFormat;
+
+ 11.  sqoop  倒数
+
+sqoop import --append --connect jdbc:mysql://10.127.193.247:3326/yht --username root --password yht@2015 --query "select id,customerid ,customeropenid,userloginopenid,loginuuid,logintime,logindate,systag,appid,corpname from yht.yht_pnt_login_ctm_append where \$CONDITIONS" --target-dir /apps/hive/warehouse/test.db/jinhb_text_nocompress --fields-terminated-by '\0001' --split-by "id" -m 4 ;
+
+
+sqoop import --append --connect jdbc:oracle:thin:bi_qg/bi_qg@10.10.4.67:1521:orcl --query " select * from bi_yht.YHT_PNT_LOGIN_201604 
+  where \$CONDITIONS" --target-dir /user/hive/warehouse/test.db/jinhb_text_nocompress --fields-terminated-by '\0001' --split-by "id" -m 10 ;
+
+12.  建立外部表
+
+
+CREATE EXTERNAL TABLE jinhb_text_nocompress(
+  id            INT,
+  userid        string,
+  username      string,
+  logindate     string,
+  logintime     string,
+  appid         string,
+  openid        string,
+  yhtchange     string,
+  mobile        string,
+  uuid          string,
+  systag        string,
+  corporationid string,
+  corpname      string,
+  paid          string,
+  status        string,
+  region        string,
+  industry      string
+) 
+LOCATION  '/user/hive/warehouse/test.db/jinhb_text_nocompress';
+
+13. 动态分区
+
+CREATE  TABLE jinhb_partition(
+  id            INT,
+  userid        string,
+  username      string,
+  logindate     string,
+  logintime     string,
+  appid         string,
+  openid        string,
+  yhtchange     string,
+  mobile        string,
+  uuid          string,
+  systag        string,
+  corporationid string,
+  corpname      string,
+  paid          string,
+  status        string,
+  region        string,
+  industry      string
+) partitioned by (mon string)
+stored as orc
+
+set hive.exec.dynamic.partition=true
+set hive.exec.dynamic.partition.mode=nostrict
+set hive.exec.max.dynamic.partitions.pernode
+set hive.exec.max.dynamic.partitions 
+set hive.exec.max.created.files
+
+insert overwrite  table jinhb_partition  partition(mon)
+ select  a.* , substr(logindate,1,6) as mon from  jinhb_orc_compress a  
+
+
+select  *  from jinhb_partition  limit 10
+
+14. 分桶
+
+
+
+
+
+16. 查看java内存消耗
+     jps  查看java 进程
+     pmap  进程号     ----------查看java内存
+
+17   yarn   container  配置
+4.2containers 计算：
+MIN_CONTAINER_SIZE = 2048 MB
+
+containers = min (2*CORES, 1.8*DISKS, (Total available RAM) / MIN_CONTAINER_SIZE)
+
+# of containers = min (2*12, 1.8*12, (78 * 1024) / 2048)
+
+# of containers = min (24,21.6,39)
+
+# of containers = 22
+
+container 内存计算：
+
+RAM-per-container = max(MIN_CONTAINER_SIZE, (Total Available RAM) / containers))
+
+RAM-per-container = max(2048, (78 * 1024) / 22))
+
+RAM-per-container = 3630 MB
+
+18.  hive  取样
+
+create table jinhb_small2 as
+select  *  from jinhb_text_nocompress  TABLESAMPLE (1 percent)
+
+
+create table jinhb_small as
+select  *  from jinhb_text_nocompress   limit 600000；
+
+
+19  大表小表连接 测试：
+   hive.mapjoin.smalltable.filesize：输入表文件的mapjoin阈值，如果输入文件的大小小于该值，则试图将普通join转化为mapjoin，默认25MB；------好像无效了；
+   hive.auto.convert.join.noconditionaltask.size   --------新版本好像是这个参数来控制map连接小文件的大小。
+
+   set hive.auto.convert.join.noconditionaltask；   ------据说有用，但是好像也没啥效果，不能控制是否开启map连接。  默认成true 就好了。（对tez无效，对mr有效）
+   hive.auto.convert.join：根据输入文件的大小决定是否将普通join转换为mapjoin的一种优化，默认不开启false；       需要设置成true；
+
+  SORTED BY (id ASC)
+  
+ CREATE  TABLE jinhb_bucket_small(
+  id            INT,
+  userid        string,
+  username      string,
+  logindate     string,
+  logintime     string,
+  appid         string,
+  openid        string,
+  yhtchange     string,
+  mobile        string,
+  uuid          string,
+  systag        string,
+  corporationid string,
+  corpname      string,
+  paid          string,
+  status        string,
+  region        string,
+  industry      string
+)  CLUSTERED BY (id)   SORTED BY (id ASC)  INTO 4 BUCKETS;
+----stored as orc
+ 
+CREATE  TABLE jinhb_bucket_big(
+  id            INT,
+  userid        string,
+  username      string,
+  logindate     string,
+  logintime     string,
+  appid         string,
+  openid        string,
+  yhtchange     string,
+  mobile        string,
+  uuid          string,
+  systag        string,
+  corporationid string,
+  corpname      string,
+  paid          string,
+  status        string,
+  region        string,
+  industry      string
+)  CLUSTERED BY (id)   SORTED BY (id ASC)  INTO 4 BUCKETS;
+---stored as orc
+
+hive.enforce.bucketing：数据分桶是否被强制执行，默认false，如果开启，则写入table数据时会启动分桶，
+insert overwrite table jinhb_bucket_small
+select  * from jinhb_small2
+
+insert overwrite table jinhb_bucket_big
+select  * from jinhb_orc_compress  
+
+set hive.convert.join.bucket.mapjoin.tez=true;  ------------------------开启bucket  mapjoin（tez用这个参数）(开启这个参数，好像就不能做merge join了)
+大表小表的分桶只要成倍数就行，谁大谁小都能做mapjoin。
+
+    select  *   from   jinhb_bucket_big  b  
+     join jinhb_bucket_small  a  on a.id=b.id    limit 10
+
+
+
+
+
+select  a. id, a.logindate, b.id, b.logindate   from  jinhb_small2 a                  -----王怀亮
+     join  jinhb_bucket_big  b on a.id=b.id    limit 10
+
+
+select  a. id, a.logindate, b.id, b.logindate    from  jinhb_bucket_big a
+     join   jinhb_small2  b on a.id=b.id    limit 10
+
+
+
+
+select  *  from  jinhb_small2 a
+      join   jinhb_small2  b on  b.username=a.username
+     join  jinhb_bucket_big  c  on  c.userid=b.userid    limit 10
+
+
+select  *    from  jinhb_bucket_big a
+     join   jinhb_small2  b on a.userid=b.userid  
+      join   jinhb_small2  c on  b.username=c.username
+
+
+
+select  count(*), logindate  from  
+     jinhb_bucket_big     group by logindate
+
+
+
+
+
+select  *  from 
+(
+select  a. id, a.logindate, b.id, b.logindate   from  jinhb_small2 a                  
+     join  jinhb_bucket_big  b on a.id=b.id    sort by  a.id, a.logindate 
+) aaa  limit  10
+
+
+1.   maven 插件 安装地址
+ http://m2eclipse.sonatype.org/sites/m2e
+
+   
+
+
+
+
+    cpu: 8核  内存:32g   硬盘:1T         文件系统:ext4            操作系统:centos 6.5  或者7.2      数量：2台
+    cpu: 4核  内存:16g   硬盘:500g       文件系统:ext4          操作系统:centos 6.5  或者7.2      数量：1台
+    cpu: 8核  内存:32g   硬盘:500g       文件系统:ext4           操作系统:centos 6.5  或者7.2      数量：1台
+
+
+
+
+          <dependency>  
+            <groupId>org.apache.kafka</groupId>  
+            <artifactId>kafka_2.10</artifactId>  
+            <version>0.8.2.2</version>  
+        </dependency>  
+
+
+   

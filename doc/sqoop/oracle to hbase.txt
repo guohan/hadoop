@@ -1,0 +1,67 @@
+sqoop import \
+--connect jdbc:oracle:thin:@172.16.19.71:1521:AADC \
+--username kit_dev \
+--password kit_dev \
+--query "SELECT * FROM ( \
+SELECT BEGIN_DT || ':' || END_DT || ':' || FLAG || ':' || CLASSIFY_ID ID, \
+BEGIN_DT, \
+END_DT, \
+CLASSIFY_ID, \
+CLASSIFY_NAME, \
+OUT_AMT, \
+IN_AMT \
+FROM MREQ_APP_STORE_TEST_TEMP \
+WHERE FLAG = '1' ) \
+WHERE \$CONDITIONS" \
+--split-by ID \
+--m 5 \
+--hbase-table 'KITDEV:MREQ_APP_STORE_MATL_IN_OUT_ALL' \
+--column-family cl \
+--hbase-row-key ID \
+--hbase-create-table 
+查看数据库表:
+SELECT SEGMENT_NAME              TABLE_NAME
+      ,SUM(BLOCKS)               BLOCKS
+      ,SUM(BYTES)/(1024*1024)    "TABLE_SIZE[MB]"
+FROM USER_SEGMENTS
+WHERE  SEGMENT_TYPE='TABLE'
+   --AND SEGMENT_NAME=&TABLE_NAME
+GROUP BY SEGMENT_NAME;
+--import big table to hbase
+select *from MM_OPERATION_HISTORY;
+
+
+-----sqoop 导数据到hbase 13g数据 2亿行数据
+
+sqoop import \
+--connect jdbc:oracle:thin:@172.16.19.61:1521:orcl \
+--username gzdc_demo \
+--password gzdc_demo \
+--query "SELECT * FROM  TB_KPI_SCORE_YW_SYSTEM \
+WHERE \$CONDITIONS" \
+--split-by SCORE_SYSTEM_ID \
+--m 5 \
+--hbase-table 'KITDEV:TB_KPI_SCORE_YW_SYSTEM' \
+--column-family cl \
+--hbase-row-key SCORE_SYSTEM_ID \
+--hbase-create-table 
+
+
+
+--hadoop 文件直接导入到hbase
+文件导入
+3. 把文件导入到hadoop
+hadoop fs -put test1.txt /test1
+ 
+4.把文件导入到hbase
+hadoop jar /opt/hbase-0.92.0/hbase-0.92.0.jar importtsv -Dimporttsv.columns=DF:rowNo,HBASE_ROW_KEY table1 /test1
+
+
+
+
+--创建全局索引
+add_index 'KITDEV:bank','i_ps_name','COMBINE_INDEX|INDEXED=ps:name:10|rowKey:rowKey:16'
+
+--rebuild_index重建索引
+rebuild_index 'KITDEV:bank','i_ps_name'
+

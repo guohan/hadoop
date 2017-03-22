@@ -1,0 +1,14 @@
+--oracle µº»ÎµΩhive
+	sqoop import \
+--connect jdbc:oracle:thin:@172.16.19.61:1521:orcl \
+--username gzdc_demo  \
+--password gzdc_demo  \
+--hive-import \
+--create-hive-table \
+--query "select * from (select rownum row_id,t.* from TB_KPI_SCORE_YW_SYSTEM t ) where \$CONDITIONS" \
+--split-by row_id \
+--m 5 \
+--null-string '\\N' \
+--null-non-string '\\N' \
+--hive-table TB_KPI_SCORE_YW_SYSTEM_BAK \
+--target-dir /tmp/sqoop_test/TB_KPI_SCORE_YW_SYSTEM_BAK

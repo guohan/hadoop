@@ -1,0 +1,36 @@
+CREATE EXTERNAL TABLE hbase_bank_info (
+acc_num STRING,
+name STRING,
+password STRING,
+card STRING,
+phone STRING,
+qq STRING, 
+weixin STRING, 
+balance DOUBLE
+) 
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler' 
+WITH SERDEPROPERTIES
+("hbase.columns.mapping"=":key, ps:name, ps:password, ps:card, ct:phone, ct:qq ,ct:weixin, bl:balance") 
+TBLPROPERTIES
+("hbase.table.name"="KITDEV:bank");
+
+
+tdh:beeline -u 'jdbc:hive2://kit-b4:10000/default' 
+tablename :KITDEV:MREQ_APP_STORE_MATL_IN_OUT
+
+CREATE EXTERNAL TABLE hbase_MREQ_APP_STORE_MATL_IN_OUT (
+ROW_ID STRING,
+CLASSIFY_ID STRING,
+CLASSIFY_NAME STRING,
+IN_AMT STRING,
+IN_QTY STRING,
+OUT_AMT STRING, 
+OUT_QTY STRING, 
+UNIT_NAME STRING,
+YEAR_MTH_ID STRING
+) 
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler' 
+WITH SERDEPROPERTIES
+("hbase.columns.mapping"=":key, cl:CLASSIFY_ID, cl:CLASSIFY_NAME, cl:IN_AMT,cl:IN_QTY, cl:OUT_AMT ,cl:OUT_QTY, cl:UNIT_NAME,cl:YEAR_MTH_ID") 
+TBLPROPERTIES
+("hbase.table.name"="KITDEV:MREQ_APP_STORE_MATL_IN_OUT");

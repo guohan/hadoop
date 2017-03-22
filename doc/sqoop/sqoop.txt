@@ -1,0 +1,106 @@
+hadoop fs -put dim_organization /tmp/sqoop_test/DIM_ORGANIZATION/dim_organization
+
+hadoop fs -chmod 777 /tmp/sqoop_test/DIM_ORGANIZATION/dim_organization
+
+beeline -u 'jdbc:hive2://kit-b4:10000/kitdev;principal=hive/kit-b4@TDH'
+
+load data inpath '/tmp/sqoop_test/DIM_ORGANIZATION/dim_organization' overwrite into table DIM_ORGANIZATION_TEST;
+
+
+hdfs://nameservice1/inceptorsql1/user/hive/warehouse/kitdev.db/kitdev/dim_organization_test
+
+
+hadoop fs -get /tmp/sqoop_test/AM_ASSET_CLASSIFY/part-m-00000 AM_ASSET_CLASSIFY
++++++++++++++++++++++++++++++cdh 158++++++++++++++++++++++++++=====
+sqoop import \
+--connect jdbc:oracle:thin:@172.16.19.71:1521:AADC \
+--username kit_dev \
+--password kit_dev \
+--query "select * from PS_SAFE_DUTY where \$CONDITIONS" \
+-m 1 \
+--fields-terminated-by '\t' \
+--null-string '\\N' \
+--null-non-string '\\N' \
+--as-textfile \
+--direct \
+--delete-target-dir \
+--target-dir /tmp/sqoop_test/PS_SAFE_DUTY
+
+
+
+
+
+
+
+--从关系数据库导入到hdfs
+sqoop import \
+--connect jdbc:oracle:thin:@172.16.19.61:1521:orcl \
+--username gzdc_demo \
+--password gzdc_demo \
+--query "select * from dim_organization_test where \$CONDITIONS" \
+-m 1 \
+--fields-terminated-by '\t' \
+--null-string '\\N' \
+--null-non-string '\\N' \
+--as-textfile \
+--direct \
+--delete-target-dir \
+--target-dir /tmp/sqoop_test/DIM_ORGANIZATION
+
+
+--建立hbase表
+--建立hive表 导入数据
+beeline -u 'jdbc:hive2://kit-b4:10000/kitdev;principal=hive/kit-b4@TDH'
+
+load data inpath '/tmp/sqoop_test/DIM_ORGANIZATION/part-m-00000' overwrite into table DIM_ORGANIZATION_TEST;
+
+
+
+--建立hive映射表
+
+
+CREATE EXTERNAL TABLE hyperbase_bank_info (
+acc_num STRING,
+name STRING,
+password STRING,
+card STRING,
+phone STRING,
+qq STRING, 
+weixin STRING, 
+balance DOUBLE
+) 
+STORED BY 'io.transwarp.hyperbase.HyperbaseStorageHandler' 
+WITH SERDEPROPERTIES
+("hbase.columns.mapping"=":key, ps:name, ps:password, ps:card, ct:phone, ct:qq ,ct:weixin, bl:balance") 
+TBLPROPERTIES
+("hbase.table.name"="KITDEV:bank");
+--建立临时表 把hive正表导入临时表，再通过临时表导入到映射表
+
+
+
+
+CREATE EXTERNAL TABLE src1 (
+key STRING,
+value STRING
+) 
+STORED BY 'org.apache.Hadoop.hive.hbase.HBaseStorageHandler' 
+WITH SERDEPROPERTIES
+("hbase.columns.mapping"=":key, col1:key, col1:value") 
+TBLPROPERTIES
+("hbase.table.name"="table1");
+
+CREATE TABLE qq1(key string, value string)   
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'  
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,col1:value")  
+TBLPROPERTIES ("hbase.table.name" = "table1");  
+
+insert into te2 select * from src
+
+
+    CREATE EXTERNAL TABLE te2(key string, value string)     
+    STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'    
+    WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,col1:value")     
+    TBLPROPERTIES("hbase.table.name" = "table1");  
+	
+	
+	

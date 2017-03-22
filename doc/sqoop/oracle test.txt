@@ -1,0 +1,35 @@
+select *from test_spark;
+select *from SM_PRIV_MENU_USER where id='201701162519501';
+
+INSERT INTO "KIT_DEV"."SM_PRIV_MENU_USER" (ID, EIPID, MENU_ID, UPD_USER, UPD_DATE, CRT_USER, CRT_DATE) VALUES
+('201701162519501', 'zhangwenfeng@gsbb.gpgc1', '23', 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'), 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'));
+INSERT INTO "KIT_DEV"."SM_PRIV_MENU_USER" (ID, EIPID, MENU_ID, UPD_USER, UPD_DATE, CRT_USER, CRT_DATE) VALUES 
+('201701162519502', 'zhangwenfeng@gsbb.gpgc1', '23', 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'), 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'));
+INSERT INTO "KIT_DEV"."SM_PRIV_MENU_USER" (ID, EIPID, MENU_ID, UPD_USER, UPD_DATE, CRT_USER, CRT_DATE) VALUES
+('201701162519503', 'zhangwenfeng@gsbb.gpgc1', '23', 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'), 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'));
+INSERT INTO "KIT_DEV"."SM_PRIV_MENU_USER" (ID, EIPID, MENU_ID, UPD_USER, UPD_DATE, CRT_USER, CRT_DATE) VALUES 
+('201701162519504', 'zhangwenfeng@gsbb.gpgc1', '23', 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'), 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'));
+INSERT INTO "KIT_DEV"."SM_PRIV_MENU_USER" (ID, EIPID, MENU_ID, UPD_USER, UPD_DATE, CRT_USER, CRT_DATE) VALUES
+('201701162519505', 'zhangwenfeng@gsbb.gpgc1', '23', 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'), 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'));
+INSERT INTO "KIT_DEV"."SM_PRIV_MENU_USER" (ID, EIPID, MENU_ID, UPD_USER, UPD_DATE, CRT_USER, CRT_DATE) VALUES 
+('201701162519506', 'zhangwenfeng@gsbb.gpgc1', '23', 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'), 'admin', TO_DATE('17-4月 -12', 'DD-MON-RR'));
+commit;
+
+update SM_PRIV_MENU_USER set UPD_USER='sa'  , menu_id ='11' where id='201701162519501';
+update SM_PRIV_MENU_USER set UPD_USER='sa' , menu_id ='21'  where id='201701162519502';
+update SM_PRIV_MENU_USER set UPD_USER='sa'  , menu_id ='11' where id='201701162519503';
+update SM_PRIV_MENU_USER set UPD_USER='sa' , menu_id ='21'  where id='201701162519504';
+update SM_PRIV_MENU_USER set UPD_USER='sa'  , menu_id ='11' where id='201701162519505';
+update SM_PRIV_MENU_USER set UPD_USER='sa' , menu_id ='21'  where id='201701162519506';
+commit;
+delete  SM_PRIV_MENU_USER  where id='201701162519501';
+delete  SM_PRIV_MENU_USER  where id='201701162519502';
+delete  SM_PRIV_MENU_USER  where id='201701162519503';
+delete  SM_PRIV_MENU_USER  where id='201701162519504';
+delete  SM_PRIV_MENU_USER  where id='201701162519505';
+delete  SM_PRIV_MENU_USER  where id='201701162519506';
+commit;
+update SM_PRIV_MENU_USER setID='201701162519502' andEIPID='zhangwenfeng@gsbb.gpgc1' andMENU_ID='23' andUPD_USER='a1dmin121333333333333' andUPD_DATE='2012-04-17:00:00:00' andCRT_USER='admin' andCRT_DATE='2012-04-17:00:00:00' where ID='201701162519502' 
+
+update SM_PRIV_MENU_USER set ID='201701162519501' and EIPID='zhangwenfeng@gsbb.gpgc1' and MENU_ID='1' and UPD_USER='adminupdate' and UPD_DATE='2012-04-17:00:00:00' and CRT_USER='admin' and CRT_DATE='2012-04-17:00:00:00' where ID='201701162519501' 
+
