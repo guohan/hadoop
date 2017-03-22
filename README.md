@@ -1,5 +1,4 @@
-# hadoop
-hadoop相关组件
+# hadoop trunk
 cdh_kafka kafka生产者，消费者示例
 cdh_sqoop sqoop
 flume apache flume
