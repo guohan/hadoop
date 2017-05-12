@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<canvas id="myCanvas" width="700" height="550" 
+		style="border: 5px solid ;border-color: red">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+	<script>
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+		
+		// 创建渐变
+// 		var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+// 		grd.addColorStop(0,"red");
+// 		grd.addColorStop(1,"white");
+		 
+		// 填充渐变
+// 		ctx.fillStyle="#FF0000";
+// 		ctx.fillRect(0, 0, 700, 550);
+		
+		
+		var x = 0;
+		var ss = setInterval(function() {
+			ctx.clearRect(0, 0, 700, 550);
+// 			ctx.addColorStop(0,"red");
+			//ctx.translate(x,0);
+			ctx.beginPath();
+			ctx.arc(200,x , 10, 0, Math.PI * 2, true);
+			ctx.stroke();
+			//ctx.fillRect(x,10,100,50);
+			if (x > 700) {
+				clearInterval(ss);
+			}
+			x += 20;
+		}, 100);
+	</script>
+</body>
+</html>

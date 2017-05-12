@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>learn matter.js</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<script src="matter.js"></script>
+
+</head>
+<body>
+<input type="button" value="下落" onclick="down()">
+<input type="button" value="完成" onclick="finish()">
+<input type="button" value="增加" onclick="add()">
+</body>
+
+<script type="text/javascript">
+// module aliases
+var Engine = Matter.Engine,
+    Render = Matter.Render,
+    World = Matter.World,
+    Bodies = Matter.Bodies;
+    Events = Matter.Events;
+var defaultCategory = 0x0001,
+        ballCategory = 0x0002,
+        filterCategory = 0x0004,
+        finishCategory = 0x0008;
+var redColor = '#FF0000',
+        yellowColor = '#FFFF00',
+        greenColor = '#008800';
+
+var redoptions={collisionFilter: {
+                        category: ballCategory
+                    },render: {
+                    	strokeStyle:'transparent',
+            fillStyle: redColor
+        }},
+yellowoptions={collisionFilter: {
+                        category: ballCategory
+                    },render: {
+                    	strokeStyle:'transparent',
+            fillStyle: yellowColor
+        }},
+blueoptions={collisionFilter: {
+                        category: ballCategory
+                    },render: {
+                    	strokeStyle:'transparent',
+            fillStyle: greenColor
+        }};
+
+var balls = new Array();
+// create an engine
+var engine = Engine.create();
+
+// create a renderer
+var render = Render.create({
+    element: document.body,
+    engine: engine,
+	options:{
+	wireframes:false
+}
+});
+
+// create two boxes and a ground
+//var funnel = Bodies.fromVertices(300,0,[{ x: 0, y: 0 },{ x: 10, y: 0 },{ x: 10, y:100 },{ x: 100, y: 100 }],redoptions);
+
+var funnel = Bodies.circle(200, 100, 10,yellowoptions);
+
+var boxA = Bodies.circle(200, 100, 10,redoptions);
+//var boxB = Bodies.rectangle(450, 50, 80, 80,blueoptions);
+var boxB =Bodies.circle(200, 100, 10,blueoptions);
+
+var boxC = Bodies.circle(200, 100, 10,yellowoptions);
+var ground1 = Bodies.rectangle(400, 310, 800, 3, {
+            collisionFilter: {
+                mask: ballCategory
+            },isStatic: true ,render: {
+            fillStyle: 'transparent',
+            lineWidth: 0
+        } });
+
+var ground2 = Bodies.rectangle(400, 510, 800, 3, {
+            collisionFilter: {
+                mask: filterCategory
+            },isStatic: true ,render: {
+            fillStyle: 'transparent',
+            lineWidth: 0
+        } });
+        //生成头部遮挡
+var groundTop = Bodies.rectangle(400, 0, 800, 3, {
+    collisionFilter: {
+        mask: ballCategory
+    },isStatic: true ,render: {
+    fillStyle: 'transparent',
+    lineWidth: 0
+} });
+//生成左边遮挡
+var groundLeft = Bodies.rectangle(0, 0, 3,1200, {
+    collisionFilter: {
+        mask: ballCategory
+    },isStatic: true ,render: {
+    fillStyle: 'transparent',
+    lineWidth: 0
+} });
+//生成右边遮挡
+var groundRight = Bodies.rectangle(800, 0, 3,1200, {
+    collisionFilter: {
+        mask: ballCategory
+    },isStatic: true ,render: {
+    fillStyle: 'transparent',
+    lineWidth: 0
+} });
+
+
+
+console.log(render.options.wireframes);
+// add all of the bodies to the world
+World.add(engine.world, [boxA, boxB, ground1,ground2,funnel,groundLeft,groundRight,groundTop,boxC]);
+
+// run the engine
+Engine.run(engine);
+
+// run the renderer
+
+Render.run(render);
+Events.on(engine, 'tick', function (event){
+  if(render.bounds.max.y<funnel.position.y)World.remove(engine.world,funnel);
+  console.log(engine.world.bodies.length);
+});
+var i=0;
+window.setInterval(function(){
+if(i==0){funnel.render.fillStyle=redColor;i=1;}
+else if(i==1){funnel.render.fillStyle=yellowColor;i=2}
+else {funnel.render.fillStyle=greenColor;i=0;}
+},500);
+//小球下落
+function down(){
+	funnel.collisionFilter.category=filterCategory;
+funnel.render.fillStyle=redColor;
+}
+//小球归档
+function finish(){
+	funnel.collisionFilter.category=finishCategory;
+funnel.render.fillStyle=redColor;
+}
+//新增小球
+function add(){
+	var addBox = Bodies.circle(400, 0, 10,yellowoptions);
+	World.add(engine.world,addBox);
+}
+</script>
+</html>

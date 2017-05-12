@@ -1,0 +1,249 @@
+$(function(){
+	var Engine = Matter.Engine,
+    Render = Matter.Render,
+    World = Matter.World,
+    Bodies = Matter.Bodies;
+    Events = Matter.Events;
+var defaultCategory = 0x0001,
+        ballCategory = 0x0002,
+        filterCategory = 0x0004,
+        finishCategory = 0x0008;
+var redColor = '#FF0000',
+        yellowColor = '#FFFF00',
+        greenColor = '#008800';
+
+var redoptions={collisionFilter: {
+                        category: ballCategory
+                    },render: {
+                    	strokeStyle:'transparent',
+            fillStyle: redColor
+        }},
+yellowoptions={collisionFilter: {
+                        category: ballCategory
+                    },render: {
+                    	strokeStyle:'transparent',
+            fillStyle: yellowColor
+        }},
+greenoptions={collisionFilter: {
+                        category: ballCategory
+                    },render: {
+                    	strokeStyle:'transparent',
+            fillStyle: greenColor
+        }};
+
+// create an engine
+var engine = Engine.create();
+
+// create a renderer
+var render = Render.create({
+    element: document.body,
+    engine: engine,
+	options:{
+	wireframes:false,
+	width:800,
+	height:800
+}
+});
+
+var idlist={};
+
+// create two boxes and a ground
+//var funnel = Bodies.fromVertices(300,0,[{ x: 0, y: 0 },{ x: 10, y: 0 },{ x: 10, y:100 },{ x: 100, y: 100 }],redoptions);
+
+var funnel = Bodies.circle(200, 100, 10,yellowoptions);
+
+var boxA = Bodies.circle(550, 100, 10,redoptions);
+//var boxB = Bodies.rectangle(450, 50, 80, 80,blueoptions);
+var boxB =Bodies.circle(550, 100, 10,greenoptions);
+
+var boxC = Bodies.circle(550, 100, 10,yellowoptions);
+
+
+
+//四根竖线
+var boxC22 = Bodies.rectangle(250, 90, 10,100, {
+    collisionFilter: {
+        mask: ballCategory
+    },isStatic: true ,render: {
+    fillStyle: 'transparent',
+    lineWidth: 0
+} });
+var boxC23 = Bodies.rectangle(500, 90, 10,100, {
+    collisionFilter: {
+        mask: ballCategory
+    },isStatic: true ,render: {
+    fillStyle: 'transparent',
+    lineWidth: 0
+} });
+
+
+var boxC24 = Bodies.rectangle(250, 240, 10,100, {
+    collisionFilter: {
+        mask: ballCategory
+    },isStatic: true ,render: {
+    fillStyle: 'transparent',
+    lineWidth: 0
+} });
+var boxC25 = Bodies.rectangle(500, 240, 10,100, {
+    collisionFilter: {
+        mask: ballCategory
+    },isStatic: true ,render: {
+    fillStyle: 'transparent',
+    lineWidth: 0
+} });
+
+//画漏斗 第一位 平移位置  第二位 竖位置 第三位 漏斗长短 第四位 大小
+var boxC20= Bodies.rectangle(300, 25, 100, 10, { isStatic: true, angle: -Math.PI * 0.06 });//first
+var boxC21 = Bodies.rectangle(450, 25, 100, 10, { isStatic: true, angle: Math.PI * 0.06 });//second
+
+var boxC1 = Bodies.rectangle(300, 150, 100, 10, { isStatic: true, angle: Math.PI * 0.06 });
+var boxC3=Bodies.rectangle(450, 150, 100, 10, { isStatic: true, angle: -Math.PI * 0.06 });
+
+
+
+
+var boxC201= Bodies.rectangle(300, 175, 100, 10, { isStatic: true, angle: -Math.PI * 0.06 });//first
+var boxC202 = Bodies.rectangle(450, 175, 100, 10, { isStatic: true, angle: Math.PI * 0.06 });//second
+
+
+
+var boxC11 = Bodies.rectangle(300, 300, 100, 10, { isStatic: true, angle: Math.PI * 0.06 });
+var boxC31=Bodies.rectangle(450, 300, 100, 10, { isStatic: true, angle: -Math.PI * 0.06 });
+
+
+var lddb1 = Bodies.rectangle(400, 160, 100, 4, {
+            collisionFilter: {
+                mask: ballCategory
+            },isStatic: true ,render: {
+            fillStyle: 'transparent',
+            lineWidth: 0
+        } });
+
+var lddb2 = Bodies.rectangle(400, 310, 100, 4, {
+            collisionFilter: {
+                mask: filterCategory
+            },isStatic: true ,render: {
+            fillStyle: 'transparent',
+            lineWidth: 0
+        } });
+
+
+var ground1 = Bodies.rectangle(400, 310, 800, 4, {
+            collisionFilter: {
+                mask: ballCategory
+            },isStatic: true ,render: {
+            fillStyle: 'transparent',
+            lineWidth: 0
+        } });
+
+var ground2 = Bodies.rectangle(400, 510, 800, 4, {
+            collisionFilter: {
+                mask: filterCategory
+            },isStatic: true ,render: {
+            fillStyle: 'transparent',
+            lineWidth: 0
+        } });
+        //生成头部遮挡
+var groundTop = Bodies.rectangle(400, 0, 800, 4, {
+    collisionFilter: {
+        mask: ballCategory
+    },isStatic: true ,render: {
+    fillStyle: 'transparent',
+    lineWidth: 0
+} });
+//生成左边遮挡
+var groundLeft = Bodies.rectangle(0, 0, 3,1200, {
+    collisionFilter: {
+        mask: ballCategory
+    },isStatic: true ,render: {
+    fillStyle: 'transparent',
+    lineWidth: 0
+} });
+//生成右边遮挡
+var groundRight = Bodies.rectangle(800, 0, 3,1200, {
+    collisionFilter: {
+        mask: ballCategory
+    },isStatic: true ,render: {
+    fillStyle: 'transparent',
+    lineWidth: 0
+} });
+
+
+// add all of the bodies to the world
+//World.add(engine.world, [boxA, boxB, ground1,ground2,funnel,groundLeft,groundRight,groundTop,boxC]);
+World.add(engine.world, [lddb1,lddb2,boxC1,boxC20,boxC3,boxC21,boxC22,boxC23,boxC201,boxC202,boxC24,boxC25,boxC11,boxC31]);
+//ground1,ground2,groundLeft,groundRight,groundTop
+// run the engine
+Engine.run(engine);
+
+// run the renderer
+
+Render.run(render);
+
+
+//建立和工程相关的连接 工程名称 endpoint
+var socket = new SockJS('/abc/random');
+var client = Stomp.over(socket);
+//添加用户名 密码进行鉴权连接 订阅连接主题 画图
+client.connect('user', 'password', function(frame) {
+//订阅主题
+  client.subscribe("/data", function(message) {
+	var data = JSON.parse(message.body);
+	jQuery.each(data.dataList, function(i,vh) {
+		 add(vh.id,vh.color,vh.status); //创建动画
+	});
+  });
+
+});
+//小球下落
+function down(ball){
+	ball.collisionFilter.category=filterCategory;
+}
+//小球归档
+function finish(ball){
+	ball.collisionFilter.category=finishCategory;
+	delete idlist[ball.id];
+	window.setTimeout(function(){
+		Matter.World.remove(engine.world,ball);
+	},5000);
+}
+//新增小球
+function add(id,color,status){
+	var addBox = getBody(engine.world,id);
+	if(addBox == null){
+		var options;
+		if(color == "yellow")options=yellowoptions;
+		else if(color == "red")options=redoptions;
+		else options = greenoptions;
+		
+		if(status == "ing"){
+			addBox = Bodies.circle(450, 321, 5,options);
+			down(addBox);
+		}
+		else if(status == "new"){
+			addBox = Bodies.circle(450, 100, 5,options);
+		}
+		else if(status == "finish"){
+			addBox = Bodies.circle(450, 530, 5,options);
+			finish(addBox);
+		}
+		idlist[id]=addBox.id;
+		console.log(idlist);
+		World.add(engine.world,addBox);
+	}else{
+		if(color == "yellow")color = yellowColor;
+		else if(color == "red")color = redColor;
+		else color = greenColor;
+		addBox.render.fillStyle = color;
+		
+		if(status == "ing")down(addBox);
+		else if(status == "finish")finish(addBox);
+	}
+}
+
+//根据id获得body
+function getBody(world,id){
+	if(typeof(idlist[id]) == "undefined")return null;
+	return Matter.Composite.get(world,idlist[id],"body");
+}
+});
