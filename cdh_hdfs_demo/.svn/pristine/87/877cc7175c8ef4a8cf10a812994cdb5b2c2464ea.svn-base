@@ -1,0 +1,22 @@
+package com.kit.cdh_hdfs_demo;
+
+import java.io.IOException;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+
+public class Delete {
+	public static void main(String[] args) {
+		String rootPath = "hdfs://172.16.2.243:8020";
+		Path p = new Path(rootPath + "/tmp/newFile/file.txt");
+		Configuration conf = new Configuration();
+		try {
+			FileSystem fs = p.getFileSystem(conf);
+			boolean b = fs.delete(p, true);
+			System.out.println(b);
+			fs.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

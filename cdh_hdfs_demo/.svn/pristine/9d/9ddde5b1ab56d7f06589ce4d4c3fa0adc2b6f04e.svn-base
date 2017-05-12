@@ -1,0 +1,23 @@
+package com.kit.cdh_hdfs_demo;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IOUtils;
+
+import java.io.*;
+
+public class AppendFile {
+	public static void main(String[] args) throws IOException {
+		Path p = new Path("/tmp/a.txt");
+		Configuration conf = new Configuration();
+		FileSystem fs = p.getFileSystem(conf);
+		fs.setReplication(p, (short) 1);
+		OutputStream out = fs.append(p);
+		InputStream in = new BufferedInputStream(new FileInputStream(
+				"E:\\桌面\\maven\\kafka-pom.txt"));
+		IOUtils.copyBytes(in, out, conf);
+		fs.close();
+		IOUtils.closeStream(in);
+	}
+}

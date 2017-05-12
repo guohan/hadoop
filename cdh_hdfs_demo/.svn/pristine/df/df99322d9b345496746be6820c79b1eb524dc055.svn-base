@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+1.      数据准备
+
+       以Tomcat日志为例，日志格式如下：
+
+[plain] view plain copy
+在CODE上查看代码片派生到我的代码片
+
+    127.0.0.1,-,-,[08/May/2014:13:42:40 +0800],GET / HTTP/1.1,200,11444  
+    127.0.0.1,-,-,[08/May/2014:13:42:42 +0800],GET /jygl/jaxrs/teachingManage/ClassBatchPlanService/getCurrentClassPlanVO HTTP/1.1,204,-  
+    127.0.0.1,-,-,[08/May/2014:13:42:42 +0800],GET /jygl/jaxrs/teachingManage/ClassBatchPlanService/getCurClassPlanVO HTTP/1.1,204,-  
+    127.0.0.1,-,-,[08/May/2014:13:42:47 +0800],GET /jygl/jaxrs/right/isValidUserByType/1-admin-superadmin HTTP/1.1,200,20  
+    127.0.0.1,-,-,[08/May/2014:13:42:47 +0800],GET /jygl/jaxrs/right/getUserByLoginName/admin HTTP/1.1,200,198  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:47 +0800],GET /jyglFront/right_login2home?loginName=admin&password=superadmin&type=1 HTTP/1.1,200,2525  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:47 +0800],GET /jyglFront/mainView/navigate/style/style.css HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:47 +0800],GET /jyglFront/mainView/navigate/js/tree.js HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:47 +0800],GET /jyglFront/mainView/navigate/js/jquery.js HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:47 +0800],GET /jyglFront/mainView/navigate/js/frame.js HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:47 +0800],GET /jyglFront/mainView/navigate/images/logo.png HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:47 +0800],GET /jyglFront/mainView/navigate/images/leftmenu_bg.gif HTTP/1.1,404,1105  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:47 +0800],GET /jyglFront/mainView/navigate/menuList.jsp HTTP/1.1,200,47603  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:47 +0800],GET /jyglFront/mainView/navigate/style/images/header_bg.jpg HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:47 +0800],GET /jyglFront/mainView/navigate/images/allmenu.gif HTTP/1.1,404,1093  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:47 +0800],GET /jyglFront/mainView/navigate/images/toggle_menu.gif HTTP/1.1,404,1105  
+    127.0.0.1,-,-,[08/May/2014:13:42:48 +0800],GET /jygl/jaxrs/article/getArticleList/10-1 HTTP/1.1,200,20913  
+    127.0.0.1,-,-,[08/May/2014:13:42:48 +0800],GET /jygl/jaxrs/article/getTotalArticleRecords HTTP/1.1,200,22  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:48 +0800],GET /jyglFront/baseInfo_articleList?flag=1 HTTP/1.1,200,8989  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:42:48 +0800],GET /jyglFront/mainView/studentView/style/images/nav_10.png HTTP/1.1,404,1117  
+    127.0.0.1,-,-,[08/May/2014:13:43:21 +0800],GET /jygl/jaxrs/right/isValidUserByType/1-admin-superadmin HTTP/1.1,200,20  
+    127.0.0.1,-,-,[08/May/2014:13:43:21 +0800],GET /jygl/jaxrs/right/getUserByLoginName/admin HTTP/1.1,200,198  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/right_login2home?loginName=admin&password=superadmin&type=1 HTTP/1.1,200,2525  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/mainView/navigate/js/tree.js HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/mainView/navigate/js/jquery.js HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/mainView/navigate/js/frame.js HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/mainView/navigate/style/style.css HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/mainView/navigate/menuList.jsp HTTP/1.1,200,47603  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/mainView/navigate/images/logo.png HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/mainView/navigate/images/leftmenu_bg.gif HTTP/1.1,404,1105  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/mainView/navigate/images/toggle_menu.gif HTTP/1.1,404,1105  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/mainView/navigate/style/images/header_bg.jpg HTTP/1.1,304,-  
+    127.0.0.1,-,-,[08/May/2014:13:43:21 +0800],GET /jygl/jaxrs/article/getArticleList/10-1 HTTP/1.1,200,20913  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/mainView/navigate/images/allmenu.gif HTTP/1.1,404,1093  
+    127.0.0.1,-,-,[08/May/2014:13:43:21 +0800],GET /jygl/jaxrs/article/getTotalArticleRecords HTTP/1.1,200,22  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/baseInfo_articleList?flag=1 HTTP/1.1,200,8989  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:21 +0800],GET /jyglFront/mainView/studentView/style/images/nav_10.png HTTP/1.1,404,1117  
+    127.0.0.1,-,-,[08/May/2014:13:43:25 +0800],GET /jygl/jaxrs/graduate/graduateBatchService/getGraduateBatchByConditions?graduateBatchName=&pageSize=10&pageNo=1 HTTP/1.1,200,597  
+    127.0.0.1,-,-,[08/May/2014:13:43:25 +0800],GET /jygl/jaxrs/graduate/graduateBatchService/getTotalGraduateBatchByCondition?graduateBatchName= HTTP/1.1,200,21  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:26 +0800],GET /jyglFront/graduate_initGraduateBatch HTTP/1.1,200,8766  
+    127.0.0.1,-,-,[08/May/2014:13:43:27 +0800],GET /jygl/jaxrs/exam/examParameterService/getAllStudyCenters HTTP/1.1,200,29089  
+    127.0.0.1,-,-,[08/May/2014:13:43:27 +0800],GET /jygl/jaxrs/exam/examParameterService/getAllGradeInfo HTTP/1.1,200,3785  
+    127.0.0.1,-,-,[08/May/2014:13:43:27 +0800],GET /jygl/jaxrs/enroll/educationLevelService/allEducationLevels HTTP/1.1,200,227  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:28 +0800],GET /jyglFront/graduate_initGraduateQulifyCheck HTTP/1.1,200,26397  
+    127.0.0.1,-,-,[08/May/2014:13:43:29 +0800],GET /jygl/jaxrs/exam/examParameterService/getAllStudyCenters HTTP/1.1,200,29089  
+    127.0.0.1,-,-,[08/May/2014:13:43:29 +0800],GET /jygl/jaxrs/exam/examParameterService/getAllGradeInfo HTTP/1.1,200,3785  
+    127.0.0.1,-,-,[08/May/2014:13:43:29 +0800],GET /jygl/jaxrs/enroll/educationLevelService/allEducationLevels HTTP/1.1,200,227  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:29 +0800],GET /jyglFront/graduate_initLeaveSchoolInfo HTTP/1.1,200,20125  
+    127.0.0.1,-,-,[08/May/2014:13:43:30 +0800],GET /jygl/jaxrs/exam/examParameterService/getAllStudyCenters HTTP/1.1,200,29089  
+    127.0.0.1,-,-,[08/May/2014:13:43:31 +0800],GET /jygl/jaxrs/exam/examParameterService/getAllGradeInfo HTTP/1.1,200,3785  
+    127.0.0.1,-,-,[08/May/2014:13:43:31 +0800],GET /jygl/jaxrs/enroll/educationLevelService/allEducationLevels HTTP/1.1,200,227  
+    127.0.0.1,-,-,[08/May/2014:13:43:31 +0800],GET /jygl/jaxrs/graduate/graduateBatchService/getAllGraduateBatch HTTP/1.1,200,597  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:13:43:31 +0800],GET /jyglFront/graduate_initGraduateInfo HTTP/1.1,200,28464  
+    127.0.0.1,-,-,[08/May/2014:14:27:10 +0800],GET / HTTP/1.1,200,11444  
+    127.0.0.1,-,-,[08/May/2014:14:27:12 +0800],GET /jygl/jaxrs/teachingManage/ClassBatchPlanService/getCurrentClassPlanVO HTTP/1.1,204,-  
+    127.0.0.1,-,-,[08/May/2014:14:27:12 +0800],GET /jygl/jaxrs/teachingManage/ClassBatchPlanService/getCurClassPlanVO HTTP/1.1,204,-  
+    127.0.0.1,-,-,[08/May/2014:14:27:34 +0800],GET /jygl/jaxrs/exam/examArrangeService/getExamBatchIdByLatest HTTP/1.1,200,43  
+    127.0.0.1,-,-,[08/May/2014:14:27:34 +0800],GET /jygl/jaxrs/exam/examArrangeService/getExamBatchNameByEBId/4af2a0424323412e014327739b1702bd HTTP/1.1,200,16  
+    127.0.0.1,-,-,[08/May/2014:14:27:35 +0800],GET /jygl/jaxrs/exam/examSubscribeService/getUtilObjectThirExamBatchsByEBNN/201403 HTTP/1.1,200,653  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:35 +0800],GET /jyglFront/exam_initgroupsubscribestatistic HTTP/1.1,200,13551  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:37 +0800],GET /jyglFront/exam_initsubstudentsubscribe HTTP/1.1,500,3900  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:41 +0800],GET /jyglFront/supervisor/intoInitAssignmentDetail HTTP/1.1,200,1808  
+    127.0.0.1,-,-,[08/May/2014:14:27:42 +0800],GET /jygl/jaxrs/right/isValidUserByType/1-admin-superadmin HTTP/1.1,200,20  
+    127.0.0.1,-,-,[08/May/2014:14:27:42 +0800],GET /jygl/jaxrs/right/getUserByLoginName/admin HTTP/1.1,200,198  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/right_login2home?loginName=admin&password=superadmin&type=1 HTTP/1.1,200,2525  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/mainView/navigate/js/tree.js HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/mainView/navigate/style/style.css HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/mainView/navigate/js/frame.js HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/mainView/navigate/js/jquery.js HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/mainView/navigate/menuList.jsp HTTP/1.1,200,47603  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/mainView/navigate/images/leftmenu_bg.gif HTTP/1.1,404,1105  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/mainView/navigate/images/allmenu.gif HTTP/1.1,404,1093  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/mainView/navigate/images/logo.png HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/mainView/navigate/style/images/header_bg.jpg HTTP/1.1,304,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/mainView/navigate/images/toggle_menu.gif HTTP/1.1,404,1105  
+    127.0.0.1,-,-,[08/May/2014:14:27:42 +0800],GET /jygl/jaxrs/article/getArticleList/10-1 HTTP/1.1,200,20913  
+    127.0.0.1,-,-,[08/May/2014:14:27:42 +0800],GET /jygl/jaxrs/article/getTotalArticleRecords HTTP/1.1,200,22  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:42 +0800],GET /jyglFront/baseInfo_articleList?flag=1 HTTP/1.1,200,8989  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:43 +0800],GET /jyglFront/mainView/studentView/style/images/nav_10.png HTTP/1.1,404,1117  
+    127.0.0.1,-,-,[08/May/2014:14:27:44 +0800],GET /jygl/jaxrs/nationInfo/getAllNationInPage?pageSize=10&pageNo=1 HTTP/1.1,200,374  
+    127.0.0.1,-,-,[08/May/2014:14:27:44 +0800],GET /jygl/jaxrs/nationInfo/getTotalNations HTTP/1.1,200,22  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:44 +0800],GET /jyglFront/baseInfo_nationInfoList HTTP/1.1,200,7471  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:44 +0800],GET /jyglFront/common/css/menuStyle2.css HTTP/1.1,404,1060  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:44 +0800],GET /jyglFront/common/css/basic.css HTTP/1.1,200,1476  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:45 +0800],GET /jyglFront/common/css/_images/botton2.gif HTTP/1.1,404,1075  
+    127.0.0.1,-,-,[08/May/2014:14:27:47 +0800],GET /jygl/jaxrs/enroll/educationLevelService/allEducationLevels HTTP/1.1,200,227  
+    127.0.0.1,-,-,[08/May/2014:14:27:47 +0800],GET /jygl/jaxrs/enroll/gradeInfoService/allGradeInfos HTTP/1.1,200,3785  
+    127.0.0.1,-,-,[08/May/2014:14:27:47 +0800],GET /jygl/jaxrs/teaching/teachingPlanService/getSpeicalListByTwo?gradeID=&educationLevelID= HTTP/1.1,200,12061  
+    127.0.0.1,-,-,[08/May/2014:14:27:47 +0800],GET /jygl/jaxrs/enroll/studyCenterService/allStudyCentersByUtilObject HTTP/1.1,200,6006  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:48 +0800],GET /jyglFront/teaching/openReplaceChooseCourse HTTP/1.1,200,26455  
+    127.0.0.1,-,-,[08/May/2014:14:27:49 +0800],GET /jygl/jaxrs/teachingManage/ClassBatchPlanService/getCurClassBatchPlanVOList?newClassBatchName=&gradeName=&term=-1 HTTP/1.1,204,-  
+    127.0.0.1,-,-,[08/May/2014:14:27:49 +0800],GET /jygl/jaxrs/teachingManage/ClassBatchPlanService/getCurClassBatchPlanVOList?newClassBatchName=&gradeName=&term=-1 HTTP/1.1,204,-  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:49 +0800],GET /jyglFront/teaching/openChooseCourse HTTP/1.1,200,1611  
+    127.0.0.1,-,-,[08/May/2014:14:27:51 +0800],GET /jygl/jaxrs/enroll/gradeInfoService/currentGradeInfo HTTP/1.1,200,473  
+    127.0.0.1,-,-,[08/May/2014:14:27:51 +0800],GET /jygl/jaxrs/enroll/educationLevelService/allEducationLevels HTTP/1.1,200,227  
+    127.0.0.1,-,-,[08/May/2014:14:27:51 +0800],GET /jygl/jaxrs/enroll/gradeInfoService/allGradeInfos HTTP/1.1,200,3785  
+    127.0.0.1,-,-,[08/May/2014:14:27:51 +0800],GET /jygl/jaxrs/teaching/teachingPlanService/hasTeachingPlanInGrade?gradeId=4af2a042437c2c0801437ed1cdea0017 HTTP/1.1,200,20  
+    127.0.0.1,-,-,[08/May/2014:14:27:51 +0800],GET /jygl/jaxrs/teaching/teachingPlanService/hasTeachingPlanInGrade?gradeId=4af2a0423f41d66d013f5a1f766c00ce HTTP/1.1,200,20  
+    127.0.0.1,-,-,[08/May/2014:14:27:51 +0800],GET /jygl/jaxrs/teaching/teachingPlanService/teachingPlanListByEducationLevelAndGradeId?grade=4af2a042437c2c0801437ed1cdea0017&educationLevel= HTTP/1.1,200,4849  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:52 +0800],GET /jyglFront/teaching/teachingPlanList HTTP/1.1,200,22794  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:27:52 +0800],GET /jyglFront/js/jquery.form.js HTTP/1.1,200,30330  
+    127.0.0.1,-,-,[08/May/2014:14:28:02 +0800],GET /jygl/jaxrs/exam/examArrangeService/getExamBatchIdByLatest HTTP/1.1,200,43  
+    127.0.0.1,-,-,[08/May/2014:14:28:02 +0800],GET /jygl/jaxrs/exam/examArrangeService/getExamBatchNameByEBId/4af2a0424323412e014327739b1702bd HTTP/1.1,200,16  
+    127.0.0.1,-,-,[08/May/2014:14:28:02 +0800],GET /jygl/jaxrs/exam/examSubscribeService/getUtilObjectThirExamBatchsByEBNN/201403 HTTP/1.1,200,653  
+    0:0:0:0:0:0:0:1,-,-,[08/May/2014:14:28:02 +0800],GET /jyglFront/exam_initgroupsubscribestatistic HTTP/1.1,200,13551  
+    127.0.0.1,-,-,[08/May/2014:14:28:19 +0800],POST /jygl/jaxrs/right/addUserLog HTTP/1.1,200,-  
+    127.0.0.1,-,-,[08/May/2014:14:31:42 +0800],GET /jygl/jaxrs/exam/examSubscribeService/groupSubscribe/201403/0/0/201309/1 HTTP/1.1,200,-  
+
+2.      要解决的问题：统计资源（URL）被访问的次数。
+
+3.      编程实现
+
+       想法：解析Tomcat日志，map的工作是将每一行日志中的URL截取作为key值，value为1表示1次，reduce的工作是将相同key值的行合并，value为总次数。
+
+代码如下：
+
+[java] view plain copy
+在CODE上查看代码片派生到我的代码片
+
+    package org.ly.ccnu;  
+    import java.io.IOException;  
+    import org.apache.hadoop.conf.Configuration;  
+    import org.apache.hadoop.conf.Configured;  
+    import org.apache.hadoop.fs.Path;  
+    import org.apache.hadoop.io.IntWritable;  
+    import org.apache.hadoop.io.LongWritable;  
+    import org.apache.hadoop.io.NullWritable;  
+    import org.apache.hadoop.io.Text;  
+    import org.apache.hadoop.mapreduce.Job;  
+    import org.apache.hadoop.mapreduce.Mapper;  
+    import org.apache.hadoop.mapreduce.Reducer;  
+    import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;  
+    import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;  
+    import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;  
+    import org.apache.hadoop.util.Tool;  
+    import org.apache.hadoop.util.ToolRunner;  
+    public class SecondTest extends Configured implements Tool{  
+        enum Counter{  
+            LINESKIP,  
+        }     
+        public static class Map extends Mapper<LongWritable,Text,Text,IntWritable>{  
+            private static final IntWritable one = new IntWritable(1);   
+            public void map(LongWritable key,Text value,Context context) throws IOException, InterruptedException{  
+                String line = value.toString();  
+                try{  
+                    String[] lineSplit = line.split(",");  
+                    String requestUrl = lineSplit[4];  
+                    requestUrl = requestUrl.substring(requestUrl.indexOf(' ')+1, requestUrl.lastIndexOf(' '));  
+                    Text out = new Text(requestUrl);  
+                    context.write(out,one);  
+                }catch(java.lang.ArrayIndexOutOfBoundsException e){  
+                    context.getCounter(Counter.LINESKIP).increment(1);  
+                }             
+            }  
+        }     
+        public static class Reduce extends Reducer<Text,IntWritable,Text,IntWritable>{          
+            public void reduce(Text key, Iterable<IntWritable> values,Context context)throws IOException{  
+                int count =  0;    
+                for(IntWritable v : values){    
+                    count = count + 1;    
+                }    
+                try {  
+                    context.write(key, new IntWritable(count));  
+                } catch (InterruptedException e) {  
+                     e.printStackTrace();  
+                }             
+            }         
+        }     
+        @Override  
+        public int run(String[] args) throws Exception {  
+            Configuration conf = getConf();  
+            Job job = new Job(conf, "logAnalysis");  
+            job.setJarByClass(SecondTest.class);          
+            FileInputFormat.addInputPath(job, new Path(args[0]));  
+            FileOutputFormat.setOutputPath(job, new Path(args[1]));       
+            job.setMapperClass(Map.class);  
+            job.setReducerClass(Reduce.class);  
+            job.setOutputFormatClass(TextOutputFormat.class);         
+            //keep the same format with the output of Map and Reduce  
+            job.setOutputKeyClass(Text.class);  
+            job.setOutputValueClass(IntWritable.class);       
+            job.waitForCompletion(true);  
+            return job.isSuccessful()?0:1;  
+        }     
+        public static void main(String[] args)throws Exception{       
+            int res = ToolRunner.run(new Configuration(), new SecondTest(),args);         
+            System.exit(res);  
+        }  
+    }  
+
+4.      处理结果
+
+[plain] view plain copy
+在CODE上查看代码片派生到我的代码片
+
+    /   2  
+    /jygl/jaxrs/article/getArticleList/10-1 3  
+    /jygl/jaxrs/article/getTotalArticleRecords  3  
+    /jygl/jaxrs/enroll/educationLevelService/allEducationLevels 5  
+    /jygl/jaxrs/enroll/gradeInfoService/allGradeInfos   2  
+    /jygl/jaxrs/enroll/gradeInfoService/currentGradeInfo    1  
+    /jygl/jaxrs/enroll/studyCenterService/allStudyCentersByUtilObject   1  
+    /jygl/jaxrs/exam/examArrangeService/getExamBatchIdByLatest  2  
+    /jygl/jaxrs/exam/examArrangeService/getExamBatchNameByEBId/4af2a0424323412e014327739b1702bd 2  
+    /jygl/jaxrs/exam/examParameterService/getAllGradeInfo   3  
+    /jygl/jaxrs/exam/examParameterService/getAllStudyCenters    3  
+    /jygl/jaxrs/exam/examSubscribeService/getUtilObjectThirExamBatchsByEBNN/201403  2  
+    /jygl/jaxrs/exam/examSubscribeService/groupSubscribe/201403/0/0/201309/1    1  
+    /jygl/jaxrs/graduate/graduateBatchService/getAllGraduateBatch   1  
+    /jygl/jaxrs/graduate/graduateBatchService/getGraduateBatchByConditions?graduateBatchName=&pageSize=10&pageNo=1  1  
+    /jygl/jaxrs/graduate/graduateBatchService/getTotalGraduateBatchByCondition?graduateBatchName=   1  
+    /jygl/jaxrs/nationInfo/getAllNationInPage?pageSize=10&pageNo=1  1  
+    /jygl/jaxrs/nationInfo/getTotalNations  1  
+    /jygl/jaxrs/right/addUserLog    1  
+    /jygl/jaxrs/right/getUserByLoginName/admin  3  
+    /jygl/jaxrs/right/isValidUserByType/1-admin-superadmin  3  
+    /jygl/jaxrs/teaching/teachingPlanService/getSpeicalListByTwo?gradeID=&educationLevelID= 1  
+    /jygl/jaxrs/teaching/teachingPlanService/hasTeachingPlanInGrade?gradeId=4af2a0423f41d66d013f5a1f766c00ce    1  
+    /jygl/jaxrs/teaching/teachingPlanService/hasTeachingPlanInGrade?gradeId=4af2a042437c2c0801437ed1cdea0017    1  
+    /jygl/jaxrs/teaching/teachingPlanService/teachingPlanListByEducationLevelAndGradeId?grade=4af2a042437c2c0801437ed1cdea0017&educationLevel=  1  
+    /jygl/jaxrs/teachingManage/ClassBatchPlanService/getCurClassBatchPlanVOList?newClassBatchName=&gradeName=&term=-1   2  
+    /jygl/jaxrs/teachingManage/ClassBatchPlanService/getCurClassPlanVO  2  
+    /jygl/jaxrs/teachingManage/ClassBatchPlanService/getCurrentClassPlanVO  2  
+    /jyglFront/baseInfo_articleList?flag=1  3  
+    /jyglFront/baseInfo_nationInfoList  1  
+    /jyglFront/common/css/_images/botton2.gif   1  
+    /jyglFront/common/css/basic.css 1  
+    /jyglFront/common/css/menuStyle2.css    1  
+    /jyglFront/exam_initgroupsubscribestatistic 2  
+    /jyglFront/exam_initsubstudentsubscribe 1  
+    /jyglFront/graduate_initGraduateBatch   1  
+    /jyglFront/graduate_initGraduateInfo    1  
+    /jyglFront/graduate_initGraduateQulifyCheck 1  
+    /jyglFront/graduate_initLeaveSchoolInfo 1  
+    /jyglFront/js/jquery.form.js    1  
+    /jyglFront/mainView/navigate/images/allmenu.gif 3  
+    /jyglFront/mainView/navigate/images/leftmenu_bg.gif 3  
+    /jyglFront/mainView/navigate/images/logo.png    3  
+    /jyglFront/mainView/navigate/images/toggle_menu.gif 3  
+    /jyglFront/mainView/navigate/js/frame.js    3  
+    /jyglFront/mainView/navigate/js/jquery.js   3  
+    /jyglFront/mainView/navigate/js/tree.js 3  
+    /jyglFront/mainView/navigate/menuList.jsp   3  
+    /jyglFront/mainView/navigate/style/images/header_bg.jpg 3  
+    /jyglFront/mainView/navigate/style/style.css    3  
+    /jyglFront/mainView/studentView/style/images/nav_10.png 3  
+    /jyglFront/right_login2home?loginName=admin&password=superadmin&type=1  3  
+    /jyglFront/supervisor/intoInitAssignmentDetail  1  
+    /jyglFront/teaching/openChooseCourse    1  
+    /jyglFront/teaching/openReplaceChooseCourse 1  
+    /jyglFront/teaching/teachingPlanList    1  
+</body>
+</html>
