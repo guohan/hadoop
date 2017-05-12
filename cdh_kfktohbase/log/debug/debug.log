@@ -1,0 +1,28 @@
+com.spark.kfktohbase_cdh.KafkaConsumer.findLeader(KafkaConsumer.java:447):09:01:41
+DEBUG:Leader tor topic test1021, partition 0 is centos-2:9092 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:51
+DEBUG:partition : 0, offset : 2  mess : 20160729  卡夫卡测试2016-10-21 08:52:34,www.example.com,192.168.2.251 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:53
+DEBUG:partition : 0, offset : 3  mess : 20160729  卡夫卡测试2016-10-21 08:52:37,www.example.com,192.168.2.105 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:53
+DEBUG:partition : 0, offset : 4  mess : 20160729  卡夫卡测试2016-10-21 08:52:40,www.example.com,192.168.2.228 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:54
+DEBUG:partition : 0, offset : 5  mess : 20160729  卡夫卡测试2016-10-21 08:52:43,www.example.com,192.168.2.238 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:55
+DEBUG:partition : 0, offset : 6  mess : 20160729  卡夫卡测试2016-10-21 08:52:52,www.example.com,192.168.2.99 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:55
+DEBUG:partition : 0, offset : 7  mess : 20160729  卡夫卡测试2016-10-21 08:54:09,www.example.com,192.168.2.173 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:55
+DEBUG:partition : 0, offset : 8  mess : 20160729  卡夫卡测试2016-10-21 08:54:16,www.example.com,192.168.2.151 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:55
+DEBUG:partition : 0, offset : 9  mess : 20160729  卡夫卡测试2016-10-21 08:55:45,www.example.com,192.168.2.248 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:55
+DEBUG:partition : 0, offset : 10  mess : 20160729  卡夫卡测试2016-10-21 08:55:49,www.example.com,192.168.2.176 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:55
+DEBUG:partition : 0, offset : 11  mess : 20160729  卡夫卡测试2016-10-21 08:55:52,www.example.com,192.168.2.253 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:55
+DEBUG:partition : 0, offset : 12  mess : 20160729  卡夫卡测试2016-10-21 08:55:55,www.example.com,192.168.2.130 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:55
+DEBUG:partition : 0, offset : 13  mess : 20160729  卡夫卡测试2016-10-21 08:55:58,www.example.com,192.168.2.154 
+com.spark.kfktohbase_cdh.KafkaConsumer.offset(KafkaConsumer.java:196):09:01:55
+DEBUG:partition : 0, offset : 14  mess : 20160729  卡夫卡测试2016-10-21 08:56:01,www.example.com,192.168.2.48 

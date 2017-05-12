@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+<!-- 控制台输出 -->
+	<appender name="kit.console"
+		class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%l:%d{hh:mm:ss}%n%p:%m %n" />
+		</layout>
+	</appender>
+	<!-- 文件输出 -->
+	<appender name="kit.file"
+		class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="log/debug/debug.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%l:%d{hh:mm:ss}%n%p:%m %n" />
+		</layout>
+	</appender>
+	
+	<!-- 文件输出 -->
+	<appender name="spark"
+		class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="log/spark/debug.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%l:%d{hh:mm:ss}%n%p:%m %n" />
+		</layout>
+	</appender>
+	
+<!-- 	<logger name="com.spark.kfktohbase_cdh" additivity="false"> -->
+<!-- 		<level value="debug" /> -->
+<!-- 		<appender-ref ref="kit.console" /> -->
+<!-- 		<appender-ref ref="spark" /> -->
+<!-- 	</logger> -->
+<!-- 	<logger name="com.spark.kfktohbase_cdh" additivity="false"> -->
+<!-- 		<level value="debug" /> -->
+<!-- 		<appender-ref ref="kit.console" /> -->
+<!-- 		<appender-ref ref="kit.file" /> -->
+<!-- 	</logger> -->
+	<!-- RootLogger配置 -->
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="kit.console" />
+	</root>
+</log4j:configuration>

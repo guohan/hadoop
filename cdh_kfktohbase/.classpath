@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-accumulo-handler-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-ant-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-beeline-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-common-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-contrib-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-exec-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-hwi-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-jdbc-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-metastore-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-serde-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-shims-0.23-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-shims-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-shims-common-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-shims-scheduler-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/linux/cdh/hive-1.1.0-cdh5.7.1/lib/hive-service-1.1.0-cdh5.7.1.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

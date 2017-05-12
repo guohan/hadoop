@@ -1,0 +1,15 @@
+com\spark\kfktohbase_cdh\InJdbc.class
+com\spark\kfktohbase_cdh\JDBCUtils.class
+com\spark\kfktohbase_cdh\HbaseUtil.class
+com\spark\kfktohbase_cdh\MsgFromkfkToHbase$1.class
+com\spark\kfktohbase_cdh\HiveJDBCdemo.class
+com\spark\kfktohbase_cdh\HiveJdbcClient.class
+com\spark\kfktohbase_cdh\JavaSparkPiTest.class
+com\spark\kfktohbase_cdh\TestProducer.class
+com\spark\kfktohbase_cdh\M.class
+com\spark\kfktohbase_cdh\MsgFromkfkToHbase$1$1.class
+com\spark\kfktohbase_cdh\MsgFromkfkToHbase.class
+com\spark\kfktohbase_cdh\JavaSparkPiTest$1.class
+com\spark\kfktohbase_cdh\Producer.class
+com\spark\kfktohbase_cdh\HbaseDemo.class
+com\spark\kfktohbase_cdh\KafkaConsumer.class
