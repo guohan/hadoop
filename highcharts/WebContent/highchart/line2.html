@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>指标统计</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../resources/sockjs.js" /></script>
+<script type="text/javascript" src="../resources/stomp.js" /></script>
+<style type="text/css">
+        div#ball{
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="myCanvas" style="height:200px;width:100px;float:left;">
+</div>
+
+<!-- <div id="canvas" style="background-color:#EEEEEE;height:200px;width:400px;float:right;"> -->
+<div align="right">
+<canvas id="canvas" width="600" height="200" >不支持HTML5</canvas> 
+</div>
+<!-- <table > -->
+<!-- <tr align="right"> -->
+<!-- <td><button id="daycount" type="button" >日统计</button></td> -->
+<!-- <td><button id="monthcount" type="button" >月统计</button></td> -->
+<!-- <td><button id="yearcount" type="button">年统计</button></td> -->
+<!-- </tr> -->
+<!-- </table> -->
+<div align="right">
+<button id="daycount" type="button" >日统计</button>
+<button id="monthcount" type="button" >月统计</button>
+<button id="yearcount" type="button">年统计</button> 
+</div>
+<div id="lineDataDayChart" style=" width: 600px; height: 400px; float:right" ></div>
+<div id="lineDataMonthChart" style=" display:none ;width: 600px; height: 400px;float:right" ></div>
+<div id="lineDataChart" style="display:none ; width: 600px; height: 400px;float:right"></div>
+
+
+
+</body>
+
+<script type="text/javascript" >
+
+$(document).ready(function(){
+	  $("#daycount").click(function(){
+		  $("#lineDataMonthChart").hide();
+		  $("#lineDataChart").hide();
+		  $("#lineDataDayChart").show();
+// 		  document.getElementById("lineDataMonthChart").style.display="none";
+// 		  document.getElementById("lineDataChart").style.display="";
+
+	  });
+	  
+	  $("#monthcount").click(function(){
+		  $("#lineDataMonthChart").show();
+		  $("#lineDataChart").hide();
+		  $("#lineDataDayChart").hide();
+	  });
+
+	  $("#yearcount").click(function(){
+		  $("#lineDataMonthChart").hide();
+		  $("#lineDataChart").show();
+		  $("#lineDataDayChart").hide();
+	  });
+	});
+    </script>
+
+<script type="text/javascript">
+
+</script>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
+
+<script src="../highchart/line.js"></script>
+<script src="../highchart/line2.js"></script>
+<script src="../highchart/line3.js"></script>
+<script src="../highchart/ybp.js"></script>
+  <script src="../matter1.js"></script>
+  <script src="../highchart/1.js"></script>
+</html>

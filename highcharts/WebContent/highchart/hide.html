@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#hide").click(function(){
+	  $("#id2").hide();
+	  $("#id1").show();
+  });
+  $("#show").click(function(){
+//   $("p").show();
+
+  $("#id1").hide();
+  $("#id2").show();
+  });
+});
+</script>
+</head>
+<body>
+<p id="id1">年统计</p>
+<div id="id2" style="display: none;" >月统计</div>
+<button id="hide" type="button">年统计</button>
+<button id="show" type="button" >月统计</button>
+</body>
+</html>
