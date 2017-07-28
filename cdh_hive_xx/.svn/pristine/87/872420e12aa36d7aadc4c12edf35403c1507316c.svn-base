@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+
+<!-- hive server1
+   <property name="hibernate.connection.url">jdbc:transwarp://172.18.251.105/aml</property>
+   <property name="hibernate.connection.driver_class">org.apache.hadoop.hive.jdbc.HiveDriver</property>
+   -->
+<!--    <property name="hibernate.connection.url">jdbc:hive2://172.16.2.246:10000/default;principal=hive/idcisp-ftp-003@TDH;authentication=kerberos;kuser=hive/idcisp-ftp-003@TDH;keytab=/E:/IdeaProjects/maven_test4.3/inceptor/target/classes/hive.keytab;krb5conf=/E:/IdeaProjects/maven_test4.3/inceptor/target/classes/krb5.conf</property> -->
+   <property name="hibernate.connection.url">jdbc:hive2://172.16.19.156:10000/default</property>
+   <property name="hibernate.connection.driver_class">org.apache.hive.jdbc.HiveDriver</property>
+   <property name="hibernate.connection.username"></property>
+   <property name="hibernate.connection.password"></property>
+   <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+   <property name="hibernate.show_sql">true</property>
+   <!--<mapping resource="User.hbm.xml"/>-->
+</session-factory>
+</hibernate-configuration>
