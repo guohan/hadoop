@@ -1,4 +1,4 @@
-# hadoop trunk
+﻿# hadoop trunk
 cdh_kafka kafka生产者，消费者示例
 cdh_sqoop sqoop
 flume apache flume
@@ -21,5 +21,6 @@ kibana
 mahout
 redis
 mongodb
+python
 
 
