@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/linux/cdh/spark-assembly-1.5.1-transwarp-tdh460-hadoop2.5.2-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/json-lib-2.3-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/jsoup-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc-14.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="lib/hive-ant-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-beeline-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-cli-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-common-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-contrib-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-exec-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-hbase-handler-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-hwi-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-jdbc-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-metastore-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-serde-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-service-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-shims-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-shims-0.23-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-shims-common-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-shims-scheduler-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="lib" path="lib/hive-testutils-0.12.0-transwarp-tdh460.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

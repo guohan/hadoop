@@ -1,0 +1,2686 @@
+﻿/*
+ * Date: 2014-05-27 by Chui  物资采购
+ *-------------------------------------------------------------------------------------------------
+ */
+body { background: #fff; }
+/* 生产流程地图 */
+#produceMap {
+    width: 1012px;
+    height: 530px;
+    background: url("../images/flowProgress/produce1.png") no-repeat top left;
+    margin: 0 auto;
+    position: relative;
+}
+/* 生产流程指标树 */
+#produceTree1 {
+    width: 1200px;
+    height: 783px;
+    background: url("../images/flowProgress/produce2.png") no-repeat top left;
+    margin: 40px auto 0;
+    position: relative;
+}
+#produceTree2 {
+    width: 1200px;
+    height: 747px;
+    background: url("../images/flowProgress/produce3.png") no-repeat top left;
+    margin: 40px auto 0;
+    position: relative;
+}
+#produceTree3 {
+    width: 1200px;
+    height: 1163px;
+    background: url("../images/flowProgress/produce4.png") no-repeat top left;
+    margin: 40px auto 0;
+    position: relative;
+}
+
+.flowPart {
+    position: absolute;
+}
+.flowProgress h2 {
+    font-size: 16px;
+    position: absolute;
+    left: 474px;
+    top: 6px;
+}
+.flowSquare {
+    height: 44px;
+    padding-bottom: 3px;
+    position: absolute;
+    background: url("../images/flowProgress/bg.png") repeat-x 0 -674px;
+    width: 120px;
+    text-align: center;
+}
+.flowSquare .left, .flowSquare .right {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: url("../images/flowProgress/bg.png") no-repeat 0 0;
+}
+.flowSquare .left {
+    left: -3px;
+    background-position: 0 -620px;
+}
+.flowSquare .right {
+    right: -3px;
+    background-position: -123px -620px;
+}
+.flowSquare .text {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.3;
+    display: inline-block;
+    text-align: center;
+    padding-top: 12px;
+}
+.greenSquare {
+    background-position: 0 -58px;
+}
+.greenSquare .left {
+    background-position: 0 0;
+}
+.greenSquare .right {
+    background-position: -123px 0;
+}
+.redSquare {
+    background-position: 0 -180px;
+}
+.redSquare .left {
+    background-position: 0 -121px;
+}
+.redSquare .right {
+    background-position: -123px -121px;
+}
+.yellowSquare {
+    background-position: 0 -301px;
+}
+.yellowSquare .left {
+    background-position: 0 -241px;
+}
+.yellowSquare .right {
+    background-position: -123px -241px;
+}
+.blueSquare {
+    background-position: 0 -795px;
+}
+.blueSquare .left {
+    background-position: 0 -735px;
+}
+.blueSquare .right {
+    background-position: -123px -735px;
+}
+.flowPart .title {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+.produceMap1 {
+    width: 138px;
+    left:8px;
+    top: 64px;
+}
+.produceMap1 .flowSquare1 {
+    left:4px;
+}
+.produceMap2 {
+    width: 314px;
+    left:181px;
+    top: 61px;
+}
+.produceMap2 .flowSquare1 {
+    left:21px;
+    top: 33px;
+}
+.produceMap2 .flowSquare2 {
+    left:172px;
+    top: 33px;
+}
+.produceMap2 .flowSquare3 {
+    left:172px;
+    top: 141px;
+}
+.produceMap2 .flowSquare4 {
+    left:21px;
+    top: 141px;
+}
+.produceMap2 .flowSquare5 {
+    left:21px;
+    top: 241px;
+    width: 272px;
+}
+.produceMap3 {
+    width: 314px;
+    left:517px;
+    top: 61px;
+}
+.produceMap3 .flowSquare1 {
+    left:23px;
+    top: 33px;
+}
+.produceMap3 .flowSquare2 {
+    left:23px;
+    top: 103px;
+}
+.produceMap3 .flowSquare3 {
+    left:23px;
+    top: 171px;
+}
+.produceMap3 .flowSquare4 {
+    left:172px;
+    top: 33px;
+}
+.produceMap3 .flowSquare5 {
+    left:172px;
+    top: 103px;
+}
+.produceMap3 .flowSquare6 {
+    left:23px;
+    top: 241px;
+}
+.produceMap3 .flowSquare7 {
+    left:172px;
+    top: 241px;
+}
+.produceMap4 {
+    width: 138px;
+    right:8px;
+    top: 64px;
+}
+.produceMap4 .flowSquare1 {
+    left:10px;
+}
+.produceMap5 {
+    width: 651px;
+    left:180px;
+    top: 407px;
+}
+.produceMap5 .flowSquare1 {
+    left:24px;
+    top: 29px;
+}
+.produceMap5 .flowSquare2 {
+    left:187px;
+    top: 29px;
+}
+.produceMap5 .flowSquare3 {
+    left:346px;
+    top: 29px;
+}
+.produceMap5 .flowSquare4 {
+    left:509px;
+    top: 29px;
+}
+.greenStart, .yellowStart, .redStart,
+.greenStar, .yellowStar, .redStar {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: url("../images/flowProgress/bg.png") no-repeat -17px -482px;
+}
+.yellowStart, .yellowStar { background-position: -48px -482px;}
+.redStart, .redStar { background-position: -78px -482px;}
+
+.tipsDiv {
+    position: absolute;
+    top:150px;
+    left: 200px;
+    max-height: 280px;
+    overflow: auto;
+    overflow-x: hidden;
+    background: #f7f7f7;
+    border:1px solid #cacaca;
+    padding:10px;
+    z-index: 1000;
+}
+.tipsDiv a {
+    color: #4c5764;
+    text-decoration: none;
+}
+.tipsDiv a.grey {
+    color: #9E9E9E;
+}
+.tipsDiv a:hover {
+    color: #ffab31;
+}
+.tips-arrow {
+    width: 16px;
+    height: 8px;
+    display: block;
+    position: absolute;
+    background: url("../images/flowProgress/bg.png") no-repeat -18px -508px !important;
+    top: -19px;
+    z-index: 1001;
+}
+.tips-arrow-down {
+    top: auto;
+    bottom: -10px;
+    background: url("../images/flowProgress/bg.png") no-repeat -22px -901px !important;
+}
+.flowProgress table {
+    display: none;
+}
+.tipsDiv table {
+    border-collapse: collapse;
+    display: block;
+}
+.tipsDiv table td {
+    border: 1px solid #dddddd;
+    background: #fff;
+    padding: 5px;
+    text-align: left;
+    line-height: 1.4em;
+}
+.tipsDiv table tbody tr.odd td {
+    background: #ebebeb;
+}
+.tipsDiv table thead td {
+    border: 1px solid #dddddd;
+    background: #fff;
+    padding:5px;
+    height: 19px;
+    background: url("../images/table-header.jpg") repeat-x 0 0;
+    color: #fff;
+    line-height: 1;
+}
+
+.greenlight,.yellowlight,.redlight,.orangelight,.greylight {
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    background: url("../images/flowProgress/bg.png") no-repeat -15px -377px;
+}
+.yellowlight {
+    background-position: -15px -410px;
+}
+.redlight {
+    background-position: -15px -443px;
+}
+.orangelight {
+    background-position: -51px -377px;
+}
+.greylight {
+    background-position: -51px -409px;
+}
+.tipsDiv table td .yellowlight,
+.tipsDiv table td .greenlight,
+.tipsDiv table td .redlight,
+.tipsDiv table td .greylight {
+    margin: 5px 0 0 20px;
+}
+
+.flowProgress:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.flowProgress .col {
+    height:100%;
+    display: inline-block;
+    width: 150px;
+    float: left;
+    position: relative;
+}
+.flowProgress .col-1 {
+    margin-left: 122px;
+}
+.flowProgress .col-2 {
+    margin-left: 22px;
+    width: 170px;
+}
+.flowProgress .col-3 {
+    margin-left: 42px;
+    width: 170px;
+}
+.flowProgress .col-4 {
+    margin-left: 40px;
+    width: 360px;
+}
+.flowProgress .col h2 {
+    height: 36px;
+    width: 126px;
+    padding-bottom: 3px;
+    position: absolute;
+    background: url("../images/flowProgress/bg.png") no-repeat 0 -577px;
+    top: -40px;
+    left: 50%;
+    margin-left: -63px;
+    color: #fff;
+    text-align: center;
+}
+#col-1 .flowSquare {
+    top: 360px;
+    left: 15px;
+}
+#col-2 .flowSquare {
+    width: 130px;
+}
+#col-2 .flowSquare1 {
+    top: 95px;
+    left: 20px;
+}
+#col-2 .flowSquare2 {
+     top: 249px;
+     left: 20px;
+}
+#col-2 .flowSquare3 {
+      top: 361px;
+      left: 20px;
+}
+#col-2 .flowSquare4 {
+    top: 569px;
+    left: 20px;
+}
+#col-2 .flowSquare5 {
+    bottom: 15px;
+    left: 20px;
+}
+#col-3 .flowSquare {
+    width: 130px;
+}
+#col-3 .flowSquare1 {
+    top: 95px;
+    left: 20px;
+}
+#col-3 .flowSquare2 {
+    top: 249px;
+    left: 20px;
+}
+#col-3 .flowSquare3 {
+    top: 361px;
+    left: 20px;
+}
+#col-3 .flowSquare4 {
+    top: 569px;
+    left: 20px;
+}
+#col-3 .flowSquare5 {
+    bottom: 15px;
+    left: 20px;
+}
+
+.treelistDiv li:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.treelistDiv {
+    padding-left: 20px;
+}
+.treelistDiv li {
+    margin-bottom: 8px;
+    padding-left: 8px;
+}
+.treelistDiv li .text {
+    width: 220px;
+    display: inline-block;
+    float: left;
+    height: 12px;
+    line-height: 1.1;
+    padding-top: 18px;
+    font-weight: bold;
+}
+.treelistDiv li.subList {
+    margin-left: 20px;
+}
+.treelistDiv li.subList .text {
+    width: 200px;
+}
+.treelistDiv li .num {
+    font-family: "arial";
+    width: 60px;
+    display: inline-block;
+    float: left;
+    height: 12px;
+    line-height: 1.1;
+    padding-top: 18px;
+    font-weight: bold;
+}
+.treelistDiv li .state {
+    width: 40px;
+    display: inline-block;
+    float: left;
+    height: 17px;
+    padding-top: 13px;
+}
+.tipsDiv table td.title {
+    vertical-align: top;
+    font-weight: bold;
+    text-align: right;
+}
+
+#col2-1 .flowSquare {
+    top: 421px;
+    left: 15px;
+}
+#col2-2 .flowSquare {
+    width: 130px;
+}
+#col2-2 .flowSquare1 {
+    top: 258px;
+    left: 19px;
+}
+#col2-2 .flowSquare2 {
+    top: 499px;
+    left: 19px;
+}
+#col2-2 .flowSquare3 {
+    top: 635px;
+    left: 19px;
+}
+#col2-3 .flowSquare {
+    width: 130px;
+}
+#col2-3 .flowSquare1 {
+    top: 114px;
+    left: 18px;
+}
+#col2-3 .flowSquare2 {
+    top: 352px;
+    left: 18px;
+}
+#col2-3 .flowSquare3 {
+    top: 499px;
+    left: 18px;
+}
+#col2-3 .flowSquare4 {
+    top: 635px;
+    left: 18px;
+}
+#col2-4 .treelistDiv {
+    margin-top: 10px;
+}
+#col2-4 .treelistDiv li {
+    margin-bottom: 9px;
+    padding-left: 8px;
+}
+
+#col3-1 .flowSquare {
+    top: 565px;
+    left: 15px;
+    width: 120px;
+}
+#col3-2 .flowSquare {
+    width: 130px;
+}
+#col3-2 .flowSquare1 {
+    top: 288px;
+    left: 19px;
+}
+#col3-2 .flowSquare2 {
+    top: 865px;
+    left: 19px;
+}
+
+#col3-3 .flowSquare {
+    width: 130px;
+}
+#col3-3 .flowSquare1 {
+    top: 20px;
+    left: 18px;
+}
+#col3-3 .flowSquare2 {
+    top: 95px;
+    left: 18px;
+}
+#col3-3 .flowSquare3 {
+    top: 380px;
+    left: 18px;
+}
+#col3-3 .flowSquare4 {
+    top: 593px;
+    left: 18px;
+}
+#col3-3 .flowSquare5 {
+    top: 651px;
+    left: 18px;
+}
+#col3-3 .flowSquare6 {
+    top: 915px;
+    left: 18px;
+}
+#col3-3 .flowSquare7 {
+    top: 1106px;
+    left: 18px;
+}
+#col3-4 .treelistDiv {
+    margin-top: 4px;
+}
+#col3-4 .treelistDiv li {
+    margin-bottom: 9px;
+    padding-left: 8px;
+}
+#col3-4 .treelistDiv {
+    margin-top: 0px;
+}
+#col3-4 .treelistDiv li {
+    margin-bottom: 9px;
+    padding-left: 8px;
+}
+
+/* tabBtns 切换 */
+.tabContainer {
+    position: fixed;
+    right: 20px;
+    left: 0;
+    padding-top: 10px;
+    width: auto;
+    background: #fff;
+    text-align: center;
+
+}
+#tabBtns {
+    height: 26px;
+    display: inline-block;
+    margin: 0 auto;
+    border: 1px solid #ccd4e0;
+    border-width: 0 1px;
+}
+#tabBtns .tabBtn {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    background: url("../images/tab-nav.png") repeat-x 0 -38px;
+    border-left: 1px solid #ccd4e0;
+    margin-left: -1px;
+    min-width: 120px;
+    text-align: center;
+    line-height: 26px;
+    padding: 0 30px;
+    position: relative;
+}
+#tabBtns .tabBtn.active {
+    background-position: 0 -4px;
+}
+#tabBtns .tabBtn a {
+    color: #4c5764;
+    text-decoration: none;
+
+}
+#tabBtns .tabBtn .subtabs a:hover,#tabBtns .tabBtn a:hover {
+    color: #ffab31;
+}
+#tabBtns .tabBtn.active a {
+    color: #fff;
+    font-weight: bold;
+}
+#subtab {
+    padding: 0 5px;
+}
+#tabBtns .tabBtn .kit-icon-arrowdown {
+    margin-bottom: -3px;
+    background-position: -50px -14px;
+}
+.subtabs {
+    min-width: 240px;
+    padding: 5px 0;
+    border: 1px solid #DBDEE1;
+    position: absolute;
+    top: 26px;
+    left: 0;
+    background:#fff;
+    display: none;
+    z-index: 2;
+}
+.subtabs .subtab {
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+    line-height: 1.8;
+}
+#tabBtns .tabBtn .subtabs a {
+    font-weight: normal;
+    color: #4c5764;
+}
+#tabBtns .subtabs a.active {
+    color: #2f76bc;
+}
+
+.tabMask {
+    position: absolute;
+    top: 29px;
+    left: 3px;
+    background:#000;
+    z-index: 1;
+}
+
+
+/*
+ * Date: 2014-06-03 by Chui  项目树
+ *-------------------------------------------------------------------------------------------------
+ */
+
+/* 项目树一 */
+#programTree1 {
+    width: 948px;
+    height: 433px;
+    background: url("../images/flowProgress/program1.png") no-repeat top left;
+    margin: 40px auto 0;
+    position: relative;
+}
+.programTree,.programTree_red_green {
+    width: 136px;
+    height: 43px;
+    display: block;
+    background: url("../images/flowProgress/programTreebg.png?base64") no-repeat 0 0;
+    font-size: 12px;
+    line-height: 1.2;
+}
+.programTree_red {
+    background-position: 0 -53px;
+}
+.programTree_yellow {
+    background-position: 0 -106px;
+}
+.programTree_green {
+    background-position: 0 0;
+}
+.programTree_grey {
+    background-position: 0 -160px;
+}
+
+.programTree_gray {
+    background-position: 0 -159px;
+}
+
+.programTree .num {
+    width: 56px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    float: left;
+    display: inline-block;
+    padding-top: 15px;
+    height: 28px;
+}
+.programTree .name {
+    width: 65px;
+    text-align: left;
+    padding:8px 10px 0 5px;
+    display: inline-block;
+    float: left;
+    color: #292929;
+    text-decoration: none;
+}
+#programTrees {
+    position: relative;
+}
+#programTrees .programTree {
+    position: absolute;
+}
+#programTree1 .program_1 { top:12px; left: 32px;}
+#programTree1 .program_2 { top:12px; left: 223px;}
+#programTree1 .program_3 { top:12px; left: 415px;}
+#programTree1 .program_4 { top:12px; left: 607px;}
+#programTree1 .program_5 { top:12px; left: 801px;}
+#programTree1 .program_6 { top:138px; left: 801px;}
+#programTree1 .program_7 { top:138px; left: 607px;}
+#programTree1 .program_8 { top:138px; left: 415px;}
+#programTree1 .program_9 { top:138px; left: 223px;}
+#programTree1 .program_10 { top:138px; left: 32px;}
+#programTree1 .program_11 { top:262px; left: 32px;}
+#programTree1 .program_12 { top:262px; left: 223px;}
+#programTree1 .program_13 { top:262px; left: 415px;}
+#programTree1 .program_14 { top:320px; left: 32px;}
+#programTree1 .program_15 { top:376px; left: 32px;}
+#programTree1 .program_16 { top:348px; left: 223px;}
+#programTree1 .program_17 { top:348px; left: 415px;}
+#programTree1 .program_18 { top:305px; left: 607px;}
+#programTree1 .program_19 { top:305px; left: 801px;}
+#programTree1 .program_18 .name { padding-top:15px;}
+
+
+/* 项目树二 */
+#programTree2 {
+    width: 948px;
+    height: 433px;
+    background: url("../images/flowProgress/program2.png") no-repeat top left;
+    margin: 40px auto 0;
+    position: relative;
+}
+#programTree2 .program_1 { top:73px; left: 13px;}
+#programTree2 .program_2 { top:151px; left: 13px;}
+#programTree2 .program_3 { top:151px; left: 197px;}
+#programTree2 .program_4 { top:151px; left: 373px;}
+#programTree2 .program_5 { top:291px; left: 373px;}
+#programTree2 .program_6 { top:20px; left: 595px;}
+#programTree2 .program_7 { top:65px; left: 595px;}
+#programTree2 .program_8 { top:110px; left: 595px;}
+#programTree2 .program_9 { top:145px; left: 595px;}
+#programTree2 .program_10 { top:200px; left: 595px;}
+#programTree2 .program_11 { top:294px; left: 594px;}
+#programTree2 .program_12 { top:152px; left: 794px;}
+#programTree2 .program_6 .name,
+#programTree2 .program_7 .name,
+#programTree2 .program_8 .name,
+#programTree2 .program_9 .name,
+#programTree2 .program_12 .name {
+    padding-top:15px;
+}
+
+
+/* 项目树三 */
+#programTree3 {
+    width: 948px;
+    height: 533px;
+    background: url("../images/flowProgress/program3.png") no-repeat top left;
+    margin: 40px auto 0;
+    position: relative;
+}
+#programTree3 .program_1 { top:12px; left: 32px;}
+#programTree3 .program_2 { top:12px; left: 223px;}
+#programTree3 .program_3 { top:12px; left: 415px;}
+#programTree3 .program_4 { top:12px; left: 607px;}
+#programTree3 .program_5 { top:12px; left: 801px;}
+#programTree3 .program_6 { top:138px; left: 801px;}
+#programTree3 .program_7 { top:138px; left: 607px;}
+#programTree3 .program_8 { top:138px; left: 415px;}
+#programTree3 .program_9 { top:138px; left: 223px;}
+#programTree3 .program_10 { top:138px; left: 32px;}
+#programTree3 .program_11 { top:273px; left: 36px;}
+#programTree3 .program_12 { top:219px; left: 227px;}
+#programTree3 .program_13 { top:221px; left: 418px;}
+#programTree3 .program_14 { top:221px; left: 612px;}
+#programTree3 .program_15 { top:272px; left: 612px;}
+#programTree3 .program_16 { top:332px; left: 612px;}
+#programTree3 .program_17 { top:271px; left: 801px;}
+#programTree3 .program_18 { top:432px; left: 802px;}
+#programTree3 .program_19 { top:432px; left: 611px;}
+#programTree3 .program_18 .name,
+#programTree3 .program_11 .name,
+#programTree3 .program_15 .name {
+    padding-top:15px;
+}
+#programTree3 .program_4 .name {
+    width:74px;
+    padding: 8px 0 0;
+}
+
+/* 项目树四 */
+.pTree {
+    text-align: center;
+    padding-top: 40px;
+}
+.pTree .flowProgress{ display: inline-block; }
+.pTree .pTreeWrapper { float: left; }
+.pTreeWrapper .programTree { float: left;}
+.pTreeWrapper .programTree .name { padding-top: 15px; }
+.flowArrow {
+    width: 90px;
+    height: 19px;
+    display: inline-block;
+    float: left;
+    background:url("../images/flowProgress/arrow.png?base64") center;
+    margin-top: 12px;
+}
+
+
+/* fp-* 组件
+ * 可自由伸缩宽度的流程样式
+ */
+.fp-wrapper {
+    width: 870px;
+    margin: 0 auto;
+}
+.fp-ele-wrapper {
+    position: relative;
+    float: left;
+    width: 130px;
+    height: 43px;
+    margin-right: 110px;
+    line-height: 16px;
+}
+.odd .fp-ele-wrapper {
+    float: right;
+}
+.fp-ele-last {
+    margin-right: 0;
+}
+.fp-ele {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 130px;
+    height: 43px;
+    background:#fff;
+}
+.fp-ele .num {
+    float: left;
+    display: block;
+    width: 56px;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    background: #fff url("../images/flowProgress/programTreebg.png") no-repeat 0 -220px;
+}
+.fp-ele .title-wrapper {
+    position: absolute;
+    left: 56px;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    background: #fff url("../images/flowProgress/programTreebg.png") no-repeat -56px -220px;
+}
+.fp-ele .r-bg {
+    position: absolute;
+    display: block;
+    left: 130px;
+    top: 0;
+    width: 25px;
+    height: 100%;
+    background:#fff url("../images/flowProgress/programTreebg.png") no-repeat -306px -220px;
+}
+.fp-ele-normal .num {
+    background-position: 0 -220px;
+}
+.fp-ele-normal .title-wrapper {
+    background-position: -56px -220px;
+}
+.fp-ele-normal .r-bg {
+    background-position: -306px -220px;
+}
+.fp-ele-warn .num {
+    background-position: 0 -326px;
+}
+.fp-ele-warn .title-wrapper {
+    background-position: -56px -326px;
+}
+.fp-ele-warn .r-bg {
+    background-position: -306px -326px;
+}
+.fp-ele-error .num {
+    background-position: 0 -273px;
+}
+.fp-ele-error .title-wrapper {
+    background-position: -56px -273px;
+}
+.fp-ele-error .r-bg {
+    background-position: -306px -273px;
+}
+.fp-ele-disable .num {
+    background-position: 0 -380px;
+}
+.fp-ele-disable .title-wrapper {
+    background-position: -56px -380px;
+}
+.fp-ele-disable .r-bg {
+    background-position: -306px -380px;
+}
+
+.fp-ele .title {
+    position: absolute;
+    display: block;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+    color: #4c5764;
+}
+.fp-ele .title:hover {
+    color: #4c5764;
+}
+.fp-ele-wrapper .flowArrow {
+    position: absolute;
+    z-index: 1;
+    top: -2px;
+    right: -112px;
+}
+.odd .fp-ele-wrapper .flowArrow {
+    background: url("../images/flowProgress/arrow-right.png") no-repeat center;
+}
+.fp-row {
+    position: relative;
+    margin-top: 60px;
+    *zoom:1;
+}
+.fp-row:after {
+    content:"";
+    display: table;
+    clear: both;
+}
+.fp-arrow-down {
+    display: block;
+    position: absolute;
+    bottom: -60px;
+    right: 60px;
+    width: 19px;
+    height: 60px;
+    background: url("../images/flowProgress/arrow-down.png") no-repeat center;
+}
+.fp-wrapper .tips-content {
+    border: 1px solid #EFEFEF;
+    padding: 10px;
+    background: #fff;
+    line-height: 1.8;
+}
+.fp-ele-wrapper .tipsDiv {
+    display: none;
+    left: 10px;
+    top: 50px;
+    width: 150px;
+}
+.fp-ele-wrapper .tipsDiv .flowArrow {
+    left: 8px;
+}
+.fp-ele .title .more {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+}
+.flowProgress .tipsDiv .flowArrow,
+.fp-wrapper .tipsDiv .flowArrow {
+    width: 16px;
+    height: 8px;
+    display: block;
+    position: absolute;
+    background: url(../images/flowProgress/bg.png) no-repeat -18px -508px;
+    top: -19px;
+}
+.flowProgress .tipsDiv,
+.fp-wrapper .tipsDiv {
+    overflow: auto; /* 2014-12-16 */
+}
+/*
+ * 工程建设 ===>> 流程地图
+ *-------------------------------------------------------------------------------------------------
+ */
+.padding-t-4 {
+    padding-top: 4px !important;
+}
+#gc-pMap {
+    width: 1200px;
+    height: 738px;
+    background: url("../images/flowProgress/gc-bg1.jpg") no-repeat top left;
+    margin: 0 auto;
+    position: relative;
+}
+#gc-pMap-title {
+    left: 562px;
+    height: 10px;
+}
+.gc-pMap-left {
+    left: 96px;
+    top: 50px;
+    width: 140px;
+}
+.gc-pMap-middle {
+    left: 280px;
+    top: 50px;
+    width: 640px;
+}
+.gc-pMap-rect1 {
+    left: 10px;
+    top: 40px;
+}
+.gc-pMap-rect2 {
+    left: 10px;
+    top: 277px;
+}
+.gc-pMap-left .title2 {
+    margin-top: 350px;
+}
+.gc-pMap-rect3 {
+    left: 10px;
+    top: 419px;
+}
+/* 基建项目管理 */
+.gc-pMap-middle .title1 {
+    margin-top: 10px;
+}
+.gc-pMap-rect4 {
+    left: 24px;
+    top: 39px;
+    width: 160px;
+}
+.gc-pMap-rect5 {
+    left: 24px;
+    top: 96px;
+    width: 160px;
+}
+.gc-pMap-rect6 {
+    left: 24px;
+    top: 152px;
+    width: 160px;
+}
+.gc-pMap-rect7 {
+    left: 244px;
+    top: 60px;
+    width: 160px;
+}
+.gc-pMap-rect8 {
+    left: 244px;
+    top: 140px;
+    width: 160px;
+}
+.gc-pMap-rect9 {
+    left: 460px;
+    top: 40px;
+    width: 160px;
+}
+.gc-pMap-rect10 {
+    left: 460px;
+    top: 96px;
+    width: 160px;
+}
+.gc-pMap-rect11 {
+    left: 460px;
+    top: 153px;
+    width: 160px;
+}
+/* 基建进度管理 */
+.gc-pMap-middle .title2 {
+    margin-top: 200px;
+}
+.gc-pMap-rect12 {
+    left: 137px;
+    top: 279px;
+    width: 155px;
+}
+.gc-pMap-rect13 {
+    left: 364px;
+    top: 279px;
+    width: 145px;
+}
+/* 基建造价管理 */
+.gc-pMap-middle .title3 {
+    margin-top: 106px;
+}
+.gc-pMap-rect14 {
+    left: 23px;
+    top: 419px;
+    width: 155px;
+}
+.gc-pMap-rect15 {
+    left: 250px;
+    top: 419px;
+    width: 155px;
+}
+.gc-pMap-rect16 {
+     left: 464px;
+     top: 419px;
+     width: 155px;
+ }
+/* 基建质量管理 */
+.gc-pMap-middle .title4 {
+    position: absolute;
+    top: 516px;
+    left: 62px;
+}
+.gc-pMap-rect17 {
+    left: 20px;
+    top: 545px;
+    width: 70px;
+}
+.gc-pMap-rect18 {
+    left: 110px;
+    top: 545px;
+    width: 70px;
+}
+.gc-pMap-rect19 {
+    left: 20px;
+    top: 600px;
+    width: 160px;
+}
+/* 基建安全管理 */
+.gc-pMap-middle .title5 {
+    position: absolute;
+    top: 516px;
+    left: 280px;
+}
+.gc-pMap-rect20 {
+    left: 239px;
+    top: 545px;
+    width: 70px;
+}
+.gc-pMap-rect21 {
+    left: 329px;
+    top: 545px;
+    width: 70px;
+}
+.gc-pMap-rect22 {
+    left: 239px;
+    top: 600px;
+    width: 160px;
+}
+/* 基建技术管理 */
+.gc-pMap-middle .title6 {
+    position: absolute;
+    top: 516px;
+    left: 500px;
+}
+.gc-pMap-rect23 {
+    left: 458px;
+    top: 545px;
+    width: 160px;
+}
+.gc-pMap-rect24 {
+    left: 458px;
+    top: 600px;
+    width: 160px;
+}
+
+.gc-pMap-right {
+    left: 964px;
+    top: 50px;
+    width: 140px;
+}
+/* 其它流程 */
+.gc-pMap-right .title1 {
+    position: absolute;
+    top: 0;
+    left: 45px;
+}
+.gc-pMap-rect25 {
+    left: 10px;
+    top: 228px;
+}
+.gc-pMap-rect26 {
+    left: 10px;
+    top: 284px;
+}
+/* 资产价值 */
+.gc-pMap-right .title2 {
+    position: absolute;
+    top: 376px;
+    left: 45px;
+}
+.gc-pMap-rect27 {
+    left: 10px;
+    top: 423px;
+}
+/*
+ * 工程建设 ===>> 项目树
+ *-------------------------------------------------------------------------------------------------
+ */
+
+/* ##项目管理-------------------------------------------------------------------------------------- */
+#gc-tree1 {
+    width: 1200px;
+    height: 1229px;
+    background: url("../images/flowProgress/gc-tree1.jpg") no-repeat 9px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+#gc-tree1 .col-4 {
+    width: 400px;
+    margin-left: 8px;
+}
+#gc-tree1 .col-3 h2 ,
+#gc-tree1 .col-4 h2 {
+    margin-left: -86px;
+}
+#gc-tree1 .gc-tree1-1 {
+    top: 500px;
+}
+#gc-tree1 #col-2 .flowSquare {
+    left:20px;
+}
+#gc-tree1 .gc-tree1-2 {
+    top: 11px;
+}
+#gc-tree1 .gc-tree1-3 {
+    top: 240px;
+}
+#gc-tree1 .gc-tree1-4 {
+    top: 870px;
+}
+#gc-tree1 .gc-tree1-5 {
+    top: 1135px;
+}
+
+#gc-tree1 #col-3 .flowSquare {
+    left:-3px;
+}
+#gc-tree1 .gc-tree1-6 {
+    top:10px;
+}
+#gc-tree1 .gc-tree1-7 {
+    top:127px;
+}
+#gc-tree1 .gc-tree1-8 {
+    top:240px;
+}
+#gc-tree1 .gc-tree1-9 {
+    top:435px;
+}
+#gc-tree1 .gc-tree1-10 {
+    top:662px;
+}
+#gc-tree1 .gc-tree1-11 {
+    top:871px;
+}
+#gc-tree1 .gc-tree1-12 {
+    top:1040px;
+}
+#gc-tree1 .gc-tree1-13 {
+    top:1133px;
+}
+
+#gc-tree1 .treelistDiv {
+    margin-top: 12px;
+}
+/* 树列表 */
+#gc-tree1 .treelistDiv li .text {
+    width: 250px;
+}
+#gc-tree1 .treelistDiv li .num {
+    width: 80px;
+}
+#gc-tree1 .treelistDiv .li-10 .text,
+#gc-tree1 .treelistDiv .li-11 .text,
+#gc-tree1 .treelistDiv .li-12 .text{
+    width: 230px;
+}
+#gc-tree1 .treelistDiv .li-10,
+#gc-tree1 .treelistDiv .li-11,
+#gc-tree1 .treelistDiv .li-12 {
+    margin-left: 20px;
+}
+#gc-tree1 .treelistDiv .li-2 { margin-top: 25px;}
+#gc-tree1 .treelistDiv .li-3 { margin-top: 8px;}
+#gc-tree1 .treelistDiv .li-4 { margin-top: 12px;}
+#gc-tree1 .treelistDiv .li-5 { margin-top: 10px;}
+#gc-tree1 .treelistDiv .li-6 { margin-top: 24px;}
+#gc-tree1 .treelistDiv .li-7 { margin-top: 26px;}
+#gc-tree1 .treelistDiv .li-8 { margin-top: 10px;}
+#gc-tree1 .treelistDiv .li-10 { margin-top: 10px;}
+#gc-tree1 .treelistDiv .li-12 { margin-top: 12px;}
+#gc-tree1 .treelistDiv .li-14 { margin-top: 10px;}
+#gc-tree1 .treelistDiv .li-15 { margin-top: 22px;}
+#gc-tree1 .treelistDiv .li-18 { margin-top: 27px;}
+#gc-tree1 .treelistDiv .li-25 { margin-top: 25px;}
+#gc-tree1 .treelistDiv .li-26 { margin-top: 25px;}
+#gc-tree1 .treelistDiv .li-28 { margin-top: 10px;}
+
+/* ##进度管理-------------------------------------------------------------------------------------- */
+#gc-tree2 {
+    width: 1200px;
+    height: 700px;
+    background: url("../images/flowProgress/gc-tree2.jpg") no-repeat 24px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+#gc-tree2 .col-4 {
+    width: 400px;
+    margin-left: 8px;
+}
+#gc-tree2 .col-3 h2 ,
+#gc-tree2 .col-4 h2 {
+    margin-left: -86px;
+}
+#gc-tree2 .gc-tree2-1 {
+    top: 214px;
+}
+#gc-tree2 .gc-tree2-2 {
+    top: 214px;
+    left: 19px;
+}
+#gc-tree2 .gc-tree2-3 {
+    top: 66px;
+    left: -4px;
+}
+#gc-tree2 .gc-tree2-4 {
+    top: 356px;
+    left: -4px;
+}
+/* 树列表 */
+#gc-tree2 .treelistDiv li .text {
+    width: 270px;
+}
+#gc-tree2 .treelistDiv .li-16 .text,
+#gc-tree2 .treelistDiv .li-17 .text {
+    width: 250px;
+}
+#gc-tree2 .treelistDiv .li-16,
+#gc-tree2 .treelistDiv .li-17 {
+    margin-left: 20px;
+}
+#gc-tree2 .treelistDiv .li-1 { margin-top: 5px;}
+#gc-tree2 .treelistDiv .li-3 { margin-top: 10px;}
+#gc-tree2 .treelistDiv .li-4 { margin-top: 8px;}
+#gc-tree2 .treelistDiv .li-5 { margin-top: 22px;}
+#gc-tree2 .treelistDiv .li-5 { margin-top: 24px;}
+#gc-tree2 .treelistDiv .li-8 { margin-top: 10px;}
+#gc-tree2 .treelistDiv .li-10 { margin-top: 10px;}
+#gc-tree2 .treelistDiv .li-12 { margin-top: 12px;}
+#gc-tree2 .treelistDiv .li-14 { margin-top: 10px;}
+#gc-tree2 .treelistDiv .li-15 { margin-top: 10px;}
+
+/* ##造价管理-------------------------------------------------------------------------------------- */
+#gc-tree3 {
+    width: 1200px;
+    height: 583px;
+    background: url("../images/flowProgress/gc-tree3.jpg") no-repeat 24px 20px;
+    margin: 40px auto 0;
+    position: relative;
+}
+#gc-tree3 .col-4 {
+    width: 400px;
+    margin-left: 10px;
+}
+#gc-tree3 .col-3 h2 ,
+#gc-tree3 .col-4 h2 {
+    margin-left: -86px;
+}
+#gc-tree3 #col-2 .flowSquare {
+    left:17px;
+}
+#gc-tree3 #col-3 .flowSquare {
+    left: -5px;
+}
+#gc-tree3 .gc-tree3-1 {
+    top: 204px;
+}
+#gc-tree3 .gc-tree3-2 {
+    top: 22px;
+}
+#gc-tree3 .gc-tree3-3 {
+    top: 158px;
+}
+#gc-tree3 .gc-tree3-4 {
+    top: 400px;
+}
+#gc-tree3 .gc-tree3-5 {
+    top: 22px;
+}
+#gc-tree3 .gc-tree3-6 {
+    top: 158px;
+}
+#gc-tree3 .gc-tree3-7 {
+    top: 400px;
+}
+
+/* 树列表 */
+#gc-tree3 .treelistDiv li .text {
+    width: 270px;
+}
+#gc-tree3 .treelistDiv .li-2 .text,
+#gc-tree3 .treelistDiv .li-6 .text,
+#gc-tree3 .treelistDiv .li-7 .text,
+#gc-tree3 .treelistDiv .li-12 .text,
+#gc-tree3 .treelistDiv .li-13 .text {
+    width: 250px;
+}
+#gc-tree3 .treelistDiv .li-2,
+#gc-tree3 .treelistDiv .li-6,
+#gc-tree3 .treelistDiv .li-7,
+#gc-tree3 .treelistDiv .li-12,
+#gc-tree3 .treelistDiv .li-13 {
+    margin-left: 20px;
+}
+#gc-tree3 .treelistDiv .li-1 { margin-top: 23px;}
+#gc-tree3 .treelistDiv .li-2 { margin-top: 11px;}
+#gc-tree3 .treelistDiv .li-3 { margin-top: 24px;}
+#gc-tree3 .treelistDiv .li-4 { margin-top: 12px;}
+#gc-tree3 .treelistDiv .li-7 { margin-top: 12px;}
+#gc-tree3 .treelistDiv .li-8 { margin-top: 33px;}
+
+/* ##安全管理-------------------------------------------------------------------------------------- */
+#gc-tree4 {
+    width: 1200px;
+    height: 370px;
+    background: url("../images/flowProgress/gc-tree4.jpg") no-repeat 16px 5px;
+    margin: 40px auto 0;
+    position: relative;
+}
+#gc-tree4 .col-4 {
+    width: 400px;
+    margin-left: 0;
+}
+#gc-tree4 .col-2 h2 {
+    margin-left: -78px;
+}
+#gc-tree4 .col-3 h2 ,
+#gc-tree4 .col-4 h2 {
+    margin-left: -97px;
+}
+#gc-tree4 #col-1 .flowSquare {
+    left:8px;
+}
+#gc-tree4 #col-2 .flowSquare {
+    left:11px;
+}
+#gc-tree4 #col-3 .flowSquare {
+    left: -11px;
+}
+#gc-tree4 .gc-tree4-1 {
+    top: 162px;
+}
+#gc-tree4 .gc-tree4-2 {
+    top: 41px;
+}
+#gc-tree4 .gc-tree4-3 {
+    top: 163px;
+}
+#gc-tree4 .gc-tree4-4 {
+    top: 283px;
+}
+#gc-tree4 .gc-tree4-5 {
+    top: 41px;
+}
+#gc-tree4 .gc-tree4-6 {
+    top: 163px;
+}
+#gc-tree4 .gc-tree4-7 {
+    top: 283px;
+}
+
+/* 树列表 */
+#gc-tree4 .treelistDiv li .text {
+    width: 270px;
+}
+#gc-tree4 .treelistDiv .li-1 { margin-top: 7px;}
+#gc-tree4 .treelistDiv .li-4 { margin-top: 49px;}
+#gc-tree4 .treelistDiv .li-5 { margin-top: 54px;}
+
+/* ##安全管理-------------------------------------------------------------------------------------- */
+#gc-tree5 {
+    width: 1200px;
+    height: 370px;
+    background: url("../images/flowProgress/gc-tree5.jpg") no-repeat -30px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+#gc-tree5 .col-4 {
+    width: 400px;
+    margin-left: 8px;
+}
+#gc-tree5 .col-2 h2 {
+    margin-left: -78px;
+}
+#gc-tree5 .col-3 h2 ,
+#gc-tree5 .col-4 h2 {
+    margin-left: -97px;
+}
+#gc-tree5 #col-1 .flowSquare {
+    left:14px;
+}
+#gc-tree5 #col-2 .flowSquare {
+    left:18px;
+}
+#gc-tree5 #col-3 .flowSquare {
+    left: -6px;
+}
+#gc-tree5 .gc-tree5-1 {
+    top: 162px;
+}
+#gc-tree5 .gc-tree5-2 {
+    top: 11px;
+}
+#gc-tree5 .gc-tree5-3 {
+    top: 163px;
+}
+#gc-tree5 .gc-tree5-4 {
+    top: 311px;
+}
+#gc-tree5 .gc-tree5-5 {
+    top: 11px;
+}
+#gc-tree5 .gc-tree5-6 {
+    top: 163px;
+}
+#gc-tree5 .gc-tree5-7 {
+    top: 311px;
+}
+
+/* 树列表 */
+#gc-tree5 .treelistDiv li .text {
+    width: 270px;
+}
+#gc-tree5 .treelistDiv .li-1 { margin-top: 7px;}
+#gc-tree5 .treelistDiv .li-2 { margin-top: 73px;}
+#gc-tree5 .treelistDiv .li-3 { margin-top: 70px;}
+#gc-tree5 .treelistDiv .li-4 { margin-top: 71px;}
+
+/* ##技术管理-------------------------------------------------------------------------------------- */
+#gc-tree6 {
+    width: 1200px;
+    height: 269px;
+    background: url("../images/flowProgress/gc-tree6.jpg") no-repeat 16px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+#gc-tree6 .col-4 {
+    width: 400px;
+    margin-left: 0;
+}
+#gc-tree6 .col-1 h2 {
+    margin-left: -70px;
+}
+#gc-tree6 .col-2 h2 {
+    margin-left: -78px;
+}
+#gc-tree6 .col-3 h2 ,
+#gc-tree6 .col-4 h2 {
+    margin-left: -97px;
+}
+#gc-tree6 #col-1 .flowSquare {
+    left:7px;
+}
+#gc-tree6 #col-2 .flowSquare {
+    left:10px;
+}
+#gc-tree6 #col-3 .flowSquare {
+    left: -11px;
+}
+#gc-tree6 .gc-tree6-1 {
+    top: 111px;
+}
+#gc-tree6 .gc-tree6-2 {
+    top: 36px;
+}
+#gc-tree6 .gc-tree6-3 {
+    top: 188px;
+}
+#gc-tree6 .gc-tree6-4 {
+    top: 36px;
+}
+#gc-tree6 .gc-tree6-5 {
+    top: 188px;
+}
+
+/* 树列表 */
+#gc-tree6 .treelistDiv li .text {
+    width: 270px;
+}
+#gc-tree6 .treelistDiv .li-1 { margin-top: 12px;}
+#gc-tree6 .treelistDiv .li-2 { margin-top: 20px;}
+#gc-tree6 .treelistDiv .li-3 { margin-top: 70px;}
+#gc-tree6 .treelistDiv .li-4 { margin-top: 20px;}
+
+/*
+ * 退役报废 ===>> 流程地图
+ *-------------------------------------------------------------------------------------------------
+ */
+#scrap-pMap {
+    width: 1200px;
+    height: 444px;
+    background: url("../images/flowProgress/scrap-chart.jpg") no-repeat top left;
+    margin: 0 auto;
+    position: relative;
+}
+.scrap-pMap-left {
+    left: 96px;
+    top: 50px;
+    width: 140px;
+}
+.scrap-pMap-middle {
+    left: 280px;
+    top: 50px;
+    width: 640px;
+}
+.scrap-pMap-right {
+    left: 964px;
+    top: 50px;
+    width: 140px;
+}
+
+.scrap-pMap-rect11,
+.scrap-pMap-rect12,
+.scrap-pMap-rect13 {
+    left: 10px;
+    width: 110px;
+}
+.scrap-pMap-rect13 {
+    top: 206px;
+}
+.scrap-pMap-rect12 {
+    top: 140px;
+}
+.scrap-pMap-rect11 {
+    top: 73px;
+}
+.scrap-pMap-right .title {
+    margin: 40px 0 0 -8px;
+}
+
+.scrap-pMap-rect10,
+.scrap-pMap-rect9,
+.scrap-pMap-rect8 {
+    right: 25px;
+    width: 160px;
+}
+.scrap-pMap-rect10 {
+    top: 269px;
+}
+.scrap-pMap-rect9 {
+    top: 190px;
+}
+.scrap-pMap-rect8 {
+    top: 107px;
+}
+.scrap-pMap-middle .title {
+    position: absolute;
+    top: 40px;
+}
+.scrap-pMap-middle .title3 {
+    left: 490px;
+}
+.scrap-pMap-middle .title2 {
+    left: 246px;
+}
+.scrap-pMap-middle .title1 {
+    left: 40px;
+}
+
+.scrap-pMap-rect7,
+.scrap-pMap-rect6,
+.scrap-pMap-rect5 {
+    left: 236px;
+    width: 160px;
+}
+.scrap-pMap-rect7 {
+    top: 272px;
+}
+.scrap-pMap-rect6 {
+    top: 190px;
+}
+.scrap-pMap-rect5 {
+    top: 107px;
+}
+
+.scrap-pMap-rect4,
+.scrap-pMap-rect3 {
+    left: 17px;
+    width: 160px;
+}
+.scrap-pMap-rect4 {
+    top: 188px;
+}
+.scrap-pMap-rect3 {
+    top: 114px;
+}
+
+.scrap-pMap-rect2,
+.scrap-pMap-rect1 {
+    left: 12px;
+    width: 110px;
+}
+.scrap-pMap-rect2 {
+    top: 215px;
+}
+.scrap-pMap-rect1 {
+    top: 86px;
+}
+.scrap-pMap-left .title {
+    margin-top: 50px;
+}
+.scrap-pMap-left .title2 {
+    margin-top: 96px;
+}
+#scrap-pMap h2 {
+    left: 564px;
+    top: 26px;
+}
+
+/*
+ * 退役报废 ===>> 项目树
+ *-------------------------------------------------------------------------------------------------
+ */
+
+/* ##项目可研/初设管理------------------------------------------------------------------------------- */
+#scrap-tree1 {
+    width: 1200px;
+    height: 300px;
+    background: url("../images/flowProgress/scrap-tree1.jpg") no-repeat 22px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+#scrap-tree1 .col-4 {
+    width: 400px;
+    margin-left: 8px;
+}
+#scrap-tree1 .col-1 h2 {
+    margin-left: -72px;
+}
+#scrap-tree1 .col-3 h2 {
+     margin-left: -79px;
+}
+#scrap-tree1 .col-4 h2 {
+    margin-left: -60px;
+}
+#scrap-tree1 .scrap-tree1-1 {
+    top: 147px;
+    left: 5px;
+}
+#scrap-tree1 #col-2 .flowSquare {
+    left:21px;
+}
+#scrap-tree1 .scrap-tree1-2 {
+    top: 80px;
+}
+#scrap-tree1 .scrap-tree1-3 {
+    top: 215px;
+}
+
+#scrap-tree1 #col-3 .flowSquare {
+    left:11px;
+}
+#scrap-tree1 .scrap-tree1-4 {
+    top:78px;
+}
+#scrap-tree1 .scrap-tree1-5 {
+    top:215px;
+}
+
+#scrap-tree1 .treelistDiv {
+    margin-top: 19px;
+}
+
+#scrap-tree1 .col-3 {
+    margin-left: 30px;
+}
+#scrap-tree1 .col-2 {
+    margin-left: 9px;
+}
+#scrap-tree1 .treelistDiv li .text {
+    width: 270px;
+}
+
+/* ##退运闲置资产管理------------------------------------------------------------------------------- */
+#scrap-tree2 {
+    width: 1200px;
+    height: 309px;
+    background: url("../images/flowProgress/scrap-tree2.jpg") no-repeat 34px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+#scrap-tree2 .col h2 {
+    margin-left: -73px;
+}
+#scrap-tree2 .col-2 h2 {
+    margin-left: -78px;
+}
+#scrap-tree2 .scrap-tree1-1 {
+    top: 145px;
+    left: 0;
+}
+#scrap-tree2 .scrap-tree1-2 {
+    top: 75px;
+    left: 7px;
+}
+#scrap-tree2 .scrap-tree1-3 {
+    top: 217px;
+    left: 7px;
+}
+#scrap-tree2 .col-3 .flowSquare {
+    left: 12px;
+}
+#scrap-tree2 .scrap-tree1-4 {
+    top: 33px;
+}
+#scrap-tree2 .scrap-tree1-5 {
+    top: 113px;
+}
+#scrap-tree2 .scrap-tree1-6 {
+    top: 217px;
+}
+#scrap-tree1 .treelistDiv {
+    margin-top: 19px;
+}
+
+#scrap-tree2 .col-3 {
+    margin-left: 14px;
+}
+#scrap-tree2 .col-4 {
+    margin-left: 15px;
+    width: 420px;
+}
+#scrap-tree2 .treelistDiv li .text {
+    width: 284px;
+}
+#scrap-tree2 .treelistDiv {
+    margin-top: 10px;
+}
+#scrap-tree2 .li-2 {
+    padding-top: 2px;
+}
+#scrap-tree2 .li-3 {
+    padding-top: 25px;
+}
+#scrap-tree2 .li-4 {
+    padding-top: 43px;
+}
+#scrap-tree2 .li-5 {
+    padding-top: 4px;
+}
+
+/* ##报废资产管理------------------------------------------------------------------------------- */
+#scrap-tree3 {
+    width: 1200px;
+    height: 588px;
+    background: url("../images/flowProgress/scrap-tree3.jpg") no-repeat 44px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+#scrap-tree3 .col h2 {
+    margin-left: -63px;
+}
+#scrap-tree3 .scrap-tree1-1 {
+    top: 198px;
+    left: 14px;
+}
+#scrap-tree3 .col-2 .flowSquare {
+    left: 17px;
+}
+#scrap-tree3 .scrap-tree1-2 {
+    top: 56px;
+}
+#scrap-tree3 .scrap-tree1-3 {
+    top: 345px;
+}
+#scrap-tree3 .scrap-tree1-4 {
+    top: 16px;
+}
+#scrap-tree3 .scrap-tree1-5 {
+    top: 96px;
+}
+#scrap-tree3 .scrap-tree1-6 {
+    top: 346px;
+}
+#scrap-tree1 .treelistDiv {
+    margin-top: 19px;
+}
+
+#scrap-tree3 .col-3 {
+    margin-left: 37px;
+}
+#scrap-tree3 .col-3 h2 {
+    margin-left: -84px;
+}
+
+#scrap-tree3 .col-4 {
+    margin-left: 5px;
+    width: 420px;
+}
+#scrap-tree3 .treelistDiv li .text {
+    width: 280px;
+}
+#scrap-tree3 .treelistDiv {
+    margin-top: 3px;
+}
+#scrap-tree3 .treelistDiv li {
+    float: left;
+    margin:11px 0 0;
+    width: 380px;
+}
+#scrap-tree3 .treelistDiv .li-2 {
+    margin-top: 51px;
+}
+#scrap-tree3 .treelistDiv .li-3 {
+    margin-top: 38px;
+}
+#scrap-tree3 .treelistDiv .li-4 .text,
+#scrap-tree3 .treelistDiv .li-5 .text,
+#scrap-tree3 .treelistDiv .li-6 .text,
+#scrap-tree3 .treelistDiv .li-7 .text,
+#scrap-tree3 .treelistDiv .li-8 .text,
+#scrap-tree3 .treelistDiv .li-9 .text,
+#scrap-tree3 .treelistDiv .li-10 .text {
+    width: 260px;
+    margin-left: 20px;
+}
+#scrap-tree3 .treelistDiv .li-4 {
+    margin-top: 12px;
+}
+#scrap-tree3 .treelistDiv .li-6 {
+    margin-top: 9px;
+}
+#scrap-tree3 .treelistDiv .li-10 {
+    margin-top: 9px;
+}
+
+/*
+ * 物资采购 ===>> 流程地图
+ *-------------------------------------------------------------------------------------------------
+ */
+#purchase-pMap {
+    width: 1200px;
+    height: 641px;
+    background: url("../images/flowProgress/purchase.jpg") no-repeat 0 0;
+    margin: 0 auto;
+    position: relative;
+}
+.purchase-pMap-left {
+    left: 96px;
+    top: 50px;
+    width: 140px;
+    height: 100%;
+}
+.purchase-pMap-middle {
+    left: 280px;
+    top: 50px;
+    width: 800px;
+    height: 100%;
+}
+.purchase-pMap-left .purchase-pMap-rect1 {
+    left: 4px;
+    top: 41px;
+}
+.purchase-pMap-left .purchase-pMap-rect2 {
+    left: 4px;
+    top: 97px;
+}
+.purchase-pMap-left .purchase-pMap-rect3 {
+    left: 4px;
+    top: 207px;
+}
+.purchase-pMap-left .purchase-pMap-rect4 {
+    left: 4px;
+    top: 266px;
+}
+.purchase-pMap-left .purchase-pMap-rect5 {
+    left: 4px;
+    top: 325px;
+}
+.purchase-pMap-left .purchase-pMap-rect6 {
+    left: 4px;
+    top: 425px;
+}
+.purchase-pMap-left .purchase-pMap-rect7 {
+    left: 4px;
+    top: 486px;
+}
+
+.purchase-pMap-middle .purchase-pMap-rect1 {
+    right: 673px;
+    top: 64px;
+}
+.purchase-pMap-middle .purchase-pMap-rect2 {
+    right: 673px;
+    top: 152px;
+}
+.purchase-pMap-middle .purchase-pMap-rect3 {
+    right: 673px;
+    top: 238px;
+}
+.purchase-pMap-middle .purchase-pMap-rect4 {
+    right: 509px;
+    top: 61px;
+}
+.purchase-pMap-middle .purchase-pMap-rect5 {
+    right: 509px;
+    top: 146px;
+}
+.purchase-pMap-middle .purchase-pMap-rect6 {
+    right: 344px;
+    top: 61px;
+}
+.purchase-pMap-middle .purchase-pMap-rect7 {
+    right: 344px;
+    top: 140px;
+}
+.purchase-pMap-middle .purchase-pMap-rect8 {
+    right: 344px;
+    top: 218px;
+}
+.purchase-pMap-middle .purchase-pMap-rect9 {
+    right: 344px;
+    top: 295px;
+}
+.purchase-pMap-middle .purchase-pMap-rect10 {
+    right: 344px;
+    top: 373px;
+}
+.purchase-pMap-middle .purchase-pMap-rect11 {
+    right: 344px;
+    top: 449px;
+}
+.purchase-pMap-middle .purchase-pMap-rect11 {
+    right: 344px;
+    top: 449px;
+}
+.purchase-pMap-middle .purchase-pMap-rect12 {
+    right: 176px;
+    top: 65px;
+}
+.purchase-pMap-middle .purchase-pMap-rect13 {
+    right: 176px;
+    top: 149px;
+}
+.purchase-pMap-middle .purchase-pMap-rect14 {
+    right: 176px;
+    top: 235px;
+}
+.purchase-pMap-middle .purchase-pMap-rect15 {
+    right: 176px;
+    top: 331px;
+}
+.purchase-pMap-middle .purchase-pMap-rect16 {
+    right: 13px;
+    top: 63px;
+}
+.purchase-pMap-middle .purchase-pMap-rect17 {
+    right: 13px;
+    top: 152px;
+}
+.purchase-pMap-middle .purchase-pMap-rect18 {
+    right: 13px;
+    top: 238px;
+}
+.purchase-pMap-middle .purchase-pMap-rect19 {
+    right: 13px;
+    top: 331px;
+}
+.purchase-pMap-middle .purchase-pMap-rect20 {
+    right: 10px;
+    top: 411px;
+}
+
+#purchase-pMap-title {
+    top: 19px;
+    left: 628px;
+}
+#purchase-pMap .title {
+    position: absolute;
+}
+.purchase-pMap-left .title1 {
+    top: 10px;
+    left: 35px;
+}
+.purchase-pMap-left .title2 {
+    top: 173px;
+    left: 35px;
+}
+.purchase-pMap-left .title3 {
+    top: 397px;
+    left: 35px;
+}
+.purchase-pMap-middle .title1 {
+    top: 24px;
+    left: 35px;
+}
+.purchase-pMap-middle .title2 {
+    top: 24px;
+    left: 175px;
+}
+.purchase-pMap-middle .title3 {
+    top: 24px;
+    left: 347px;
+}
+.purchase-pMap-middle .title4 {
+    top: 24px;
+    left: 521px;
+}
+.purchase-pMap-middle .title5 {
+    top: 24px;
+    left: 685px;
+}
+
+/* ##需求管理 ------------------------------------------------------------------------------- */
+#purchase-tree1 {
+    width: 1200px;
+    height: 447px;
+    background: url("../images/flowProgress/purchase-tree1.jpg") no-repeat 26px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+#purchase-tree1 .col-1 .purchase-tree1-1 {
+    top: 249px;
+    width: 136px;
+}
+#purchase-tree1 .col-2 {
+    margin-left: 29px;
+}
+#purchase-tree1 .col-3 {
+    margin-left: 50px;
+}
+#purchase-tree1 .col-4 {
+    margin-left: 50px;
+    width: 340px;
+}
+#purchase-tree1 .col-2 .purchase-tree1-1 {
+    top: 106px;
+    left: 29px;
+}
+#purchase-tree1 .col-2 .purchase-tree1-2 {
+    top: 383px;
+    left: 29px;
+}
+#purchase-tree1 .col-3 .purchase-tree1-1 {
+    top: 8px;
+    left: 23px;
+}
+#purchase-tree1 .col-3 .purchase-tree1-2 {
+    top: 198px;
+    left: 23px;
+}
+#purchase-tree1 .col-3 .purchase-tree1-3 {
+    top: 383px;
+    left: 23px;
+}
+#purchase-tree1 .col-4 .text {
+    padding-top: 6px;
+    width: 200px;
+}
+#purchase-tree1 .col-4 .num {
+    padding-top: 6px;
+}
+#purchase-tree1 .col-4 .state {
+    padding-top: 3px;
+}
+#purchase-tree1 .treelistDiv {
+    margin-top: 12px;
+}
+#purchase-tree1 .treelistDiv li {
+    float: left;
+    clear: both;
+    margin-top: 8px;
+}
+#purchase-tree1 .treelistDiv .li-2 {
+    margin-top: 20px;
+}
+#purchase-tree1 .treelistDiv .li-3 {
+    margin-top: 13px;
+}
+#purchase-tree1 .treelistDiv .li-4 {
+    margin-top: 13px;
+}
+#purchase-tree1 .treelistDiv .li-5,
+#purchase-tree1 .treelistDiv .li-7,
+#purchase-tree1 .treelistDiv .li-8 {
+    margin-top: 13px;
+}
+#purchase-tree1 .treelistDiv .li-10 {
+    margin-top: 23px;
+}
+#purchase-tree1 .treelistDiv .li-5,
+#purchase-tree1 .treelistDiv .li-6,
+#purchase-tree1 .treelistDiv .li-7,
+#purchase-tree1 .treelistDiv .li-8 {
+    padding-left: 25px;
+}
+#purchase-tree1 .treelistDiv .li-5 .text,
+#purchase-tree1 .treelistDiv .li-6 .text,
+#purchase-tree1 .treelistDiv .li-7 .text,
+#purchase-tree1 .treelistDiv .li-8 .text {
+    width: 184px;
+}
+
+/* ##采购与供应商管理 ------------------------------------------------------------------------------- */
+#purchase-tree2 {
+    width: 1200px;
+    height: 511px;
+    background: url("../images/flowProgress/purchase-tree2.jpg") no-repeat 45px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+
+#purchase-tree2 .col-1 .purchase-tree2-1 {
+    top: 249px;
+    width: 136px;
+}
+#purchase-tree2 .col-2 {
+    margin-left: 54px;
+    width: 140px;
+}
+#purchase-tree2 .col-3 {
+    margin-left: 50px;
+}
+#purchase-tree2 .col-4 {
+    margin-left: 57px;
+    width: 340px;
+}
+#purchase-tree2 .col-2 .purchase-tree2-1 {
+    left: 5px;
+    top: 88px;
+}
+#purchase-tree2 .col-2 .purchase-tree2-2 {
+    left: 5px;
+    top: 431px;
+}
+#purchase-tree2 .col-3 .purchase-tree2-1 {
+    left: 28px;
+    top: 41px;
+}
+#purchase-tree2 .col-3 .purchase-tree2-2 {
+    left: 28px;
+    top: 134px;
+}
+#purchase-tree2 .col-3 .purchase-tree2-3 {
+    left: 28px;
+    top: 431px;
+}
+#purchase-tree2 .treelistDiv li .text {
+    width: 210px;
+}
+#purchase-tree2 .col-4 .text {
+    padding-top: 6px;
+    width: 200px;
+}
+#purchase-tree2 .col-4 .num {
+    padding-top: 6px;
+}
+#purchase-tree2 .col-4 .state {
+    padding-top: 3px;
+}
+#purchase-tree2 .treelistDiv {
+    margin-top: 22px;
+}
+#purchase-tree2 .treelistDiv li {
+    float: left;
+    clear: both;
+    margin-top: 8px;
+}
+#purchase-tree2 .treelistDiv .li-2 {
+    margin-top: 13px;
+}
+#purchase-tree2 .treelistDiv .li-3 {
+    margin-top: 26px;
+}
+#purchase-tree2 .treelistDiv .li-4 {
+    margin-top: 10px;
+}
+#purchase-tree2 .treelistDiv .li-5 .text,
+#purchase-tree2 .treelistDiv .li-6 .text,
+#purchase-tree2 .treelistDiv .li-7 .text,
+#purchase-tree2 .treelistDiv .li-8 .text,
+#purchase-tree2 .treelistDiv .li-9 .text,
+#purchase-tree2 .treelistDiv .li-10 .text {
+    padding-left: 20px;
+    width: 190px;
+}
+#purchase-tree2 .treelistDiv .li-5,
+#purchase-tree2 .treelistDiv .li-6,
+#purchase-tree2 .treelistDiv .li-9,
+#purchase-tree2 .treelistDiv .li-10 {
+    margin-top: 10px;
+}
+#purchase-tree2 .treelistDiv .li-8 {
+    margin-top: 12px;
+}
+#purchase-tree2 .treelistDiv .li-11 {
+    margin-top: 21px;
+}
+/* ##合约与品控管理 ------------------------------------------------------------------------------- */
+#purchase-tree3 {
+    width: 1200px;
+    height: 618px;
+    background: url("../images/flowProgress/purchase-tree3.jpg") no-repeat 45px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+#purchase-tree3 .col-2 {
+    margin-left: 35px;
+}
+#purchase-tree3 .col-1 .purchase-tree3-1 {
+    top: 222px;
+    width: 136px;
+}
+#purchase-tree3 .col-2 .flowSquare {
+    left: 22px;
+}
+#purchase-tree3 .col-2 .purchase-tree3-1 {
+    top: 80px;
+}
+#purchase-tree3 .col-2 .purchase-tree3-2 {
+    top: 415px;
+}
+#purchase-tree3 .col-3 .flowSquare {
+    left: 22px;
+}
+#purchase-tree3 .col-3 .purchase-tree3-1 {
+    top: 39px;
+}
+#purchase-tree3 .col-3 .purchase-tree3-2 {
+    top: 118px;
+}
+#purchase-tree3 .col-3 .purchase-tree3-3 {
+    top: 223px;
+}
+#purchase-tree3 .col-3 .purchase-tree3-4 {
+    top: 361px;
+}
+#purchase-tree3 .col-3 .purchase-tree3-5 {
+    top: 471px;
+}
+#purchase-tree3 .col-3 .purchase-tree3-6 {
+    top: 556px;
+}
+#purchase-tree3 .treelistDiv {
+    padding:19px 0 0 30px;
+}
+
+#purchase-tree3 .col-4 .text {
+    padding-top: 6px;
+    width: 215px;
+}
+#purchase-tree3 .col-4 .num {
+    padding-top: 6px;
+}
+#purchase-tree3 .col-4 .state {
+    padding-top: 3px;
+}
+#purchase-tree3 .treelistDiv li {
+    float: left;
+    clear: both;
+    margin-top: 8px;
+}
+#purchase-tree3 .treelistDiv .li-2 {
+    margin-top: 13px;
+}
+#purchase-tree3 .treelistDiv .li-3 {
+    margin-top: 34px;
+}
+#purchase-tree3 .treelistDiv .li-4 {
+    margin-top: 25px;
+}
+#purchase-tree3 .treelistDiv .li-5,
+#purchase-tree3 .treelistDiv .li-6,
+#purchase-tree3 .treelistDiv .li-7 {
+    margin-top: 11px;
+}
+#purchase-tree3 .treelistDiv .li-8 {
+    margin-top: 25px;
+}
+#purchase-tree3 .treelistDiv .li-9 {
+    margin-top: 11px;
+}
+#purchase-tree3 .treelistDiv .li-10,
+#purchase-tree3 .treelistDiv .li-13 {
+    margin-top: 24px;
+}
+/* =仓储配送管理 ------------------------------------------------------------------------------- */
+#purchase-tree4 {
+    width: 1200px;
+    height: 433px;
+    background: url("../images/flowProgress/purchase-tree4.jpg") no-repeat 25px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+#purchase-tree4 .col-1 .purchase-tree4-1 {
+    top: 236px;
+    width: 127px;
+}
+#purchase-tree4 .col-2 .flowSquare {
+    left: 27px;
+}
+#purchase-tree4 .col-2 .purchase-tree4-1 {
+    top: 71px;
+}
+#purchase-tree4 .col-2 .purchase-tree4-2 {
+    top: 234px;
+}
+#purchase-tree4 .col-2 .purchase-tree4-3 {
+    top: 366px;
+}
+#purchase-tree4 .col-3 .flowSquare {
+    left: 27px;
+}
+#purchase-tree4 .col-3 .purchase-tree4-1 {
+    top: 37px;
+}
+#purchase-tree4 .col-3 .purchase-tree4-2 {
+    top: 103px;
+}
+#purchase-tree4 .col-3 .purchase-tree4-3 {
+    top: 177px;
+}
+#purchase-tree4 .col-3 .purchase-tree4-4 {
+    top: 234px;
+}
+#purchase-tree4 .col-3 .purchase-tree4-5 {
+    top: 295px;
+}
+#purchase-tree4 .col-3 .purchase-tree4-6 {
+    top: 366px;
+}
+#purchase-tree4 .treelistDiv {
+    padding:19px 0 0 36px;
+}
+
+#purchase-tree4 .col-4 .text {
+    padding-top: 6px;
+    width: 215px;
+}
+#purchase-tree4 .col-4 .num {
+    padding-top: 6px;
+}
+#purchase-tree4 .col-4 .state {
+    padding-top: 3px;
+}
+#purchase-tree4 .treelistDiv li {
+    float: left;
+    clear: both;
+    margin-top: 8px;
+}
+#purchase-tree4 .treelistDiv .li-2 {
+    margin-top: 10px;
+}
+#purchase-tree4 .treelistDiv .li-3 {
+    margin-top: 20px;
+}
+#purchase-tree4 .treelistDiv .li-4 {
+     margin-top: 46px;
+}
+#purchase-tree4 .treelistDiv .li-5 {
+    margin-top: 32px;
+}
+#purchase-tree4 .treelistDiv .li-6 {
+    margin-top: 30px;
+}
+#purchase-tree4 .treelistDiv .li-7 {
+    margin-top: 44px;
+}
+
+/* =逆向物流管理 ------------------------------------------------------------------------------- */
+#purchase-tree5 {
+    width: 1200px;
+    height: 170px;
+    background: url("../images/flowProgress/purchase-tree5.jpg") no-repeat 25px 0;
+    margin: 40px auto 0;
+    position: relative;
+}
+#purchase-tree5 .col-1 .purchase-tree5-1 {
+    top: 60px;
+    width: 138px;
+}
+#purchase-tree5 .col-2 .purchase-tree5-1 {
+    top: 60px;
+    left: 37px;
+}
+#purchase-tree5 .col-3 .purchase-tree5-1 {
+    top: 60px;
+    left: 37px;
+}
+#purchase-tree5 .treelistDiv {
+    padding:24px 0 0 43px;
+}
+
+#purchase-tree5 .col-4 .text {
+    padding-top: 6px;
+    width: 209px;
+}
+#purchase-tree5 .col-4 .num {
+    padding-top: 6px;
+}
+#purchase-tree5 .col-4 .state {
+    padding-top: 3px;
+}
+#purchase-tree5 .treelistDiv li {
+    float: left;
+    clear: both;
+    margin-top: 8px;
+}
+#purchase-tree5 .treelistDiv .li-2 {
+    margin-top: 12px;
+}
+#purchase-tree5 .treelistDiv .li-3 {
+    margin-top: 12px;
+}
+
+/* =业务监控层 总览 ------------------------------------------------------------------------------- */
+#busMonitor {
+    width: 1200px;
+    height: 519px;
+    background: url("../images/flowProgress/businessMonitor1.jpg") no-repeat top left;
+    margin: 40px auto 0;
+    position: relative;
+}
+.busMonitor1 {
+    left: 114px;
+    top: 15px;
+    width: 180px;
+    height: 480px;
+}
+.busMonitor1 .flowSquare1 {
+    top: 50px;
+}
+.busMonitor1 .flowSquare2 {
+    top: 227px;
+}
+.busMonitor1 .flowSquare3 {
+    top: 402px;
+}
+.busMonitor2 {
+    left: 314px;
+    top: 15px;
+    width: 180px;
+    height: 480px;
+}
+.busMonitor2 .flowSquare {
+    left: 26px;
+}
+.busMonitor2 .flowSquare1 {
+    top: 50px;
+}
+.busMonitor2 .flowSquare2 {
+    top: 137px;
+}
+.busMonitor2 .flowSquare3 {
+    top: 226px;
+}
+.busMonitor2 .flowSquare4 {
+    top: 315px;
+}
+.busMonitor2 .flowSquare5 {
+    top: 404px;
+}
+.busMonitor3 {
+    left: 510px;
+    top: 15px;
+    width: 180px;
+    height: 480px;
+}
+.busMonitor3 .flowSquare1 {
+    top: 45px;
+}
+.busMonitor3 .flowSquare2 {
+    top: 124px;
+}
+.busMonitor3 .flowSquare3 {
+    top: 193px;
+}
+.busMonitor3 .flowSquare4 {
+    top: 265px;
+}
+.busMonitor3 .flowSquare5 {
+    top: 335px;
+}
+.busMonitor3 .flowSquare6 {
+    top: 400px;
+}
+.busMonitor4 {
+    left: 704px;
+    top: 15px;
+    width: 180px;
+    height: 300px;
+}
+.busMonitor1 .flowSquare,
+.busMonitor3 .flowSquare,
+.busMonitor4 .flowSquare,
+.busMonitor5 .flowSquare {
+    left: 30px;
+}
+.busMonitor4 .flowSquare1 {
+    top: 50px;
+}
+.busMonitor4 .flowSquare2 {
+    top: 138px;
+}
+.busMonitor4 .flowSquare3 {
+    top: 228px;
+}
+.busMonitor5 {
+    left: 904px;
+    top: 15px;
+    width: 180px;
+    height: 300px;
+}
+.busMonitor5 .title {
+    left: 50px;
+}
+.busMonitor5 .flowSquare1 {
+    top: 50px;
+}
+.busMonitor5 .flowSquare2 {
+    top: 138px;
+}
+.busMonitor5 .flowSquare3 {
+    top: 228px;
+}
+.busMonitor6 {
+    left: 704px;
+    top: 360px;
+    width: 376px;
+    height: 140px;
+}
+.busMonitor6 .flowSquare1 {
+    top: 60px;
+    left: 30px;
+}
+.busMonitor6 .flowSquare2 {
+    top: 60px;
+    left: 230px;
+}
+.kit-row {
+    position: relative;
+    z-index: 100;
+}
+.kit-row-b {
+    z-index: 1;
+}
+
+/* 项目树五 */
+#programTree5 {
+    width: 948px;
+    height: 619px;
+    background: url("../images/flowProgress/program5.png") no-repeat left -2px;
+    margin: 40px auto 0;
+    position: relative;
+}
+#programTree5 .program_1 { top:12px; left: 32px;}
+#programTree5 .program_2 { top:12px; left: 223px;}
+#programTree5 .program_3 { top:12px; left: 415px;}
+#programTree5 .program_3_1 { top:88px; left: 415px;}
+#programTree5 .program_4 { top:12px; left: 607px;}
+#programTree5 .program_5 { top:12px; left: 801px;}
+#programTree5 .program_6 { top:146px; left: 801px;}
+#programTree5 .program_7_1 { top:88px; left: 607px;}
+#programTree5 .program_7_2 { top:146px; left: 607px;}
+#programTree5 .program_7_3 { top:204px; left: 607px;}
+#programTree5 .program_8 { top:204px; left: 415px;}
+#programTree5 .program_9 { top:204px; left: 223px;}
+#programTree5 .program_10 { top:204px; left: 32px;}
+#programTree5 .program_11 { top:280px; left: 32px;}
+#programTree5 .program_12 { top:280px; left: 223px;}
+#programTree5 .program_13 { top:356px; left: 32px;}
+#programTree5 .program_14 { top:492px; left: 32px;}
+#programTree5 .program_15 { top:550px; left: 32px;}
+#programTree5 .program_16 { top:356px; left: 223px;}
+#programTree5 .program_17 { top:432px; left: 223px;}
+#programTree5 .program_18 { top:432px; left: 415px;}
+#programTree5 .program_19 { top:521px; left: 224px;}
+#programTree5 .program_20 { top:492px; left: 415px;}
+#programTree5 .program_21 { top:550px; left: 415px;}
+#programTree5 .program_22 { top:432px; left: 607px;}
+#programTree5 .program_23 { top:432px; left: 801px;}
+#programTree5 .program_24 { top:550px; left: 801px;}
+#programTree5 .program_3_1 .name {
+    padding:8px 0 0 0;width:80px;
+}

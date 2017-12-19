@@ -1,0 +1,104 @@
+@CHARSET "UTF-8";
+
+.font1 {
+	color: #aaaaaa;
+}
+
+.font2 {
+	color: black;
+}
+
+#dateFrom,#dateTo,#dateFrom2,#dateTo2{
+	width: 150px;
+}
+
+select {
+	width: 80px;;
+}
+
+.hover{
+  background-color: #BCF5A9;
+}
+
+table {
+	width: 100%;
+}
+
+th{
+	background-color: black;
+	color: white;
+	height: 35px;
+}
+
+.appIdNameStyle{
+	width: 25%;
+}
+
+.channelNameStyle{
+	width: 20%;
+}
+
+.operateDateStyle{
+	width: 10%;
+}
+
+.statusStyle{
+	width: 5%;
+}
+
+tr {
+	width: 100%;
+	background-color: buttonface;
+}
+
+td {
+	font-size: 15px;
+	text-align: center;
+}
+
+.dataRow{
+	height: 30px;
+}
+
+#searchTip{
+	float: left;
+	margin-right: 50px;
+}
+
+#searchTip2{
+	float: left;
+	margin-right: 50px;
+}
+
+#nevigate{
+	margin-top:20px;
+	display: none;
+}
+
+#nevigate2{
+	margin-top:20px;
+	display: none;
+}
+
+.index{
+	margin-left:10px;
+	margin-right:10px;
+	font-size:18;
+}
+
+.lessPages{
+	margin-left:10px;
+	margin-right:10px;
+	text-decoration:none;
+}
+
+.morePages{
+	margin-left:10px;
+	margin-right:10px;
+	text-decoration:none;
+}
+
+.currentIndex{
+	font-weight: bold;
+	font-size: 22px;
+}

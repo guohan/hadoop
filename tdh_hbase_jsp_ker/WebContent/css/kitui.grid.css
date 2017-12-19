@@ -1,0 +1,158 @@
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.float-none {
+  float: none;
+}
+.clearfixed {
+  clear: both;
+}
+.clearfixed:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Name:   kit-grid 组件
+ * Date:   2014-07-11
+ * Author: CHUILEE
+ * ------------------------------------------------------
+ */
+/* 栅栏容器 */
+.table-container {
+  width: 100%;
+  margin-top: -8px;
+  line-height: 1;
+}
+.table-row {
+  display: inline-block;
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+}
+.table-row-btns {
+  display: inline-block;
+  float: left;
+  width: 100%;
+  padding-top: 10px;
+}
+.row-bottomsplit {
+  border-bottom: 1px solid #d4d5d6;
+}
+.row-topsplit {
+  border-top: 1px solid #076fba;
+}
+.table-col-1 {
+  width: 8.33333333%;
+}
+.table-col-2 {
+  width: 16.66666667%;
+}
+.table-col-3 {
+  width: 25%;
+}
+.table-col-4 {
+  width: 33.33333333%;
+}
+.table-col-5 {
+  width: 41.66666667%;
+}
+.table-col-6 {
+  width: 50%;
+}
+.table-col-7 {
+  width: 58.33333333%;
+}
+.table-col-8 {
+  width: 66.66666667%;
+}
+.table-col-9 {
+  width: 75%;
+}
+.table-col-10 {
+  width: 83.33333333%;
+}
+.table-col-11 {
+  width: 91.66666667%;
+}
+.table-col-12 {
+  width: 100%;
+}
+.table-col-1,
+.table-col-2,
+.table-col-3,
+.table-col-4,
+.table-col-5,
+.table-col-6,
+.table-col-7,
+.table-col-8,
+.table-col-9,
+.table-col-10,
+.table-col-11,
+.table-col-12,
+.form-title,
+.form-element,
+.form-text {
+  float: left;
+}
+.table-row,
+.table-container,
+.table-row-btns {
+  clear: both;
+}
+.table-row:after,
+.table-container:after,
+.table-row-btns:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.form-title {
+  width: 100px;
+  padding-top: 7px;
+}
+.form-element {
+  padding-left: 10px;
+}
+.form-element .kit-select {
+  margin-right: 10px;
+}
+.form-element .filebox {
+  margin-bottom: -2px;
+}
+.form-text {
+  padding-top: 7px;
+  color: #2f76bc;
+  padding-left: 10px;
+}
+.table-col-3 .form-title {
+  float: left;
+  padding-left: 20px;
+  width: 80px;
+}
+.table-col-3 .form-element {
+  float: right;
+}
+.table-col-3 .form-element .kit-select {
+  margin-right: 0;
+}
+.table-col-3 .form-element .kit-select .kit-input-icon {
+  width: 111px;
+}
+.table-col-3 .form-element .kit-select .input-small {
+  width: 107px;
+}
+.table-row .table-col-3:first-child .form-title {
+  padding-left: 0;
+}
+.table-col-4 .tableHeader {
+  float: left;
+  color: #2f76bc;
+  width: 100px;
+}
+.table-col-4 .tableContent {
+  float: left;
+  padding: 0 10px;
+}

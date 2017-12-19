@@ -1,0 +1,34 @@
+.imgareaselect-border1 {
+	BACKGROUND: url(border-anim-v.gif) repeat-y left top
+}
+.imgareaselect-border2 {
+	BACKGROUND: url(border-anim-h.gif) repeat-x left top
+}
+.imgareaselect-border3 {
+	BACKGROUND: url(border-anim-v.gif) repeat-y right top
+}
+.imgareaselect-border4 {
+	BACKGROUND: url(border-anim-h.gif) repeat-x left bottom
+}
+.imgareaselect-border1 {
+	FILTER: alpha(opacity=50); opacity: 0.5
+}
+.imgareaselect-border2 {
+	FILTER: alpha(opacity=50); opacity: 0.5
+}
+.imgareaselect-border3 {
+	FILTER: alpha(opacity=50); opacity: 0.5
+}
+.imgareaselect-border4 {
+	FILTER: alpha(opacity=50); opacity: 0.5
+}
+.imgareaselect-handle {
+	BORDER-RIGHT: #000 1px solid; BORDER-TOP: #000 1px solid; FILTER: alpha(opacity=50); BORDER-LEFT: #000 1px solid; BORDER-BOTTOM: #000 1px solid; BACKGROUND-COLOR: #fff; opacity: 0.5
+}
+.imgareaselect-outer {
+	FILTER: alpha(opacity=50); BACKGROUND-COLOR: #000; opacity: 0.5
+}
+.imgareaselect-selection {
+	
+}
+body {font-family: "Î¢ÈíÑÅºÚ";}

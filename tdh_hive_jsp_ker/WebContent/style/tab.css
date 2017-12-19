@@ -1,0 +1,69 @@
+@CHARSET "UTF-8";
+
+.nav_current {
+	float: left;
+	background: #FFF;
+	color: black;
+	font-weight: bolder;
+}
+
+.nav_link {
+	float: left;
+}
+
+.nav_current:hover  ,.nav_link:hover {
+	color: black;
+}
+
+.dis {
+	display: block;
+}
+
+.undis {
+	display: none;
+}
+
+#daiwowan {
+	width: 100%;
+	margin: 0 auto
+}
+
+#dww-menu {
+	width: 100%;
+	overflow: hidden;
+	border: 1px #dcdcdc solid;
+	font-family: "微软雅黑", "宋体", Tahoma, Verdana,Arial,sans-serif;
+}
+
+#dww-menu .mod-hd {
+	overflow: hidden;
+	height: 50px;
+	position: relative;
+	background-color: rgb(204, 204, 204);
+	vertical-align: middle;
+}
+
+#dww-menu .mod-hd li {
+	float: left;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+	height: 30px;
+	padding: 10px 10px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	list-style-type:none; 
+}
+
+#dww-menu .mod-hd li.hover {
+	font-weight: bolder;
+}
+
+#dww-menu .mod-bd {
+	padding: 5px 10px
+}
+
+button {
+	margin-left:20px;
+	font-family: "微软雅黑", "宋体", Tahoma, Verdana,Arial,sans-serif
+}

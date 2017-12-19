@@ -1,0 +1,3 @@
+LABEL.error { BACKGROUND: url(/oms/style/newstyle/images/error_wrong.gif) no-repeat scroll 0 center transparent;color: #FF8B36;display: inline-block; margin: 0 5px; padding: 5px 0 5px 20px;}
+SPAN.errormsg { BACKGROUND: url(/oms/style/newstyle/images/error_wrong.gif) no-repeat scroll 0 center transparent;color: #FF8B36;display: inline-block; margin: 0 5px; padding: 0 0 5px 20px;}
+LABEL.valid {WIDTH: 16px; BACKGROUND: url(/oms/style/newstyle/images/error_right.gif) no-repeat scroll 0 center transparent; HEIGHT: 16px}

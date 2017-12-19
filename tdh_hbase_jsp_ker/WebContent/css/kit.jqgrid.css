@@ -1,0 +1,77 @@
+.ui-state-disabled .ui-icon {
+    filter: none;
+}
+
+.ui-jqgrid .ui-pg-selbox {
+    display: none;
+}
+.ui-jqgrid .ui-pg-input {
+    display: inline-block;
+    margin-top: -4px;
+    padding: 0 3px;
+    height: 14px;
+    border: 1px solid #abb3c0;
+    text-align: right;
+    line-height: 14px;
+    background: url("../images/table-pager-input.jpg") repeat-x 0 0;
+}
+
+.ui-pg-button .ui-icon {
+    width: 19px;
+    height: 17px;
+    background-image: url("../images/table-imgs.png");
+    background-repeat: no-repeat;
+}
+.ui-icon-seek-first {
+    background-position: 0 -34px;
+}
+.ui-icon-seek-prev {
+    background-position: -41px -34px;
+}
+.ui-icon-seek-next {
+    background-position: -81px -34px;
+}
+.ui-icon-seek-end {
+    background-position: -121px -34px;
+}
+.ui-state-disabled .ui-icon-seek-prev {
+    background-position: -41px 0;
+}
+.ui-state-disabled .ui-icon-seek-first {
+    background-position: 0 0;
+}
+.ui-state-disabled .ui-icon-seek-next {
+    background-position: -81px 0;
+}
+.ui-state-disabled .ui-icon-seek-end {
+    background-position: -121px 0;
+}
+.ui-jqgrid .ui-pg-button span {
+    margin: .2em .25em;
+}
+.ui-jqgrid .ui-pg-button span.ui-separator {
+    display: none;
+}
+.ui-paging-info span {
+    display: inline-block;
+    margin: 0 5px;
+    color: #2f76bc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+ *  tree grid
+ * =================================================================================
+ */
+.ui-jqgrid .tree-plus {
+    background: url("../images/treegrid-close.png") no-repeat 0px center;
+}
+.ui-jqgrid .tree-minus {
+    background: url("../images/treegrid-open.png") no-repeat 0px center;
+}
+.ui-jqgrid .tree-leaf {
+    background: url("../images/treegrid-leaf.png") no-repeat 4px center;
+}
+.ui-jqgrid .kit-icon {
+    margin-bottom: -2px;
+}

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:hbase-site.xml,classpath:core-site.xml,classpath:hdfs-site.xml</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>hbaseServlet</servlet-name>
+    <servlet-class>com.kit.HbaseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hbaseServlet</servlet-name>
+    <url-pattern>/demo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ShowDataServlet</servlet-name>
+    <servlet-class>com.kit.ShowDataServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowDataServlet</servlet-name>
+    <url-pattern>/showData.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddDataServlet</servlet-name>
+    <servlet-class>com.kit.AddDataServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddDataServlet</servlet-name>
+    <url-pattern>/addData.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>QueryAllServlet</servlet-name>
+    <servlet-class>com.kit.QueryAllServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryAllServlet</servlet-name>
+    <url-pattern>/queryAll.py</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <!-- add table -->
+  
+    <servlet>
+    <servlet-name>AddTableServlet</servlet-name>
+    <servlet-class>com.kit.AddTableServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddTableServlet</servlet-name>
+    <url-pattern>/addTable.do</url-pattern>
+  </servlet-mapping>
+  
+<!--   Delete Table -->
+   <servlet>
+    <servlet-name>DeleteTableServlet</servlet-name>
+    <servlet-class>com.kit.DeleteTableServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteTableServlet</servlet-name>
+    <url-pattern>/deleteTable.do</url-pattern>
+  </servlet-mapping>
+  <!-- query data -->
+  <servlet>
+    <servlet-name>QueryDataList</servlet-name>
+    <servlet-class>com.kit.QueryDataList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryDataList</servlet-name>
+    <url-pattern>/queryAll.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+   <!-- query data -->
+  <servlet>
+    <servlet-name>QueryDataListByPara</servlet-name>
+    <servlet-class>com.kit.QueryDataListByPara</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryDataListByPara</servlet-name>
+    <url-pattern>/queryAllByPara.do</url-pattern>
+  </servlet-mapping>
+  <!-- 查询所有表的信息 -->
+   <servlet>
+    <servlet-name>ShowTableList</servlet-name>
+    <servlet-class>com.kit.ShowTableList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowTableList</servlet-name>
+    <url-pattern>/tableList.jsp</url-pattern>
+  </servlet-mapping>
+</web-app>

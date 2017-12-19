@@ -1,0 +1,24 @@
+com.kit.TestProducer.main(TestProducer.java:66):02:35:40
+DEBUG:[B@d35dea7 
+com.kit.TestProducer.main(TestProducer.java:66):02:35:43
+DEBUG:[B@7770f470 
+com.kit.TestProducer.main(TestProducer.java:66):02:35:46
+DEBUG:[B@5e5d171f 
+com.kit.KafkaConsumer.findLeader(KafkaConsumer.java:484):02:37:11
+DEBUG:Leader tor topic oggtopic, partition 0 is kit-b4:9092 
+com.kit.TestProducer.main(TestProducer.java:66):02:37:35
+DEBUG:[B@d35dea7 
+com.kit.TestProducer.main(TestProducer.java:66):02:37:38
+DEBUG:[B@7770f470 
+com.kit.TestProducer.main(TestProducer.java:66):02:37:41
+DEBUG:[B@5e5d171f 
+com.kit.TestProducer.main(TestProducer.java:66):04:15:04
+DEBUG:[B@544fa968 
+com.kit.TestProducer.main(TestProducer.java:66):04:15:07
+DEBUG:[B@247bddad 
+com.kit.TestProducer.main(TestProducer.java:66):04:15:10
+DEBUG:[B@d35dea7 
+com.kit.TestProducer.main(TestProducer.java:66):04:15:13
+DEBUG:[B@7770f470 
+com.kit.TestProducer.main(TestProducer.java:66):04:15:16
+DEBUG:[B@5e5d171f 

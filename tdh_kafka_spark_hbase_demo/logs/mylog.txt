@@ -1,0 +1,350 @@
+com.kit.kafka.TestProducer.main(TestProducer.java:52):04:02:52
+DEBUG: kafka test2016-07-14 16:02:48,www.example.com,192.168.2.42 
+com.kit.kafka.TestProducer.main(TestProducer.java:52):04:02:55
+DEBUG: kafka test2016-07-14 16:02:55,www.example.com,192.168.2.39 
+com.kit.kafka.TestProducer.main(TestProducer.java:52):04:02:58
+DEBUG: kafka test2016-07-14 16:02:58,www.example.com,192.168.2.98 
+com.kit.kafka.TestProducer.main(TestProducer.java:52):04:03:01
+DEBUG: kafka test2016-07-14 16:03:01,www.example.com,192.168.2.197 
+com.kit.kafka.TestProducer.main(TestProducer.java:52):04:03:04
+DEBUG: kafka test2016-07-14 16:03:04,www.example.com,192.168.2.101 
+com.kit.kafka.TestProducer.main(TestProducer.java:52):04:03:07
+DEBUG: kafka test2016-07-14 16:03:07,www.example.com,192.168.2.180 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:16:41
+DEBUG: kafka test2016-07-14 16:16:41,www.example.com,192.168.2.215 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:16:45
+DEBUG: kafka test2016-07-14 16:16:44,www.example.com,192.168.2.2 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:16:48
+DEBUG: kafka test2016-07-14 16:16:48,www.example.com,192.168.2.89 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:16:51
+DEBUG: kafka test2016-07-14 16:16:51,www.example.com,192.168.2.101 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:16:54
+DEBUG: kafka test2016-07-14 16:16:54,www.example.com,192.168.2.37 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:16:57
+DEBUG: kafka test2016-07-14 16:16:57,www.example.com,192.168.2.45 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:17:00
+DEBUG: kafka test2016-07-14 16:17:00,www.example.com,192.168.2.118 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:17:03
+DEBUG: kafka test2016-07-14 16:17:03,www.example.com,192.168.2.154 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:17:06
+DEBUG: kafka test2016-07-14 16:17:06,www.example.com,192.168.2.94 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:17:09
+DEBUG: kafka test2016-07-14 16:17:09,www.example.com,192.168.2.75 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:17:12
+DEBUG: kafka test2016-07-14 16:17:12,www.example.com,192.168.2.229 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:17:15
+DEBUG: kafka test2016-07-14 16:17:15,www.example.com,192.168.2.250 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:17:18
+DEBUG: kafka test2016-07-14 16:17:18,www.example.com,192.168.2.121 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:17:21
+DEBUG: kafka test2016-07-14 16:17:21,www.example.com,192.168.2.68 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:17:54
+DEBUG: kafka test2016-07-14 16:17:54,www.example.com,192.168.2.206 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:17:57
+DEBUG: kafka test2016-07-14 16:17:57,www.example.com,192.168.2.61 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:00
+DEBUG: kafka test2016-07-14 16:18:00,www.example.com,192.168.2.226 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:03
+DEBUG: kafka test2016-07-14 16:18:03,www.example.com,192.168.2.177 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:06
+DEBUG: kafka test2016-07-14 16:18:06,www.example.com,192.168.2.126 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:09
+DEBUG: kafka test2016-07-14 16:18:09,www.example.com,192.168.2.7 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:12
+DEBUG: kafka test2016-07-14 16:18:12,www.example.com,192.168.2.202 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:15
+DEBUG: kafka test2016-07-14 16:18:15,www.example.com,192.168.2.237 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:18
+DEBUG: kafka test2016-07-14 16:18:18,www.example.com,192.168.2.1 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:21
+DEBUG: kafka test2016-07-14 16:18:21,www.example.com,192.168.2.234 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:24
+DEBUG: kafka test2016-07-14 16:18:24,www.example.com,192.168.2.61 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:27
+DEBUG: kafka test2016-07-14 16:18:27,www.example.com,192.168.2.160 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:30
+DEBUG: kafka test2016-07-14 16:18:30,www.example.com,192.168.2.31 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:33
+DEBUG: kafka test2016-07-14 16:18:33,www.example.com,192.168.2.161 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:36
+DEBUG: kafka test2016-07-14 16:18:36,www.example.com,192.168.2.206 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:39
+DEBUG: kafka test2016-07-14 16:18:39,www.example.com,192.168.2.101 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:42
+DEBUG: kafka test2016-07-14 16:18:42,www.example.com,192.168.2.127 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:45
+DEBUG: kafka test2016-07-14 16:18:45,www.example.com,192.168.2.47 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:48
+DEBUG: kafka test2016-07-14 16:18:48,www.example.com,192.168.2.160 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:51
+DEBUG: kafka test2016-07-14 16:18:51,www.example.com,192.168.2.121 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:54
+DEBUG: kafka test2016-07-14 16:18:54,www.example.com,192.168.2.89 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:18:57
+DEBUG: kafka test2016-07-14 16:18:57,www.example.com,192.168.2.54 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:22
+DEBUG: kafka test2016-07-14 16:20:22,www.example.com,192.168.2.163 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:25
+DEBUG: kafka test2016-07-14 16:20:25,www.example.com,192.168.2.35 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:28
+DEBUG: kafka test2016-07-14 16:20:28,www.example.com,192.168.2.188 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:31
+DEBUG: kafka test2016-07-14 16:20:31,www.example.com,192.168.2.43 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:34
+DEBUG: kafka test2016-07-14 16:20:34,www.example.com,192.168.2.199 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:37
+DEBUG: kafka test2016-07-14 16:20:37,www.example.com,192.168.2.91 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:40
+DEBUG: kafka test2016-07-14 16:20:40,www.example.com,192.168.2.117 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:43
+DEBUG: kafka test2016-07-14 16:20:43,www.example.com,192.168.2.226 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:46
+DEBUG: kafka test2016-07-14 16:20:46,www.example.com,192.168.2.53 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:49
+DEBUG: kafka test2016-07-14 16:20:49,www.example.com,192.168.2.174 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:52
+DEBUG: kafka test2016-07-14 16:20:52,www.example.com,192.168.2.29 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:55
+DEBUG: kafka test2016-07-14 16:20:55,www.example.com,192.168.2.131 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:20:58
+DEBUG: kafka test2016-07-14 16:20:58,www.example.com,192.168.2.177 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:01
+DEBUG: kafka test2016-07-14 16:21:01,www.example.com,192.168.2.31 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:04
+DEBUG: kafka test2016-07-14 16:21:04,www.example.com,192.168.2.151 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:07
+DEBUG: kafka test2016-07-14 16:21:07,www.example.com,192.168.2.153 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:10
+DEBUG: kafka test2016-07-14 16:21:10,www.example.com,192.168.2.219 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:13
+DEBUG: kafka test2016-07-14 16:21:13,www.example.com,192.168.2.47 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:16
+DEBUG: kafka test2016-07-14 16:21:16,www.example.com,192.168.2.100 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:19
+DEBUG: kafka test2016-07-14 16:21:19,www.example.com,192.168.2.59 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:22
+DEBUG: kafka test2016-07-14 16:21:22,www.example.com,192.168.2.162 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:25
+DEBUG: kafka test2016-07-14 16:21:25,www.example.com,192.168.2.128 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:28
+DEBUG: kafka test2016-07-14 16:21:28,www.example.com,192.168.2.192 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:31
+DEBUG: kafka test2016-07-14 16:21:31,www.example.com,192.168.2.141 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:34
+DEBUG: kafka test2016-07-14 16:21:34,www.example.com,192.168.2.160 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:37
+DEBUG: kafka test2016-07-14 16:21:37,www.example.com,192.168.2.78 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:40
+DEBUG: kafka test2016-07-14 16:21:40,www.example.com,192.168.2.141 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:43
+DEBUG: kafka test2016-07-14 16:21:43,www.example.com,192.168.2.33 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:46
+DEBUG: kafka test2016-07-14 16:21:46,www.example.com,192.168.2.96 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:49
+DEBUG: kafka test2016-07-14 16:21:49,www.example.com,192.168.2.159 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:52
+DEBUG: kafka test2016-07-14 16:21:52,www.example.com,192.168.2.159 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:55
+DEBUG: kafka test2016-07-14 16:21:55,www.example.com,192.168.2.9 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:21:58
+DEBUG: kafka test2016-07-14 16:21:58,www.example.com,192.168.2.31 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:22:01
+DEBUG: kafka test2016-07-14 16:22:01,www.example.com,192.168.2.92 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:22:04
+DEBUG: kafka test2016-07-14 16:22:04,www.example.com,192.168.2.119 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:02
+DEBUG: kafka test2016-07-14 16:23:02,www.example.com,192.168.2.98 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:05
+DEBUG: kafka test2016-07-14 16:23:05,www.example.com,192.168.2.111 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:08
+DEBUG: kafka test2016-07-14 16:23:08,www.example.com,192.168.2.97 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:11
+DEBUG: kafka test2016-07-14 16:23:11,www.example.com,192.168.2.246 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:14
+DEBUG: kafka test2016-07-14 16:23:14,www.example.com,192.168.2.164 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:17
+DEBUG: kafka test2016-07-14 16:23:17,www.example.com,192.168.2.222 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:20
+DEBUG: kafka test2016-07-14 16:23:20,www.example.com,192.168.2.140 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:23
+DEBUG: kafka test2016-07-14 16:23:23,www.example.com,192.168.2.68 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:26
+DEBUG: kafka test2016-07-14 16:23:26,www.example.com,192.168.2.249 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:29
+DEBUG: kafka test2016-07-14 16:23:29,www.example.com,192.168.2.3 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:32
+DEBUG: kafka test2016-07-14 16:23:32,www.example.com,192.168.2.249 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:35
+DEBUG: kafka test2016-07-14 16:23:35,www.example.com,192.168.2.38 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:38
+DEBUG: kafka test2016-07-14 16:23:38,www.example.com,192.168.2.26 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:41
+DEBUG: kafka test2016-07-14 16:23:41,www.example.com,192.168.2.165 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:44
+DEBUG: kafka test2016-07-14 16:23:44,www.example.com,192.168.2.127 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:47
+DEBUG: kafka test2016-07-14 16:23:47,www.example.com,192.168.2.219 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:50
+DEBUG: kafka test2016-07-14 16:23:50,www.example.com,192.168.2.254 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:53
+DEBUG: kafka test2016-07-14 16:23:53,www.example.com,192.168.2.186 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:56
+DEBUG: kafka test2016-07-14 16:23:56,www.example.com,192.168.2.56 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:23:59
+DEBUG: kafka test2016-07-14 16:23:59,www.example.com,192.168.2.17 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:02
+DEBUG: kafka test2016-07-14 16:24:02,www.example.com,192.168.2.191 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:05
+DEBUG: kafka test2016-07-14 16:24:05,www.example.com,192.168.2.75 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:08
+DEBUG: kafka test2016-07-14 16:24:08,www.example.com,192.168.2.0 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:11
+DEBUG: kafka test2016-07-14 16:24:11,www.example.com,192.168.2.115 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:14
+DEBUG: kafka test2016-07-14 16:24:14,www.example.com,192.168.2.131 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:17
+DEBUG: kafka test2016-07-14 16:24:17,www.example.com,192.168.2.158 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:20
+DEBUG: kafka test2016-07-14 16:24:20,www.example.com,192.168.2.249 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:23
+DEBUG: kafka test2016-07-14 16:24:23,www.example.com,192.168.2.44 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:26
+DEBUG: kafka test2016-07-14 16:24:26,www.example.com,192.168.2.70 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:29
+DEBUG: kafka test2016-07-14 16:24:29,www.example.com,192.168.2.228 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:32
+DEBUG: kafka test2016-07-14 16:24:32,www.example.com,192.168.2.94 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:35
+DEBUG: kafka test2016-07-14 16:24:35,www.example.com,192.168.2.63 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:38
+DEBUG: kafka test2016-07-14 16:24:38,www.example.com,192.168.2.42 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:41
+DEBUG: kafka test2016-07-14 16:24:41,www.example.com,192.168.2.175 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:44
+DEBUG: kafka test2016-07-14 16:24:44,www.example.com,192.168.2.243 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:47
+DEBUG: kafka test2016-07-14 16:24:47,www.example.com,192.168.2.136 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:50
+DEBUG: kafka test2016-07-14 16:24:50,www.example.com,192.168.2.116 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:53
+DEBUG: kafka test2016-07-14 16:24:53,www.example.com,192.168.2.95 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:56
+DEBUG: kafka test2016-07-14 16:24:56,www.example.com,192.168.2.88 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:24:59
+DEBUG: kafka test2016-07-14 16:24:59,www.example.com,192.168.2.249 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:25:02
+DEBUG: kafka test2016-07-14 16:25:02,www.example.com,192.168.2.42 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:25:05
+DEBUG: kafka test2016-07-14 16:25:05,www.example.com,192.168.2.241 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:26:23
+DEBUG: kafka test2016-07-14 16:26:23,www.example.com,192.168.2.47 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:26:26
+DEBUG: kafka test2016-07-14 16:26:26,www.example.com,192.168.2.115 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:26:29
+DEBUG: kafka test2016-07-14 16:26:29,www.example.com,192.168.2.54 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:26:32
+DEBUG: kafka test2016-07-14 16:26:32,www.example.com,192.168.2.145 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:26:35
+DEBUG: kafka test2016-07-14 16:26:35,www.example.com,192.168.2.102 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:26:38
+DEBUG: kafka test2016-07-14 16:26:38,www.example.com,192.168.2.33 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:26:41
+DEBUG: kafka test2016-07-14 16:26:41,www.example.com,192.168.2.73 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:26:44
+DEBUG: kafka test2016-07-14 16:26:44,www.example.com,192.168.2.12 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:20
+DEBUG: kafka test2016-07-14 16:27:20,www.example.com,192.168.2.230 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:23
+DEBUG: kafka test2016-07-14 16:27:23,www.example.com,192.168.2.19 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:26
+DEBUG: kafka test2016-07-14 16:27:26,www.example.com,192.168.2.175 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:29
+DEBUG: kafka test2016-07-14 16:27:29,www.example.com,192.168.2.213 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:32
+DEBUG: kafka test2016-07-14 16:27:32,www.example.com,192.168.2.117 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:35
+DEBUG: kafka test2016-07-14 16:27:35,www.example.com,192.168.2.151 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:38
+DEBUG: kafka test2016-07-14 16:27:38,www.example.com,192.168.2.43 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:41
+DEBUG: kafka test2016-07-14 16:27:41,www.example.com,192.168.2.29 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:44
+DEBUG: kafka test2016-07-14 16:27:44,www.example.com,192.168.2.32 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:47
+DEBUG: kafka test2016-07-14 16:27:47,www.example.com,192.168.2.248 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:50
+DEBUG: kafka test2016-07-14 16:27:50,www.example.com,192.168.2.35 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:53
+DEBUG: kafka test2016-07-14 16:27:53,www.example.com,192.168.2.10 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:56
+DEBUG: kafka test2016-07-14 16:27:56,www.example.com,192.168.2.127 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:27:59
+DEBUG: kafka test2016-07-14 16:27:59,www.example.com,192.168.2.218 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:02
+DEBUG: kafka test2016-07-14 16:28:02,www.example.com,192.168.2.100 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:05
+DEBUG: kafka test2016-07-14 16:28:05,www.example.com,192.168.2.57 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:08
+DEBUG: kafka test2016-07-14 16:28:08,www.example.com,192.168.2.216 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:11
+DEBUG: kafka test2016-07-14 16:28:11,www.example.com,192.168.2.84 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:14
+DEBUG: kafka test2016-07-14 16:28:14,www.example.com,192.168.2.25 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:17
+DEBUG: kafka test2016-07-14 16:28:17,www.example.com,192.168.2.29 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:20
+DEBUG: kafka test2016-07-14 16:28:20,www.example.com,192.168.2.239 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:23
+DEBUG: kafka test2016-07-14 16:28:23,www.example.com,192.168.2.131 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:26
+DEBUG: kafka test2016-07-14 16:28:26,www.example.com,192.168.2.202 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:29
+DEBUG: kafka test2016-07-14 16:28:29,www.example.com,192.168.2.47 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:32
+DEBUG: kafka test2016-07-14 16:28:32,www.example.com,192.168.2.167 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:35
+DEBUG: kafka test2016-07-14 16:28:35,www.example.com,192.168.2.196 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:38
+DEBUG: kafka test2016-07-14 16:28:38,www.example.com,192.168.2.103 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:41
+DEBUG: kafka test2016-07-14 16:28:41,www.example.com,192.168.2.35 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:44
+DEBUG: kafka test2016-07-14 16:28:44,www.example.com,192.168.2.144 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:47
+DEBUG: kafka test2016-07-14 16:28:47,www.example.com,192.168.2.140 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:50
+DEBUG: kafka test2016-07-14 16:28:50,www.example.com,192.168.2.235 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:53
+DEBUG: kafka test2016-07-14 16:28:53,www.example.com,192.168.2.121 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:56
+DEBUG: kafka test2016-07-14 16:28:56,www.example.com,192.168.2.77 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:28:59
+DEBUG: kafka test2016-07-14 16:28:59,www.example.com,192.168.2.49 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:02
+DEBUG: kafka test2016-07-14 16:29:02,www.example.com,192.168.2.171 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:05
+DEBUG: kafka test2016-07-14 16:29:05,www.example.com,192.168.2.10 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:08
+DEBUG: kafka test2016-07-14 16:29:08,www.example.com,192.168.2.145 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:11
+DEBUG: kafka test2016-07-14 16:29:11,www.example.com,192.168.2.135 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:14
+DEBUG: kafka test2016-07-14 16:29:14,www.example.com,192.168.2.9 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:17
+DEBUG: kafka test2016-07-14 16:29:17,www.example.com,192.168.2.75 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:20
+DEBUG: kafka test2016-07-14 16:29:20,www.example.com,192.168.2.208 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:23
+DEBUG: kafka test2016-07-14 16:29:23,www.example.com,192.168.2.233 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:26
+DEBUG: kafka test2016-07-14 16:29:26,www.example.com,192.168.2.234 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:29
+DEBUG: kafka test2016-07-14 16:29:29,www.example.com,192.168.2.184 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:32
+DEBUG: kafka test2016-07-14 16:29:32,www.example.com,192.168.2.22 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:35
+DEBUG: kafka test2016-07-14 16:29:35,www.example.com,192.168.2.41 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:38
+DEBUG: kafka test2016-07-14 16:29:38,www.example.com,192.168.2.251 
+com.kit.kafka.TestProducer.main(TestProducer.java:53):04:29:41
+DEBUG: kafka test2016-07-14 16:29:41,www.example.com,192.168.2.12 

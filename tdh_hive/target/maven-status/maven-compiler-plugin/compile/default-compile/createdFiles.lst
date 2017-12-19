@@ -1,0 +1,5 @@
+com\kit\App.class
+com\kit\InJdbc.class
+com\kit\JDBCUtils.class
+com\kit\JDBCUtils$1.class
+com\kit\HiveJDBCdemo.class

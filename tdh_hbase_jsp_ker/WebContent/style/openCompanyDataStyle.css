@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+
+body{
+	font-family: "微软雅黑", "宋体", Tahoma, Verdana,Arial,sans-serif;
+}
+
+.dataRow{
+	height: 30px;
+}
+
+tr {
+	width: 100%;
+	background-color: buttonface;
+}
+
+td {
+	font-size: 15px;
+	text-align: center;
+}
+
+th{
+	background-color: black;
+	color: white;
+	height: 35px;
+}
+
+table {
+	width: 100%;
+}
+
+.tip{
+	float: left;
+	margin-right: 50px;
+}
+#nevigate{
+	margin-top:20px;
+	display: none;
+}
+
+.index{
+	margin-left:10px;
+	margin-right:10px;
+	font-size:18;
+}
+
+.lessPages{
+	margin-left:10px;
+	margin-right:10px;
+	text-decoration:none;
+}
+
+.morePages{
+	margin-left:10px;
+	margin-right:10px;
+	text-decoration:none;
+}
+
+.currentIndex{
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.hover{
+  background-color: #BCF5A9;
+}
+
+#dialog-table td{
+	height: 32px;
+	background-color: white;
+}
+
+#dialog-table input{
+	width: 90%
+}

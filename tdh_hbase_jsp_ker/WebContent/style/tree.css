@@ -1,0 +1,120 @@
+//------------------Ê÷Ä¿Â¼----------------------------//
+.tree {
+	font-family: Arial,ËÎÌå;
+	font-size: 12px;
+	white-space: nowrap;
+}
+.tree img {
+	border: 0px;
+	vertical-align: middle;
+}
+.tree a {
+	text-decoration: none;
+}
+.tree a.node, .tree a.nodeSel {
+	white-space: nowrap;
+	padding: 1px 2px 1px 2px;
+}
+.tree a.node:hover, .tree a.nodeSel:hover {
+	text-decoration: underline;
+}
+.tree a.nodeSel {
+	background-color: #FBFBFB;
+}
+.tree .clip {
+	overflow: hidden;
+}
+
+//-------------------time--------------------------------
+
+.m_fieldset   {   
+  padding:   0,10,5,10;   
+  text-align:   center;   
+  width:   150px;   
+  }   
+  .m_legend   {   
+  font-family:   Tahoma;   
+  font-size:   12px;   
+  padding-bottom:   5px;   
+  }   
+  .m_frameborder   {   
+  border-left:   1px   inset   #D4D0C8;   
+  border-top:   1px   inset   #D4D0C8;   
+  border-right:   1px   inset   #CCCCCC;   
+  border-bottom:   1px   inset   #CCCCCC;   
+  width:   70px;   
+  height:   16px;   
+  background-color:   #FFFFFF;   
+  overflow:   hidden;   
+  text-align:   right;   
+  font-family:   "Tahoma";   
+  font-size:   11px;   
+  padding:0px;   
+  }   
+  .m_arrow   {   
+  width:   16px;   
+  height:   8px;   
+  font-family:   "Webdings";   
+  font-size:   7px;   
+  line-height:   2px;   
+  padding-left:   2px;   
+  cursor:   default;   
+  }   
+  .m_input   {   
+  width:   18px;   
+  height:   14px;   
+  border:   0px   solid   black;   
+  font-family:   "Tahoma";   
+  font-size:   9px;   
+  text-align:   right;   
+  ime-mode:disabled;   
+  }   
+  .c_fieldset   {   
+  padding:   0,10,5,10;   
+  text-align:   center;   
+  width:   180px;   
+  }   
+  .c_legend   {   
+  font-family:   Tahoma;   
+  font-size:   11px;   
+  padding-bottom:   5px;   
+  }   
+  .c_frameborder   {   
+  border-left:   2px   inset   #D4D0C8;   
+  border-top:   2px   inset   #D4D0C8;   
+  border-right:   2px   inset   #FFFFFF;   
+  border-bottom:   2px   inset   #FFFFFF;   
+  background-color:  #FFFFFF;   
+  overflow:   hidden;   
+  font-family:   "Tahoma";   
+  font-size:   10px;   
+  width:160px;   
+  height:120px;   
+  }   
+  .c_frameborder   td   {   
+  width:   23px;   
+  height:   16px;   
+  font-family:   "Tahoma";   
+  font-size:   11px;   
+  text-align:   center;   
+  cursor:   default;   
+  }   
+  .c_frameborder   .selected   {   
+  background-color:#0A246A;   
+  width:12px;   
+  height:12px;   
+  color:white;   
+  }   
+  .c_frameborder   span   {   
+  width:12px;   
+  height:12px;   
+  }   
+  .c_arrow   {   
+  width:   16px;   
+  height:   8px;   
+  font-family:   "Webdings";   
+  font-size:   7px;   
+  line-height:   2px;   
+  padding-left:   2px;   
+  cursor:   default;   
+  } 

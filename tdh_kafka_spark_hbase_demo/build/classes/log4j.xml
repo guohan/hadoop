@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+<!-- 控制台输出 -->
+	<appender name="kit.console"
+		class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%l:%d{hh:mm:ss}%n%p:%m %n" />
+		</layout>
+	</appender>
+	<!-- 文件输出 -->
+	<appender name="kit.file"
+		class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="logs/mylog.txt" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%l:%d{hh:mm:ss}%n%p:%m %n" />
+		</layout>
+	</appender>
+	
+	<logger name="com.kit" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="kit.console" />
+		<appender-ref ref="kit.file" />
+	</logger>
+	<!-- RootLogger配置 -->
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="kit.console" />
+	</root>
+</log4j:configuration>

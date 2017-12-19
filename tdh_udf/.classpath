@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-net-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/dnsjava-2.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/hive-ant-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-beeline-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-cli-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-common-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-contrib-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-exec-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-hbase-handler-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-hwi-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-jdbc-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-metastore-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-serde-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-service-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-shims-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-shims-0.23-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-shims-common-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/hive-shims-scheduler-0.12.0-transwarp-tdh464.jar"/>
+	<classpathentry kind="lib" path="lib/inceptor-driver.jar"/>
+	<classpathentry kind="lib" path="lib/jopt-simple-3.2.jar"/>
+	<classpathentry kind="lib" path="lib/jsoup-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="lib/scala-library-2.10.4.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-simple-1.7.21.jar"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

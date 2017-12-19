@@ -1,0 +1,4 @@
+org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:52):04:55:27
+INFO:Starting SimpleController on guohan with PID 22540 (D:\gzkiterp\workspace\tdh_hive_jsp_ker\build\classes started by Administrator in D:\gzkiterp\workspace\tdh_hive_jsp_ker) 
+org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:55):04:55:27
+DEBUG:Running with Spring Boot v1.0.2.RELEASE, Spring v4.0.3.RELEASE 

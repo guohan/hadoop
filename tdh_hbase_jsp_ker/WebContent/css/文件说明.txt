@@ -1,0 +1,19 @@
+1.index.css   
+
+	用于页面头部，页面左侧树，页面右侧内容，头部导航样式。只在首页布局引用。例如head1.html。
+
+2.page.css   
+	
+	主要内容样式，一般都是用于框架内的内容，包括panel,tab切换，表格等样式。例如：demo.html,demo1.html...。
+
+3.clear.css   
+	
+	清除一些默认样式，在页面头部首先引用。
+
+4.KITUI.form.css   
+	
+	表单插件样式。
+
+5.maps.css   
+	
+	首页地图样式。

@@ -1,0 +1,104 @@
+package com.kit.tdh.hdfs;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URI;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileStatus;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.hdfs.DistributedFileSystem;
+import org.apache.hadoop.hdfs.HdfsConfiguration;
+import org.apache.hadoop.io.IOUtils;
+
+/**
+ * 
+ * @author gh
+ * @desc 测试读取hdfs文件后 写入本地文件
+ *
+ */
+public class Downloader {
+	private static Log LOG = LogFactory.getLog(Downloader.class);
+	private String src;
+	private static Configuration conf;
+	public static DistributedFileSystem dfs;
+	static {
+		conf = new HdfsConfiguration();
+		dfs = new DistributedFileSystem();
+		try {
+			dfs.initialize(new URI(conf.get("fs.defaultFS")), conf);
+		} catch (Exception e) {
+			LOG.error(e.getMessage(), e);
+		}
+	}
+
+	public Downloader(String src) {
+		this.src = src;
+	}
+
+	public void download(String dest) {
+		Path path = new Path(src);
+		File file = new File(dest);
+		file.mkdirs();
+		try {
+			if (dfs.isFile(path)) {
+				innerDownloadFile(src, dest);
+				System.out.println("down file");
+			} else {
+				innerDownloadDir(src, dest);
+				System.out.println("down dir");
+			}
+		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
+		}
+	}
+
+	private void innerDownloadFile(String src, String dest) {
+		Path path = new Path(src);
+		try {
+			if (dfs.exists(path)) {
+				File file = new File(dest + File.separator + path.getName());
+				file.createNewFile();
+				InputStream in = dfs.open(path);
+				OutputStream out = new FileOutputStream(file);
+				IOUtils.copyBytes(in, out, conf);
+				in.close();
+				out.close();
+			}
+		} catch (Exception e) {
+			LOG.error(e.getMessage(), e);
+		}
+	}
+
+	private void innerDownloadDir(String src, String dest) {
+
+		Path path = new Path(src);
+		File file = new File(dest + File.separator + path.getName());
+		file.mkdirs();
+		try {
+			FileStatus[] fss = dfs.listStatus(path);
+			for (int i = 0; i < fss.length; i++) {
+				if (fss[i].isFile()) {
+					innerDownloadFile(fss[i].getPath().toString(), dest
+							+ File.separator + path.getName());
+				} else {
+
+					innerDownloadDir(fss[i].getPath().toString(),
+							file.getAbsolutePath());
+				}
+			}
+		} catch (Exception e) {
+			LOG.error(e.getMessage(), e);
+		}
+	}
+
+	public static void main(String[] args) {
+		Downloader downloader = new Downloader("/guohan/test0817.txt");
+		downloader.download(	"D://guohan123");
+	}
+}

@@ -1,0 +1,34 @@
+com.kit.InJdbc.createTable(InJdbc.java:84):03:44:01
+ERROR:Could not open connection to jdbc:hive2://172.16.19.151:10000/default: java.net.ConnectException: Connection refused: connect 
+java.sql.SQLException: Could not open connection to jdbc:hive2://172.16.19.151:10000/default: java.net.ConnectException: Connection refused: connect
+	at org.apache.hive.jdbc.HiveConnection.openTransport(HiveConnection.java:235)
+	at org.apache.hive.jdbc.HiveConnection.<init>(HiveConnection.java:202)
+	at org.apache.hive.jdbc.HiveDriver.connect(HiveDriver.java:180)
+	at java.sql.DriverManager.getConnection(DriverManager.java:571)
+	at java.sql.DriverManager.getConnection(DriverManager.java:215)
+	at com.kit.InJdbc.createTable(InJdbc.java:66)
+	at com.kit.InJdbc.main(InJdbc.java:237)
+Caused by: org.apache.thrift.transport.TTransportException: java.net.ConnectException: Connection refused: connect
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:187)
+	at org.apache.thrift.transport.TSaslTransport.open(TSaslTransport.java:266)
+	at org.apache.thrift.transport.TSaslClientTransport.open(TSaslClientTransport.java:37)
+	at org.apache.hive.jdbc.HiveConnection.openTransport(HiveConnection.java:232)
+	... 6 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:182)
+	... 9 more
+com.kit.InJdbc.createTable(InJdbc.java:84):03:46:39
+ERROR:No suitable driver found for jdbc:transwarp://172.16.19.151:10000/default 
+java.sql.SQLException: No suitable driver found for jdbc:transwarp://172.16.19.151:10000/default
+	at java.sql.DriverManager.getConnection(DriverManager.java:596)
+	at java.sql.DriverManager.getConnection(DriverManager.java:215)
+	at com.kit.InJdbc.createTable(InJdbc.java:66)
+	at com.kit.InJdbc.main(InJdbc.java:237)

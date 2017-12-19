@@ -1,0 +1,4 @@
+com.kit.TestProducer.main(TestProducer.java:66):10:36:35
+DEBUG:[B@544fa968 
+com.kit.TestProducer.main(TestProducer.java:66):10:36:38
+DEBUG:[B@247bddad 

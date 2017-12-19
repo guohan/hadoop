@@ -1,0 +1,13 @@
+label.checkbox {padding-left: 24px; cursor:pointer;background: url(../images/checkbox.png) no-repeat left -0px; line-height:22px; height:20px; display:inline-block; } 
+label.checked {background-position:left 67%;  } 
+label.disabled{background-position:left 0px;}
+
+.hRadio 
+{
+    padding-left: 22px; display: inline-block;
+	background: transparent url(../images/radio.png) no-repeat left top;
+	height: 19px; line-height:20px;
+	cursor:pointer;vertical-align:middle;
+}
+
+.hRadio_Checked { background-position: left bottom;}

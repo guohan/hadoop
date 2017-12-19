@@ -1,0 +1,161 @@
+@import "reset.YUI3.css";
+html {
+    height: 100%;
+}
+body {
+    position: relative;
+    height: 100%;
+    font: 14px/1.6 'Microsoft YaHei',Arial;
+    background-color: #e4edfb;
+}
+#login-top,
+#login-middle,
+#login-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+/* login-top,middle,bottom 上中下布局 */
+#login-top {
+    top: 0;
+    height: 64px;
+    background: url("../images/login/login-headbg.jpg") repeat-x;
+}
+#login-middle {
+    top: 64px;
+    bottom: 32px;
+}
+#login-bottom {
+    bottom: 0;
+    height: 32px;
+    background: url("../images/login/login-bottombg.jpg") repeat-x;
+}
+
+#login-logo,
+#login-form,
+#user-name,
+#user-pw1,
+#user-pw2,
+#btn-cancel,
+#btn-ok {
+    background: url("../images/login/login.png") no-repeat;
+}
+#login-logo {
+    position: absolute;
+    height: 64px;
+    width: 179px;
+    background-position: 0 0;
+}
+#login-bottom .copyRight {
+    float: right;
+    margin-right: 10px;
+    line-height: 32px;
+    color: #121213;
+}
+#login-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+#login-img .building {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+#login-img .line {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* login-from 表单样式 */
+#login-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px -256px;
+    z-index: 100;
+    width: 512px;
+    height: 300px;
+    background-position: -8px -182px;
+}
+#login-form .user-name,
+#login-form .user-pw,
+#login-form .login-btns {
+    position: absolute;
+    left: 135px;
+}
+#login-form .user-name {
+    top: 100px;
+}
+#login-form .user-pw {
+    top: 150px;
+}
+#login-form .login-btns {
+    top: 200px;
+}
+#login-form label {
+    color: #fff;
+    line-height: 30px;
+}
+#user-pw1,
+#user-pw2,
+#user-name {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    border: 0;
+    width: 156px;
+    height: 30px;
+    padding-left: 30px;
+    line-height: 30px;
+    color: #889fc1;
+}
+#user-name.inputIng,
+#user-pw1 {
+    color: #194689;
+}
+#user-name {
+    background-position: 0 -141px;
+}
+#user-pw1 {
+    display: none;
+}
+#user-pw1,
+#user-pw2 {
+    background-position: -218px -141px;
+}
+#btn-ok,
+#btn-cancel {
+    position: absolute;
+    width: 82px;
+    height: 32px;
+    border: 0;
+    text-indent: -999em;
+    outline: none;
+    cursor: pointer;
+}
+#btn-ok {
+    left: 51px;
+    background-position: -97px -87px;
+}
+#btn-ok:hover,
+#btn-ok.state-hover {
+    background-position: 0 -87px;
+}
+#btn-cancel {
+    left: 153px;
+    background-position: -290px -87px;
+}
+#btn-cancel:hover,
+#btn-cancel.state-hover {
+    background-position: -193px -87px;
+}
+.login-tips {
+    margin-top: 73px;
+    text-align: center;
+    color: #ffab31;
+}

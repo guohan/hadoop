@@ -1,0 +1,39 @@
+.editImgTable{border:none;display:block;border:red}
+.editImgTable td{
+	border:none;
+}
+td{
+			border-bottom:1px solid #9FCCEC;
+		border-right:1px solid #9FCCEC;
+}
+.editImgLeft{width:270px;height:320px;border:none;overflow: hidden}
+.editImgRight{width:270px;margin-left:20px;border:none;}
+
+.royalblue  { color:#00449F;}
+.gray { color:#7B7B7B;}
+.errorMsg{color:red;display:none}
+.hide{display:none}
+.uploadFrame{display:none;border:0px solid white;width:100px;height:50px;}
+#debug{width:80%;height:50px;overflow:hidden;color:red;margin-top:20;margin-bottom:20;display:none}
+.noborder{border:none};
+#cartoonPicture_auto{margin-right:10px;margin-left:10px;padding-top:5px;}
+#cartoonPicture_hand{margin-right:10px;display:none;margin-left:10px;padding-top:5px}
+#swapUploadTypeDiv{width:400px;margin:5px;padding-bottom:8px;border-bottom:1px dashed gray;}
+.focus{	background-color: #FFFFCD;	border:1px solid #E2C822;}
+.td_right{text-align: left;background-color: white}
+form{width:98%;}
+.maintable_new{
+	background-color:#EBF7F8;
+	bordercolor:#9FCCEC;
+	border-top:1px solid #9FCCEC;
+	border-left:1px solid #9FCCEC;
+	width: 98%;
+}
+.maintable_new td{
+
+	height:25px;
+}
+.demoForEdit{
+	margin-left:255px;
+	margin-top:30px;
+}

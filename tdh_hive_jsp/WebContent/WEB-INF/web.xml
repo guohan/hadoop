@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 加载资源配置 -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:hive-site.xml,classpath:core-site.xml,classpath:hdfs-site.xml</param-value>
+  </context-param>
+  
+  
+  
+    <!-- query page data -->
+  <servlet>
+    <servlet-name>queryPageAll</servlet-name>
+    <servlet-class>com.kit.SplitePage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>queryPageAll</servlet-name>
+    <url-pattern>/queryPageAll.do</url-pattern>
+  </servlet-mapping>
+  
+ 
+  <!-- query data -->
+  <servlet>
+    <servlet-name>QueryDataList</servlet-name>
+    <servlet-class>com.kit.QueryDataList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryDataList</servlet-name>
+    <url-pattern>/queryAll.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- query data -->
+  <servlet>
+    <servlet-name>QueryDataList2</servlet-name>
+    <servlet-class>com.kit.QueryDataList2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryDataList2</servlet-name>
+    <url-pattern>/queryAll2.do</url-pattern>
+  </servlet-mapping>
+  
+   <!-- query data hbase_MREQ_PICKING_PROJ_INFO-->
+  <servlet>
+    <servlet-name>QueryPROJ_INFOList</servlet-name>
+    <servlet-class>com.kit.QueryPROJ_INFOList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryPROJ_INFOList</servlet-name>
+    <url-pattern>/QueryPROJ_INFOList.do</url-pattern>
+  </servlet-mapping>
+    <!-- query data hbase_MREQ_PICKING_PROJ_INFO-->
+  <servlet>
+    <servlet-name>QuerySystemList</servlet-name>
+    <servlet-class>com.kit.QuerySystemList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QuerySystemList</servlet-name>
+    <url-pattern>/QuerySystemList.do</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

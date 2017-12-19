@@ -1,0 +1,252 @@
+/*广州市地图 style*/
+a img{ border:0px;}
+.maps{width:330px; height:430px; position:relative; top:0; left:58px;}
+.map{ background-image:url(../images/maps.png); background-repeat:no-repeat; display:block; position:absolute; z-index:2;}
+.map_ns{ width:82px; height:97px;}
+.map_py{ width:98px; height:105px;}
+.map_yx{ width:25px; height:21px;}
+.map_hz{ width:53px; height:23px;}
+.map_th{ width:45px; height:47px;}
+.map_hp{ width:52px; height:33px;}
+.map_lg{ width:64px; height:116px;}
+.map_by{ width:105px; height:89px;}
+.map_hd{ width:149px; height:112px;}
+.map_ch{ width:220px; height:168px;}
+.map_zc{ width:132px; height:164px;}
+.map_lw{ width:29px; height:37px;}
+
+.status0 .map_ns { background-position: -12px -1031px;}
+.status0 .map_py { background-position: -119px -1035px;}
+.status0 .map_yx { background-position: -318px -1080px;}
+.status0 .map_hz { background-position: -369px -1080px;}
+.status0 .map_th { background-position: -441px -1064px;}
+.status0 .map_hp { background-position: -516px -1076px;}
+.status0 .map_lg { background-position: -600px -1034px;}
+.status0 .map_by { background-position: -685px -1050px;}
+.status0 .map_hd { background-position: -828px -1038px;}
+.status0 .map_ch { background-position: -1001px -1025px;}
+.status0 .map_zc { background-position: -1262px -1025px;}
+.status0 .map_lw { background-position: -255px -1069px;}
+
+.status1 .map_ns{ background-position:-12px -6px;}
+.status1 .map_py{ background-position:-119px -11px;}
+.status1 .map_yx{ background-position:-318px -55px;}
+.status1 .map_hz{ background-position:-369px -56px;}
+.status1 .map_th{ background-position:-441px -39px;}
+.status1 .map_hp{ background-position:-516px -51px;}
+.status1 .map_lg{ background-position:-600px -9px;}
+.status1 .map_by{ background-position:-685px -25px;}
+.status1 .map_hd{ background-position:-828px -13px;}
+.status1 .map_ch{ background-position:-1001px 0px;}
+.status1 .map_zc{ background-position:-1262px 0px;}
+.status1 .map_lw{ background-position:-255px -43px;}
+
+.status2 .map_ns{ background-position:-12px -280px;}
+.status2 .map_py{ background-position:-119px -285px;}
+.status2 .map_yx{ background-position:-318px -329px;}
+.status2 .map_hz{ background-position:-369px -330px;}
+.status2 .map_th{ background-position:-441px -313px;}
+.status2 .map_hp{ background-position:-516px -325px;}
+.status2 .map_lg{ background-position:-600px -283px;}
+.status2 .map_by{ background-position:-685px -299px;}
+.status2 .map_hd{ background-position:-828px -287px;}
+.status2 .map_ch{ background-position:-1001px -274px;}
+.status2 .map_zc{ background-position:-1262px -274px;}
+.status2 .map_lw{ background-position:-255px -317px;}
+
+.status3 .map_ns{ background-position:-12px -554px;}
+.status3 .map_py{ background-position:-119px -559px;}
+.status3 .map_yx{ background-position:-318px -603px;}
+.status3 .map_hz{ background-position:-369px -604px;}
+.status3 .map_th{ background-position:-441px -587px;}
+.status3 .map_hp{ background-position:-516px -599px;}
+.status3 .map_lg{ background-position:-600px -557px;}
+.status3 .map_by{ background-position:-685px -573px;}
+.status3 .map_hd{ background-position:-828px -561px;}
+.status3 .map_ch{ background-position:-1001px -548px;}
+.status3 .map_zc{ background-position:-1262px -548px;}
+.status3 .map_lw{ background-position:-255px -591px;}
+
+.selected .map_ns{ background-position:-12px -808px;}
+.selected .map_py{ background-position:-119px -813px;}
+.selected .map_yx{ background-position:-318px -857px;}
+.selected .map_hz{ background-position:-369px -858px;}
+.selected .map_th{ background-position:-441px -841px;}
+.selected .map_hp{ background-position:-516px -853px;}
+.selected .map_lg{ background-position:-600px -811px;}
+.selected .map_by{ background-position:-685px -827px;}
+.selected .map_hd{ background-position:-828px -815px;}
+.selected .map_ch{ background-position:-1001px -802px;}
+.selected .map_zc{ background-position:-1262px -802px;}
+.selected .map_lw{ background-position:-255px -845px;}
+
+
+.maps .status0,.maps .status1,.maps .status2,.maps .status3{ position:absolute; z-index:2;}
+#ns{ width:82px; height:97px; top:322px; left:146px;}
+#py{ width:98px; height:105px; top:264px; left:86px;}
+#yx{ width:25px; height:21px; top:239px; left:85px;}
+#hz{ width:53px; height:23px; top:254px; left:86px;}
+#th{ width:45px; height:47px; top:215px; left:100px;}
+#hp{ width:52px; height:33px; top:240px; left:130px;}
+#lg{ width:64px; height:116px; top:163px; left:127px; z-index:10}
+#by{ width:105px; height:89px; top:160px; left:58px;}
+#hd{ width:149px; height:112px; top:105px; left:4px;}
+#ch{ width:220px; height:168px; right:13px; top:15px;}
+#zc{ width:132px; height:164px; top:102px; right:27px;}
+#lw{ width:29px; height:37px; top:241px; left:68px;}
+
+.maps .shadow{ position:absolute; z-index:1; background:url(../images/maps.png) no-repeat;}
+#ns .shadow{ width:105px; height:115px; background-position:0px -799px; top:-9px; left:-12px;}
+#py .shadow{ width:110px; height:122px; background-position:-114px -804px; top:-9px; left:-5px;}
+#lw .shadow{ width:44px; height:54px; background-position:-247px -836px; top:-9px; left:-8px;}
+#yx .shadow{ width:39px; height:36px; background-position:-311px -850px; top:-7px; left:-7px;}
+#hz .shadow{ width:64px; height:38px; background-position:-363px -850px; top:-8px; left:-6px;}
+#th .shadow{ width:64px; height:60px; background-position:-434px -835px; top:-6px; left:-7px;}
+#hp .shadow{ width:64px; height:44px; background-position:-510px -847px; top:-6px; left:-6px;}
+#lg .shadow{ width:76px; height:129px; background-position:-595px -803px; top:-8px; left:-5px;}
+#by .shadow{ width:118px; height:102px; background-position:-678px -821px; top:-6px; left:-7px;}
+#hd .shadow{ width:158px; height:124px; background-position:-824px -810px; top:-5px; left:-4px;}
+#ch .shadow{ width:234px; height:181px; background-position:-994px -794px; top:-8px; left:-7px;}
+#zc .shadow{ width:148px; height:181px; background-position:-1252px -794px; top:-8px; left:-10px;}
+
+.maps .imgMask{ position:absolute; z-index:90; left:-4px;}
+.maps .imgMask img{ border:0px; outline:none;}
+.maps .lists{ width:64px; height:126px; background:url(../images/lists.png) no-repeat; position:absolute; right:5px; bottom:15px;}
+.maps .lists a{ width:100%; height:20px; display:inline-block; float:left;}
+.maps .lists a.th{ margin-top:6px;}
+
+/* circle style*/
+#circle{ width:116px; height:106px; position:absolute; bottom:20px; left:20px;}
+#circle span{ background:url(../images/circle.png) no-repeat; display:block;}
+#circle .cl{ width:56px; height:96px;}
+#circle .cr{ width:77px; height:59px;}
+#circle .cb{ width:90px; height:37px;}
+#cl{ width:56px; height:96px; top:3px; left:3px; position:absolute;}
+#cr{ width:77px; height:59px; top:4px; left:38px; position:absolute;}
+#cb{ width:90px; height:37px; top:62px; left:24px; position:absolute;}
+
+
+#circle .status0 .cl { background-position: -578px -95px;}
+#circle .status0 .cr { background-position: -568px -233px;}
+#circle .status0 .cb { background-position: -561px -15px;}
+
+#circle .status1 .cl{ background-position:-29px -95px;}
+#circle .status1 .cr{ background-position:-19px -233px;}
+#circle .status1 .cb{ background-position:-12px -15px;}
+
+#circle .status2 .cl{ background-position:-168px -95px;}
+#circle .status2 .cr{ background-position:-158px -233px;}
+#circle .status2 .cb{ background-position:-151px -15px;}
+
+#circle .status3 .cl{ background-position:-306px -95px;}
+#circle .status3 .cr{ background-position:-296px -233px;}
+#circle .status3 .cb{ background-position:-289px -15px;}
+
+#circle .selected .cl{ background-position:-445px -95px;}
+#circle .selected .cr{ background-position:-435px -233px;}
+#circle .selected .cb{ background-position:-428px -15px;}
+
+#circle .imgMask{ position:absolute; z-index:101;}
+#circle .imgMask img{ border:0px; outline:none;}
+
+.mapTitle{ font-size:18px; color:#465461; position:absolute; top:10px; left:30px; font-weight:normal; z-index:111}
+.mapTitle a { color: inherit}
+
+#maps .tabs{ position:absolute; top:20px; right:20px; }
+#maps .tabs .tabBtns{ position:relative; left:auto; top:auto; margin:auto;}
+.mapsList .icon{ width:24px; height:20px; display:inline-block; float:left; text-align:right; padding-right:7px; margin-left:10px;}
+.mapsList .text{ height:20px; display:inline-block; line-height:20px; padding-left:10px; float:left;}
+.mapsList .num{ height:20px; display:inline-block; line-height:20px; padding-left:10px; float:right; padding-right:10px;}
+.mapsList li{ padding-top:10px; clear:both; color:#434a54;}
+map area{ outline:none;}
+
+/*温度计样式*/
+#thermometer{ width:400px; height:340px; position:relative; margin: 0 auto;}
+#thermometer .text{ font-size:16px; font-family:"微软雅黑";}
+#thermometer .num{font-family:Arial, Helvetica, sans-serif; text-align:center; font-weight:bold;}
+.chartNum{
+    width:87px;
+    height:87px;
+    display:block;
+    background:url(../images/chartNum.png) no-repeat;
+    text-align:center;
+    line-height:87px;
+    color:#8cc152;
+    font-size:18px;
+    top:50%;
+    left:50%;
+    position:absolute;
+    margin:-10px 0px 0px -43px;
+    z-index:3
+}
+#gauge1{ position:absolute; top:50px; left:90px; z-index:1}
+#gauge2{
+    transform: rotate(-120deg);
+    -o-transform: rotate(-120deg);
+    -webkit-transform: rotate(-120deg);
+    -moz-transform: rotate(-120deg);
+    -ms-filter: progid:DXImageTransform.Microsoft.Matrix(
+        M11=-0.4999999999999998,
+        M12=0.8660254037844387,
+        M21=-0.8660254037844387,
+        M22=-0.4999999999999998,
+        SizingMethod='auto expand');
+    filter: progid:DXImageTransform.Microsoft.Matrix(
+        M11=-0.4999999999999998,
+        M12=0.8660254037844387,
+        M21=-0.8660254037844387,
+        M22=-0.4999999999999998,
+        SizingMethod='auto expand');
+    position:absolute;
+    bottom:100px;
+    left:-87px;
+    z-index:2;
+    z-index:1\9;
+    *z-index:1;
+}
+
+#gauge3{
+    transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -ms-filter: progid:DXImageTransform.Microsoft.Matrix(
+        M11=-0.5000000000000004,
+        M12=-0.8660254037844384,
+        M21=0.8660254037844384,
+        M22=-0.5000000000000004,
+        SizingMethod='auto expand');
+    filter: filter: progid:DXImageTransform.Microsoft.Matrix(
+        M11=-0.5000000000000004,
+        M12=-0.8660254037844384,
+        M21=0.8660254037844384,
+        M22=-0.5000000000000004,
+        SizingMethod='auto expand');
+    position:absolute;
+    top:4px;
+    right:8px;
+    z-index:1;
+}
+.gauge2_far{position:absolute;left:30px;top:200px;width:150px;height:140px;overflow:hidden;}
+.gauge3_far{position:absolute;right:50px;top:200px;width:150px;height:140px;overflow:hidden;}
+#thermometer .score{ width:102px; height:33px; background:url(../images/thermometerLine.png) no-repeat; position:absolute; top:160px; left:80px; z-index:5}
+#thermometer .score .text{ position:absolute; top:-10px; left:-70px;}
+#thermometer .text1,#thermometer .text2,#thermometer .text3{ position:relative; z-index:10}
+#thermometer .greenBg,#thermometer .redBg{ background:url(../images/tipsIcon.png) no-repeat; color:#fff;}
+#thermometer .text1{ width:56px; position:absolute; top:10px; left:175px;}
+#thermometer .text1 .num{ width:56px; height:23px; display:inline-block; line-height:27px; float:left; padding-bottom:7px;}
+#thermometer .text1 .greenBg{ background-position:0px -7px;}
+#thermometer .text1 .redBg{ background-position:0px -162px;}
+#thermometer .text1 .text{ width:56px; display:inline-block; text-align:center; float:left; line-height:1em;}
+
+#thermometer .text2{ width:56px; position:absolute; top:255px; top:256px\9; *top:255px\9; left:20px; left:14px\9; *left:20px;}
+#thermometer .text2 .num{ width:50px; height:23px; display:inline-block; line-height:23px; float:left; text-align:center; padding-right:6px;}
+#thermometer .text2 .greenBg{ background-position:0px -64px;}
+#thermometer .text2 .redBg{ background-position:0px -219px;}
+#thermometer .text2 .text{ width:50px; display:inline-block; text-align:center; float:left; line-height:1em;}
+
+#thermometer .text3{ width:56px; position:absolute; top:258px; left:330px;}
+#thermometer .text3 .num{ width:50px; height:23px; display:inline-block; line-height:23px; float:left; text-align:center; padding-left:6px;}
+#thermometer .text3 .greenBg{ background-position:0px -115px;}
+#thermometer .text3 .redBg{ background-position:0px -271px;}
+#thermometer .text3 .text{ width:40px; display:inline-block; text-align:center; float:left; line-height:1em; padding-left:12px;}
